@@ -9,13 +9,23 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
   </head>
   <body>
+    <!-- navbar -->
     <nav class="shadow-lg font-montserrat">
       <div
         class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
       >
-        <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
+        <a
+          href="/index.html"
+          class="flex items-center space-x-3 rtl:space-x-reverse"
+        >
           <img src="assets/images/logo.png" class="w-12" alt="Save Forest" />
           <span
             class="self-center text-2xl font-semibold whitespace-nowrap text-hijau"
@@ -52,35 +62,35 @@
           >
             <li>
               <a
-                href="#"
+                href="/index.html"
                 class="block py-2 px-3 rounded-sm md:p-0 text-hijau md:hover:text-aksen"
                 >Home</a
               >
             </li>
             <li>
               <a
-                href="#"
+                href="/education.html"
                 class="block py-2 px-3 rounded-sm md:hover:text-aksen md:p-0 text-hijau"
                 >Education</a
               >
             </li>
             <li>
               <a
-                href="#"
+                href="/contribution.html"
                 class="block py-2 px-3 text-gray-900 rounded-sm md:border-0 md:hover:text-aksen md:p-0 text-hijau"
                 >Contribution</a
               >
             </li>
             <li>
               <a
-                href="#"
+                href="/community.html"
                 class="block py-2 px-3 text-gray-900 rounded-sm md:border-0 md:hover:text-aksen md:p-0 text-hijau"
                 >Community</a
               >
             </li>
             <li>
               <a
-                href="#"
+                href="/a"
                 class="block py-2 px-3 text-gray-900 rounded-sm md:border-0 md:hover:text-aksen md:p-0 text-hijau"
                 >About Us</a
               >
@@ -91,39 +101,54 @@
     </nav>
 
     <!-- banner -->
-    <section
-      class="w-full bg-hijau py-16 px-6 font-montserrat md:py-20 md:px-10"
-    >
+    <section class="w-full bg-hijau py-20 px-6 font-montserrat md:px-16">
       <div
-        class="flex flex-col md:flex-row gap-8 md:gap-12 items-center justify-around"
+        class="flex flex-col-reverse md:flex-row items-center justify-between gap-12"
       >
+        <!-- Text Section -->
         <div
-          class="text text-background text-center flex flex-col gap-4 order-2 md:order-1 md:text-left md:gap-10"
+          class="flex flex-col gap-6 text-background text-center md:text-left"
+          data-aos="fade-right"
         >
-          <h1 class="font-bold text-xl md:text-4xl">
-            Turning Awarness Into Action
+          <h1 class="text-3xl md:text-5xl font-extrabold leading-tight">
+            Turning <span class="text-aksen">Awareness</span> Into Action
           </h1>
-          <p class="font-normal text-md md:text-xl">
-            Save our forests, shape our future
+          <p class="text-md md:text-xl font-light leading-relaxed">
+            Save our forests, shape our future. One step at a time, your action
+            today defines tomorrow's Earth.
           </p>
+          <div class="mt-4">
+            <a
+              href="/education.html"
+              class="inline-block bg-aksen text-white px-6 py-3 rounded-full text-sm md:text-base font-semibold hover:bg-background hover:text-aksen transition"
+            >
+              Learn How You Can Help →
+            </a>
+          </div>
         </div>
+
+        <!-- Image Section -->
         <div
-          class="gambar relative flex flex-col items-center order-1 md:order-2"
+          class="relative w-full md:w-[40rem] flex flex-col items-center"
+          data-aos="fade-left"
         >
           <img
             id="sliderImg"
             src="assets/images/deforestasi1.jpeg"
-            alt="saveforest"
-            class="w-[28rem] rounded-xl object-cover transition-all duration-500"
+            alt="Deforestation impact"
+            class="w-full rounded-2xl shadow-lg object-cover transition-all duration-500"
           />
-          <!-- Bullets di bawah gambar -->
           <div id="sliderBullets" class="flex gap-2 mt-4"></div>
         </div>
       </div>
     </section>
 
-    <!-- news -->
-    <section class="w-full py-16 px-6 font-montserrat md:py-20 md:px-16">
+    <!-- Content -->
+    <section
+      class="w-full py-16 px-6 font-montserrat md:py-20 md:px-16"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
       <div
         class="flex flex-col md:flex-row gap-8 md:gap-12 items-center justify-around"
       >
@@ -149,114 +174,149 @@
     </section>
 
     <!-- footer -->
-    <section class="w-full mt-10 p-10 font-montserrat border-t">
-      <div class="flex justify-center font-normal gap-10">
-        <h1>About Us</h1>
-        <h1>Contact</h1>
-        <h1>Terms & Conditions</h1>
-        <h1>Privacy Policy</h1>
-      </div>
-    </section>
-
-    <script>
-      // Slider Gambar
-      const images = [
-        "assets/images/deforestasi1.jpeg",
-        "assets/images/deforestasi2.jpeg",
-        "assets/images/deforestasi3.jpeg",
-      ];
-      let current = 0;
-      const sliderImg = document.getElementById("sliderImg");
-      const bulletsContainer = document.getElementById("sliderBullets");
-
-      function showImage(idx) {
-        sliderImg.src = images[idx];
-        updateBullets();
-      }
-
-      function updateBullets() {
-        bulletsContainer.innerHTML = "";
-        images.forEach((_, i) => {
-          const bullet = document.createElement("button");
-          bullet.className =
-            "w-3 h-3 rounded-full border border-background transition-all duration-300 " +
-            (i === current
-              ? "bg-aksen border-aksen"
-              : "bg-background opacity-70 hover:bg-aksen");
-          bullet.addEventListener("click", () => {
-            current = i;
-            showImage(current);
-          });
-          bulletsContainer.appendChild(bullet);
-        });
-      }
-
-      setInterval(() => {
-        current = (current + 1) % images.length;
-        showImage(current);
-      }, 5000);
-
-      // Inisialisasi pertama
-      showImage(current);
-
-      const newsList = [
-        {
-          title:
-            "Dampak Deforestasi dan Penggundulan Hutan Terhadap Permukaan Bumi",
-          image: "assets/images/greenlab-dampak-deforestasi.jpg",
-          url: "https://www.greenlab.co.id/news/Dampak-Deforestasi-dan-Penggundulan-Hutan-Terhadap-Permukaan-Bumi",
-          summary:
-            "Hutan adalah paru-paru bumi yang terdiri dari wilayah daratan yang didominasi oleh pepohonan dan vegetasi kayu-kayuan. Di balik rimbunnya pepohonan, tersimpan kekayaan hayati dan keseimbangan alam yang tak ternilai.",
-        },
-        {
-          title:
-            "Kementerian Kehutanan: Deforestasi di Indonesia Tembus 175,4 Ribu Hektare pada 2024",
-          image: "assets/images/tempo-deforestasi.jpg",
-          url: "https://www.tempo.co/lingkungan/kementerian-kehutanan-deforestasi-di-indonesia-tembus-175-4-ribu-hektare-pada-2024-1223666",
-          summary:
-            "Kementerian Kehutanan menyatakan luas lahan berhutan di Indonesia pada 2024 mencapai 95,5 juta hektare, atau 51,1 persen dari total daratan.",
-        },
-        {
-          title: "Dampak Tambang Nikel di Raja Ampat versi Greenpeace",
-          image: "assets/images/tempo-deforestasi2.jpg",
-          url: "https://www.kompas.id/baca/humaniora/2024/03/22/auriga-rilis-deforestasi-indonesia-2023-mencapai-257384-hektarhttps://www.tempo.co/hukum/dampak-tambang-nikel-di-raja-ampat-versi-greenpeace-1654703",
-          summary:
-            "Isu penambangan dan hilirisasi nikel di Raja Ampat, Papua, menjadi sorotan publik, terutama setelah sejumlah aktivis Greenpeace Indonesia.",
-        },
-      ];
-
-      // Card template
-      function getNewsCardHTML(news) {
-        return `
-        <div class="w-[40rem] flex gap-8 items-center p-4 bg-white rounded-lg shadow-xl hover:scale-105 hover:border-2 hover:border- transition-all duration-500 overflow-hidden">
-          <div>
-            <img src="${news.image}" alt="${news.title}" class="max-w-52 min-w-52 h-[10rem] rounded object-cover">
+    <footer
+      class="bg-hijau text-white py-8 md:pt-8"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
+      <div class="container mx-auto px-4 md:px-8">
+        <div class="flex flex-col mx-6 md:mx-0 md:flex-row md:space-x-32">
+          <div class="about mb-6 md:mb-0 md:w-2/3">
+            <h4 class="font-bold text-base md:text-xl mb-4">Save Forest</h4>
+            <p
+              class="mb-4 text-xs md:text-base text-white/90 text-justify text-left"
+            >
+              Save Forest is a website developed by a passionate team of
+              aspiring web designers from Politeknik Negeri Jakarta. With
+              creativity as our foundation and innovation as our driving force,
+              we are proud to showcase our skills in the TeknoCom International
+              Web Design Competition 2025. The name "Save Forest" reflects our
+              commitment to environmental awareness and digital advocacy—turning
+              awareness into action through the power of thoughtful design and
+              technology. Through this platform, we aim to inspire individuals
+              to take part in protecting our forests, preserving biodiversity,
+              and building a sustainable future for the next generations.
+            </p>
           </div>
-          <div class="p-4 flex flex-col gap-2">
-            <h2 class="font-bold text-lg text-hijau line-clamp-2">${news.title}</h2>
-            <p class="text-gray-700 text-sm line-clamp-3">${news.summary}</p>
-            <a href="${news.url}" target="_blank" class="text-coklat font-semibold hover:underline mt-2 text-sm">Baca Selengkapnya &rarr;</a>
+          <div class="contact-info md:w-1/3 flex flex-col">
+            <h4 class="font-bold text-base md:text-xl mb-4">Our Socials</h4>
+            <div class="text-xs md:text-base space-y-4 w-full">
+              <div class="flex flex-col">
+                <p class="text-white">Ahmad Zainul Mufid</p>
+                <div class="social-icons flex md:space-x-4">
+                  <a
+                    href="https://www.instagram.com/ahmadzainulmfd_/"
+                    class="bg-white text-hijau p-2 rounded-full text-xl md:text-base hover:bg-aksen hover:text-white transition"
+                  >
+                    <i class="fa-brands fa-instagram"></i>
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/ahmad-zainul-mufid-b29b91219/"
+                    class="bg-white text-hijau p-2 rounded-full text-xl md:text-base hover:bg-aksen hover:text-white transition"
+                  >
+                    <i class="fab fa-linkedin-in"></i>
+                  </a>
+                  <a
+                    href="https://github.com/ahmadzainulmufid/"
+                    class="bg-white text-hijau p-2 rounded-full text-xl md:text-base hover:bg-aksen hover:text-white transition"
+                  >
+                    <i class="fab fa-github"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="flex flex-col">
+                <p class="text-white">Dimas Adlan Wiyanto</p>
+                <div class="social-icons flex md:space-x-4">
+                  <a
+                    href="https://www.instagram.com/dimasadlan/"
+                    class="bg-white text-hijau p-2 rounded-full text-xl md:text-base hover:bg-aksen hover:text-white transition"
+                  >
+                    <i class="fa-brands fa-instagram"></i>
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/dimasadlan/"
+                    class="bg-white text-hijau p-2 rounded-full text-xl md:text-base hover:bg-aksen hover:text-white transition"
+                  >
+                    <i class="fab fa-linkedin-in"></i>
+                  </a>
+                  <a
+                    href="https://github.com/DimasAdlan13"
+                    class="bg-white text-hijau p-2 rounded-full text-xl md:text-base hover:bg-aksen hover:text-white transition"
+                  >
+                    <i class="fab fa-github"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="flex flex-col">
+                <p class="text-white">Muhammad Dzaki Alif Hidayat</p>
+                <div class="social-icons flex md:space-x-4">
+                  <a
+                    href="https://www.instagram.com/dzakialiff/"
+                    class="bg-white text-hijau p-2 rounded-full text-xl md:text-base hover:bg-aksen hover:text-white transition"
+                  >
+                    <i class="fa-brands fa-instagram"></i>
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/muhammad-dzaki-alif-hidayat-83365023b/"
+                    class="bg-white text-hijau p-2 rounded-full text-xl md:text-base hover:bg-aksen hover:text-white transition"
+                  >
+                    <i class="fab fa-linkedin-in"></i>
+                  </a>
+                  <a
+                    href="https://github.com/dzakialif"
+                    class="bg-white text-hijau p-2 rounded-full text-xl md:text-base hover:bg-aksen hover:text-white transition"
+                  >
+                    <i class="fab fa-github"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        `;
-      }
+      </div>
+      <hr class="border-white/30 my-8" />
+      <div class="text-center text-xs md:text-base text-white/80">
+        <p>Save Forest © 2025, All Rights Reserved</p>
+      </div>
+    </footer>
 
-      // Render cards
-      const newsSlider = document.getElementById("newsSlider");
-      let newsCurrent = 0;
-      function renderNewsSlider(idx) {
-        // Tampilkan hanya 1 card (atau 2 jika ingin responsive: newsList.slice(idx, idx+2))
-        const visibleNews = [newsList[idx]];
-        newsSlider.innerHTML = visibleNews.map(getNewsCardHTML).join("");
-      }
-      renderNewsSlider(newsCurrent);
-
-      // Auto-slide
-      setInterval(() => {
-        newsCurrent = (newsCurrent + 1) % newsList.length;
-        renderNewsSlider(newsCurrent);
-      }, 5000);
+    <script src="assets/js/script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      // Inisialisasi AOS SETELAH script dimuat
+      AOS.init({
+        once: true, // animasi hanya sekali saat scroll
+        duration: 800, // durasi animasi (optional)
+        easing: "ease-in-out", // efek transisi
+      });
     </script>
-    <script src="node_modules/flowbite/dist/flowbite.min.js"></script>
+    <script>
+      function toggleMenu() {
+        var menu = document.getElementById("menu");
+        menu.classList.toggle("hidden");
+      }
+    </script>
+    <script>
+      const scrollers = document.querySelectorAll(".scroller");
+
+      if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        addAnimation();
+      }
+
+      function addAnimation() {
+        scrollers.forEach((scroller) => {
+          scroller.setAttribute("data-animated", true);
+
+          const scrollerInner = scroller.querySelector(".scroller__inner");
+          const scrollerContent = Array.from(scrollerInner.children);
+
+          scrollerContent.forEach((item) => {
+            const duplicatedItem = item.cloneNode(true);
+            duplicatedItem.setAttribute("image-hidden", true);
+            scrollerInner.appendChild(duplicatedItem);
+          });
+        });
+      }
+    </script>
   </body>
 </html>
