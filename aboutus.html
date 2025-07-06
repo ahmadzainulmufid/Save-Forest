@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Save Forest</title>
+    <link href="assets/css/output.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="shadow-lg font-montserrat">
+      <div
+        class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
+      >
+        <a
+          href="/"
+          class="flex items-center space-x-3 rtl:space-x-reverse"
+        >
+          <img
+            src="assets/images/logo.png"
+            class="w-12"
+            alt="Save Forest"
+          />
+          <span
+            class="self-center text-2xl font-semibold whitespace-nowrap text-hijau"
+            >Save Forest</span
+          >
+        </a>
+        <button
+          data-collapse-toggle="navbar-default"
+          type="button"
+          class="inline-flex items-center p-2 w-10 h-10 justify-center text-md text-hijau rounded-lg md:hidden ring-2 ring-hijau"
+          aria-controls="navbar-default"
+          aria-expanded="false"
+        >
+          <span class="sr-only">Open main menu</span>
+          <svg
+            class="w-5 h-5"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 17 14"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M1 1h15M1 7h15M1 13h15"
+            />
+          </svg>
+        </button>
+        <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+          <ul
+            class="font-medium flex flex-col p-4 md:p-0 mt-3 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0"
+          >
+            <li>
+              <a
+                href="index.html"
+                class="block py-2 px-3 rounded-sm md:p-0 text-hijau md:hover:text-aksen"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block py-2 px-3 rounded-sm md:hover:text-aksen md:p-0 text-hijau"
+                >Education</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block py-2 px-3 text-gray-900 rounded-sm md:border-0 md:hover:text-aksen md:p-0 text-hijau"
+                >Contribution</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block py-2 px-3 text-gray-900 rounded-sm md:border-0 md:hover:text-aksen md:p-0 text-hijau"
+                >Community</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block py-2 px-3 text-gray-900 rounded-sm md:border-0 md:hover:text-aksen md:p-0 text-hijau"
+                >About Us</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+     <!-- Our Members Section -->
+    <section class="py-16 px-6">
+        <div class="max-w-6xl mx-auto">
+        <div class="mb-16 flex flex-col items-center">
+        <h2 class="text-2xl md:text-3xl font-extrabold text-emerald-700 tracking-wide">
+            Our Members
+        </h2>
+        <span class="mt-2 w-16 h-1 bg-emerald-400 rounded"></span>
+        </div>     
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Member Card 1 -->
+                <div class="rounded-lg overflow-hidden shadow-md group">
+                    <div class="aspect-[3/4] relative">
+                        <!-- Replace the src with your actual image path -->
+                        <img src="assets/images/dimasadlan.jpg" alt="Ahmad Zainul Mufid" class="w-full h-full object-cover object-center">
+                        <!-- Hover overlay with quote -->
+                        <div class="absolute inset-0 bg-lime-900 bg-opacity-80 flex items-center justify-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <p class="text-white text-center font-medium">
+                                "Bumi tidak memerlukan kita, tapi kita sangat memerlukan bumi. Mari jaga hutan untuk masa depan yang lebih baik."
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-lime-800 text-white">
+                        <h3 class="text-lg font-bold">Ahmad Zainul Mufid</h3>
+                    </div>
+                </div>
+                
+                <!-- Member Card 2 -->
+                <div class="rounded-lg overflow-hidden shadow-md group">
+                    <div class="aspect-[3/4] relative">
+                        <!-- Replace the src with your actual image path -->
+                        <img src="assets/images/dimasadlan.jpg" alt="Dimas Adlan Wiyanto" class="w-full h-full object-cover object-center">
+                        <!-- Hover overlay with quote -->
+                        <div class="absolute inset-0 bg-yellow-900 bg-opacity-80 flex items-center justify-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <p class="text-white text-center font-medium">
+                                "Ketika kita menanam sebatang pohon, kita tidak hanya menanam kehidupan, tetapi juga harapan untuk generasi mendatang."
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-amber-800 text-white">
+                        <h3 class="text-lg font-bold">Dimas Adlan Wiyanto</h3>
+                    </div>
+                </div>
+                
+                <!-- Member Card 3 -->
+                <div class="rounded-lg overflow-hidden shadow-md group">
+                    <div class="aspect-[3/4] relative">
+                        <!-- Replace the src with your actual image path -->
+                        <img src="assets/images/dimasadlan.jpg" alt="Muhammad Dzaki Alif" class="w-full h-full object-cover object-center">
+                        <!-- Hover overlay with quote -->
+                        <div class="absolute inset-0 bg-teal-800 bg-opacity-80 flex items-center justify-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <p class="text-white text-center font-medium">
+                                "Hutan adalah paru-paru bumi. Melestarikannya adalah tanggung jawab kita bersama untuk masa depan yang berkelanjutan."
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-cyan-900 text-white">
+                        <h3 class="text-lg font-bold">Muhammad Dzaki Alif</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision and Mission Section -->
+    <section class="py-16 px-6">
+    <div class="max-w-6xl mx-auto">
+        <div class="mb-16 flex flex-col items-center">
+            <h2 class="text-2xl md:text-3xl font-extrabold text-emerald-700 tracking-wide">
+                Vision and Mission
+            </h2>
+            <span class="mt-2 w-16 h-1 bg-emerald-400 rounded"></span>
+        </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Vision Column -->
+                <div class="bg-teal-800 p-8 rounded-lg text-white">
+                    <h3 class="text-xl font-bold mb-4">Vision</h3>
+                    <p class="text-sm text-white leading-relaxed">
+                        Menjadi ekosistem digital terdepan yang menghubungkan masyarakat, komunitas, dan berbagai pemangku kepentingan untuk bersama-sama melindungi, melestarikan, dan memulihkan hutan Indonesia. Melalui inovasi teknologi dan kolaborasi sosial, kami berkomitmen memperkuat kesadaran, menyediakan solusi praktis, dan mendorong perubahan sikap berkelanjutan yang diperlukan untuk mengatasi tantangan perlindungan hutan Indonesia.
+                    </p>
+                </div>
+                
+                <!-- Mission Column -->
+                <div class="bg-teal-800 p-8 rounded-lg text-white">
+                    <h3 class="text-xl font-bold mb-4">Mission</h3>
+                    <ol class="text-sm text-white space-y-4 list-decimal pl-5">
+                        <li>Meningkatkan masyarakat tentang bahaya deforestasi dan pentingnya pelestarian hutan melalui informasi yang akurat dan mudah diakses.</li>
+                        <li>Menghubungkan komunitas, relawan, dan organisasi yang berkontribusi dalam upaya penyelamatan deforestasi.</li>
+                        <li>Memberdayakan masyarakat lokal agar lebih berperan aktif dalam menjaga kelestarian hutan melalui dukungan sosial dan ekonomi.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+     <!-- footer -->
+     <section class="w-full mt-10 p-10 font-montserrat border-t">
+        <div class="flex justify-center font-normal gap-10">
+          <h1>About Us</h1>
+          <h1>Contact</h1>
+          <h1>Terms & Conditions</h1>
+          <h1>Privacy Policy</h1>
+        </div>
+     </section>
+
+    <script src="node_modules/flowbite/dist/flowbite.min.js"></script>
+</body>
+</html>

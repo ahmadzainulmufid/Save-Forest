@@ -9,13 +9,21 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
   "devDependencies": {
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.6",
-    "tailwindcss": "^4.1.10"
+    "tailwindcss": "^4.1.11"
   },
   "dependencies": {
     "flowbite": "^3.1.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahmadzainulmufid/Save-Forest.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ahmadzainulmufid/Save-Forest/issues"
+  },
+  "homepage": "https://github.com/ahmadzainulmufid/Save-Forest#readme",
+  "description": ""
 }
