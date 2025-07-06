@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Save Forest</title>
+    <link href="assets/css/output.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <script src="https://unpkg.com/@heroicons/vue@2.0.16/dist/heroicons.min.js"></script>
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav class="shadow-lg font-montserrat">
+      <div
+        class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
+      >
+        <a
+          href="/index.html"
+          class="flex items-center space-x-3 rtl:space-x-reverse"
+        >
+          <img src="assets/images/logo.png" class="w-12" alt="Save Forest" />
+          <span
+            class="self-center text-2xl font-semibold whitespace-nowrap text-hijau"
+            >Save Forest</span
+          >
+        </a>
+        <button
+          data-collapse-toggle="navbar-default"
+          type="button"
+          class="inline-flex items-center p-2 w-10 h-10 justify-center text-md text-hijau rounded-lg md:hidden ring-2 ring-hijau"
+          aria-controls="navbar-default"
+          aria-expanded="false"
+        >
+          <span class="sr-only">Open main menu</span>
+          <svg
+            class="w-5 h-5"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 17 14"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M1 1h15M1 7h15M1 13h15"
+            />
+          </svg>
+        </button>
+        <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+          <ul
+            class="font-medium flex flex-col p-4 md:p-0 mt-3 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0"
+          >
+            <li>
+              <a
+                href="/index.html"
+                class="block py-2 px-3 rounded-sm md:p-0 md:hover:text-aksen"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="/education.html"
+                class="block py-2 px-3 rounded-sm md:hover:text-aksen md:p-0 text-hijau"
+                >Education</a
+              >
+            </li>
+            <li>
+              <a
+                href="/contribution.html"
+                class="block py-2 px-3 text-gray-900 rounded-sm md:border-0 md:hover:text-aksen md:p-0"
+                >Contribution</a
+              >
+            </li>
+            <li>
+              <a
+                href="/community.html"
+                class="block py-2 px-3 text-gray-900 rounded-sm md:border-0 md:hover:text-aksen md:p-0"
+                >Community</a
+              >
+            </li>
+            <li>
+              <a
+                href="/a"
+                class="block py-2 px-3 text-gray-900 rounded-sm md:border-0 md:hover:text-aksen md:p-0"
+                >About Us</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Content 1-->
+    <div class="relative w-full h-[50vh] lg:h-[85vh] overflow-hidden">
+      <video
+        autoplay
+        muted
+        loop
+        playsinline
+        class="absolute top-0 left-0 w-full h-full object-cover"
+      >
+        <source src="assets/video/deforestasi.mp4" type="video/mp4" />
+      </video>
+
+      <!-- Overlay -->
+      <div class="absolute top-0 left-0 w-full h-full bg-black/60"></div>
+
+      <!-- Text content -->
+      <div
+        class="absolute inset-0 flex flex-col items-center justify-center text-center px-4"
+      >
+        <h1
+          class="text-3xl md:text-5xl font-extrabold leading-tight text-transparent bg-clip-text bg-gradient-to-tr from-green-400 via-lime-300 to-yellow-200 drop-shadow-md"
+        >
+          Deforestation: <br class="block md:hidden" />
+          A Real Threat to Our Planet
+        </h1>
+
+        <p
+          class="mt-4 text-sm md:text-lg text-white max-w-2xl leading-relaxed drop-shadow"
+        >
+          Every second, forests vanish due to illegal logging, agriculture, and
+          development.
+          <br class="hidden md:block" />
+          It’s time to act and protect the lungs of the Earth — before it’s too
+          late.
+        </p>
+      </div>
+    </div>
+
+    <!-- Content 2 -->
+    <div
+      class="bg-white py-12 px-6 md:px-16 text-center"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+      data-aos-once="true"
+    >
+      <h2 class="text-2xl md:text-3xl font-semibold text-gray-900">
+        10 Million Hectares of Forest Are Lost Every Year
+      </h2>
+      <p class="mt-2 text-gray-600 text-base md:text-lg">
+        A staggering amount of forest disappears annually due to illegal
+        logging...
+      </p>
+    </div>
+
+    <!-- Content 3 -->
+    <section
+      class="w-full py-16 px-6 md:py-20 md:px-16 font-montserrat"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+      data-aos-once="true"
+    >
+      <div
+        class="flex flex-col md:flex-row items-start md:items-center justify-between gap-10"
+      >
+        <div
+          class="md:w-1/2 space-y-6 order-2 md:order-1 text-center md:text-left"
+        >
+          <h2 class="text-2xl md:text-4xl font-extrabold text-gray-900">
+            What is Deforestation?
+          </h2>
+          <p class="text-gray-600 text-base md:text-lg leading-relaxed">
+            Explore the statistics and effects of deforestation on our planet
+            and communities.
+          </p>
+        </div>
+
+        <div class="md:w-1/2 space-y-6 order-1 md:order-2">
+          <div
+            class="flex items-start bg-white shadow-md rounded-lg p-4 gap-4 border"
+          >
+            <div
+              class="w-12 h-12 bg-green-100 text-green-600 flex items-center justify-center rounded-md"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-6 h-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 3v18h18M9 17V9m4 8V5m4 12v-6"
+                />
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-gray-900">
+                Deforestation Rates
+              </h3>
+              <p class="text-gray-600 text-sm">
+                Learn about crushing deforestation rates and what they mean for
+                our planet.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="flex items-start bg-white shadow-md rounded-lg p-4 gap-4 border"
+          >
+            <div
+              class="w-12 h-12 bg-green-100 text-green-600 flex items-center justify-center rounded-md"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-6 h-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17 20h5v-2a4 4 0 00-4-4h-1m-6 6v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2h5m6-6a4 4 0 100-8 4 4 0 000 8z"
+                />
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-gray-900">
+                Social Impacts
+              </h3>
+              <p class="text-gray-600 text-sm">
+                Understand how deforestation affects local communities and
+                biodiversity.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Content 4 -->
+    <section
+      class="w-full py-16 px-6 md:py-20 md:px-16 font-montserrat"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+      data-aos-once="true"
+    >
+      <div
+        class="flex flex-col md:flex-row items-start md:items-center justify-between gap-10"
+      >
+        <div class="w-full max-w-sm h-64 bg-gray-300 rounded-md mx-auto">
+          <div
+            class="w-full max-w-sm h-64 h-64 bg-green-100 flex items-center justify-center rounded-lg shadow-md"
+          >
+            <!-- Icon: Chart Bar (Heroicons) -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-16 h-16 text-green-600"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 3v18h18M9 17V9m4 8V5m4 12v-6"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          class="md:w-1/2 space-y-6 order-2 md:order-1 text-center md:text-left"
+        >
+          <h2 class="text-2xl md:text-4xl font-extrabold text-gray-900">
+            Deforestation Rates
+          </h2>
+          <p class="text-gray-600 text-base md:text-lg leading-relaxed">
+            The rate of global forest loss is reaching millions of hectares per
+            year, having a significant impact on the environment.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Content 5 -->
+    <section
+      class="w-full py-16 px-6 md:py-20 md:px-16 font-montserrat"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+      data-aos-once="true"
+    >
+      <div
+        class="flex flex-col md:flex-row items-start md:items-center justify-between gap-10"
+      >
+        <div
+          class="md:w-1/2 space-y-6 order-2 md:order-1 text-center md:text-left"
+        >
+          <h2 class="text-2xl md:text-4xl font-extrabold text-gray-900">
+            Social Impact
+          </h2>
+          <p class="text-gray-600 text-base md:text-lg leading-relaxed">
+            Deforestation damages the lives of local communities who depend on
+            the forest.
+          </p>
+        </div>
+        <div class="w-full max-w-sm h-64 mx-auto order-1 md:order-2">
+          <div
+            class="w-full max-w-sm h-64 h-64 bg-green-100 flex items-center justify-center rounded-lg shadow-md"
+          >
+            <!-- Icon: Chart Bar (Heroicons) -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-16 h-16 text-green-600"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17 20h5v-2a4 4 0 00-4-4h-1m-6 6v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2h5m6-6a4 4 0 100-8 4 4 0 000 8z"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Content 6 -->
+    <section>
+      <div
+        class="bg-white py-16 px-6 md:px-16 text-center font-montserrat"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+        data-aos-once="true"
+      >
+        <h2 class="text-3xl md:text-4xl font-extrabold text-green-600 mb-10">
+          Main Impact
+        </h2>
+
+        <!-- Grid 2x2 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+          <!-- Box 1 -->
+          <div
+            class="border border-green-400 rounded-lg p-6 shadow-sm bg-white text-left"
+          >
+            <h3 class="text-lg font-semibold text-gray-800 mb-2">
+              Biodiversity Loss
+            </h3>
+            <p class="text-sm text-gray-600">
+              Deforestation destroys habitats and accelerates species
+              extinction.
+            </p>
+          </div>
+
+          <!-- Box 2 -->
+          <div
+            class="border border-green-400 rounded-lg p-6 shadow-sm bg-white text-left"
+          >
+            <h3 class="text-lg font-semibold text-gray-800 mb-2">
+              Climate Disruption
+            </h3>
+            <p class="text-sm text-gray-600">
+              Forest loss contributes to CO₂ buildup and global warming.
+            </p>
+          </div>
+
+          <!-- Box 3 -->
+          <div
+            class="border border-green-400 rounded-lg p-6 shadow-sm bg-white text-left"
+          >
+            <h3 class="text-lg font-semibold text-gray-800 mb-2">
+              Water Cycle Damage
+            </h3>
+            <p class="text-sm text-gray-600">
+              Fewer trees disturb rainfall patterns and increase drought risk.
+            </p>
+          </div>
+
+          <!-- Box 4 -->
+          <div
+            class="border border-green-400 rounded-lg p-6 shadow-sm bg-white text-left"
+          >
+            <h3 class="text-lg font-semibold text-gray-800 mb-2">
+              Human Impact
+            </h3>
+            <p class="text-sm text-gray-600">
+              Local communities lose access to food, medicine, and livelihoods.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Content 7 -->
+    <section>
+      <div
+        class="bg-white py-16 px-6 md:px-16 text-center font-montserrat"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+        data-aos-once="true"
+      >
+        <h2 class="text-3xl md:text-4xl font-extrabold text-green-600 mb-10">
+          How to Prevent
+        </h2>
+
+        <!-- Grid 2x2 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+          <!-- Box 1 -->
+          <div
+            class="border border-green-400 rounded-lg p-6 shadow-sm bg-white text-left"
+          >
+            <h3 class="text-lg font-semibold text-gray-800 mb-2">
+              Reforestation
+            </h3>
+            <p class="text-sm text-gray-600">
+              Plant trees to restore deforested areas and rebuild natural
+              ecosystems.
+            </p>
+          </div>
+
+          <!-- Box 2 -->
+          <div
+            class="border border-green-400 rounded-lg p-6 shadow-sm bg-white text-left"
+          >
+            <h3 class="text-lg font-semibold text-gray-800 mb-2">
+              Sustainable Logging
+            </h3>
+            <p class="text-sm text-gray-600">
+              Promote legal and eco-friendly logging practices to preserve
+              forest health.
+            </p>
+          </div>
+
+          <!-- Box 3 -->
+          <div
+            class="border border-green-400 rounded-lg p-6 shadow-sm bg-white text-left"
+          >
+            <h3 class="text-lg font-semibold text-gray-800 mb-2">
+              Community Education
+            </h3>
+            <p class="text-sm text-gray-600">
+              Raise awareness about forest conservation through local and school
+              programs.
+            </p>
+          </div>
+
+          <!-- Box 4 -->
+          <div
+            class="border border-green-400 rounded-lg p-6 shadow-sm bg-white text-left"
+          >
+            <h3 class="text-lg font-semibold text-gray-800 mb-2">
+              Reduce Paper Use
+            </h3>
+            <p class="text-sm text-gray-600">
+              Minimize paper consumption and switch to digital alternatives when
+              possible.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Content 8 -->
+    <section class="w-full py-16 px-6 md:px-16 text-center font-montserrat">
+      <div data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
+        <h2 class="text-2xl md:text-4xl font-extrabold text-gray-900 mb-4">
+          Join the Movement
+        </h2>
+        <p class="text-gray-600 text-sm md:text-base mb-6">
+          Make a meaningful contribution towards a sustainable future.
+        </p>
+        <a
+          href="/contribution.html"
+          class="inline-block bg-black hover:bg-gray-800 text-white font-medium px-6 py-2 rounded-md shadow transition duration-300"
+        >
+          Contribute Now
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+      class="bg-hijau text-white py-8 md:pt-8"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+      data-aos-once="true"
+    >
+      <div class="container mx-auto px-4 md:px-8">
+        <div class="flex flex-col mx-6 md:mx-0 md:flex-row md:space-x-32">
+          <div class="about mb-6 md:mb-0 md:w-2/3">
+            <h4 class="font-bold text-base md:text-xl mb-4">Save Forest</h4>
+            <p
+              class="mb-4 text-xs md:text-base text-white/90 text-justify text-left"
+            >
+              Save Forest is a website developed by a passionate team of
+              aspiring web designers from Politeknik Negeri Jakarta. With
+              creativity as our foundation and innovation as our driving force,
+              we are proud to showcase our skills in the TeknoCom International
+              Web Design Competition 2025. The name "Save Forest" reflects our
+              commitment to environmental awareness and digital advocacy—turning
+              awareness into action through the power of thoughtful design and
+              technology. Through this platform, we aim to inspire individuals
+              to take part in protecting our forests, preserving biodiversity,
+              and building a sustainable future for the next generations.
+            </p>
+          </div>
+          <div class="contact-info md:w-1/3 flex flex-col">
+            <h4 class="font-bold text-base md:text-xl mb-4">Our Socials</h4>
+            <div class="text-xs md:text-base space-y-4 w-full">
+              <div class="flex flex-col">
+                <p class="text-white">Ahmad Zainul Mufid</p>
+                <div class="social-icons flex md:space-x-4">
+                  <a
+                    href="https://www.instagram.com/ahmadzainulmfd_/"
+                    class="bg-white text-hijau p-2 rounded-full text-xl md:text-base hover:bg-aksen hover:text-white transition"
+                  >
+                    <i class="fa-brands fa-instagram"></i>
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/ahmad-zainul-mufid-b29b91219/"
+                    class="bg-white text-hijau p-2 rounded-full text-xl md:text-base hover:bg-aksen hover:text-white transition"
+                  >
+                    <i class="fab fa-linkedin-in"></i>
+                  </a>
+                  <a
+                    href="https://github.com/ahmadzainulmufid/"
+                    class="bg-white text-hijau p-2 rounded-full text-xl md:text-base hover:bg-aksen hover:text-white transition"
+                  >
+                    <i class="fab fa-github"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="flex flex-col">
+                <p class="text-white">Dimas Adlan Wiyanto</p>
+                <div class="social-icons flex md:space-x-4">
+                  <a
+                    href="https://www.instagram.com/dimasadlan/"
+                    class="bg-white text-hijau p-2 rounded-full text-xl md:text-base hover:bg-aksen hover:text-white transition"
+                  >
+                    <i class="fa-brands fa-instagram"></i>
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/dimasadlan/"
+                    class="bg-white text-hijau p-2 rounded-full text-xl md:text-base hover:bg-aksen hover:text-white transition"
+                  >
+                    <i class="fab fa-linkedin-in"></i>
+                  </a>
+                  <a
+                    href="https://github.com/DimasAdlan13"
+                    class="bg-white text-hijau p-2 rounded-full text-xl md:text-base hover:bg-aksen hover:text-white transition"
+                  >
+                    <i class="fab fa-github"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="flex flex-col">
+                <p class="text-white">Muhammad Dzaki Alif Hidayat</p>
+                <div class="social-icons flex md:space-x-4">
+                  <a
+                    href="https://www.instagram.com/dzakialiff/"
+                    class="bg-white text-hijau p-2 rounded-full text-xl md:text-base hover:bg-aksen hover:text-white transition"
+                  >
+                    <i class="fa-brands fa-instagram"></i>
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/muhammad-dzaki-alif-hidayat-83365023b/"
+                    class="bg-white text-hijau p-2 rounded-full text-xl md:text-base hover:bg-aksen hover:text-white transition"
+                  >
+                    <i class="fab fa-linkedin-in"></i>
+                  </a>
+                  <a
+                    href="https://github.com/dzakialif"
+                    class="bg-white text-hijau p-2 rounded-full text-xl md:text-base hover:bg-aksen hover:text-white transition"
+                  >
+                    <i class="fab fa-github"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr class="border-white/30 my-8" />
+      <div class="text-center text-xs md:text-base text-white/80">
+        <p>Save Forest © 2025, All Rights Reserved</p>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/animation.js"></script>
+  </body>
+</html>

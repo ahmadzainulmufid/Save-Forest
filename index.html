@@ -70,28 +70,28 @@
             <li>
               <a
                 href="/education.html"
-                class="block py-2 px-3 rounded-sm md:hover:text-aksen md:p-0 text-hijau"
+                class="block py-2 px-3 rounded-sm md:hover:text-aksen md:p-0"
                 >Education</a
               >
             </li>
             <li>
               <a
                 href="/contribution.html"
-                class="block py-2 px-3 text-gray-900 rounded-sm md:border-0 md:hover:text-aksen md:p-0 text-hijau"
+                class="block py-2 px-3 text-gray-900 rounded-sm md:border-0 md:hover:text-aksen md:p-0"
                 >Contribution</a
               >
             </li>
             <li>
               <a
                 href="/community.html"
-                class="block py-2 px-3 text-gray-900 rounded-sm md:border-0 md:hover:text-aksen md:p-0 text-hijau"
+                class="block py-2 px-3 text-gray-900 rounded-sm md:border-0 md:hover:text-aksen md:p-0"
                 >Community</a
               >
             </li>
             <li>
               <a
                 href="/a"
-                class="block py-2 px-3 text-gray-900 rounded-sm md:border-0 md:hover:text-aksen md:p-0 text-hijau"
+                class="block py-2 px-3 text-gray-900 rounded-sm md:border-0 md:hover:text-aksen md:p-0"
                 >About Us</a
               >
             </li>
@@ -282,42 +282,13 @@
       </div>
     </footer>
 
-    <script src="assets/js/script.js"></script>
+    <script src="assets/js/slider.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-      // Inisialisasi AOS SETELAH script dimuat
-      AOS.init({
-        once: true, // animasi hanya sekali saat scroll
-        duration: 800, // durasi animasi (optional)
-        easing: "ease-in-out", // efek transisi
-      });
-    </script>
+    <script src="assets/js/animation.js"></script>
     <script>
       function toggleMenu() {
         var menu = document.getElementById("menu");
         menu.classList.toggle("hidden");
-      }
-    </script>
-    <script>
-      const scrollers = document.querySelectorAll(".scroller");
-
-      if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-        addAnimation();
-      }
-
-      function addAnimation() {
-        scrollers.forEach((scroller) => {
-          scroller.setAttribute("data-animated", true);
-
-          const scrollerInner = scroller.querySelector(".scroller__inner");
-          const scrollerContent = Array.from(scrollerInner.children);
-
-          scrollerContent.forEach((item) => {
-            const duplicatedItem = item.cloneNode(true);
-            duplicatedItem.setAttribute("image-hidden", true);
-            scrollerInner.appendChild(duplicatedItem);
-          });
-        });
       }
     </script>
   </body>
