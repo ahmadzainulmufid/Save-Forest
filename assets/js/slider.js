@@ -160,7 +160,7 @@ const newsList = [
 function getNewsCardHTML(news) {
   return `
     <div
-      class="news-card w-[16rem] md:w-[40rem] flex flex-col md:flex-row md:gap-8 items-center p-4 bg-background rounded-xl border-4 border-[#005f39] hover:scale-105 transition-all duration-300 opacity-0"
+      class="news-card w-[16rem] md:w-[40rem] flex flex-col md:flex-row md:gap-8 items-center p-4 rounded-xl border-4 border-[#005f39] hover:scale-105 transition-all duration-300 opacity-0"
       style="transform: translateY(-40px);"
     >
       <div>
