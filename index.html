@@ -16,160 +16,154 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
   </head>
-  <body>
+  <body class="bg-white">
     <!-- navbar -->
-    <nav class="shadow-lg font-montserrat">
-      <div
-        class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
-      >
-        <a
-          href="/index.html"
-          class="flex items-center space-x-3 rtl:space-x-reverse"
-        >
-          <img src="assets/images/logo.png" class="w-12" alt="Save Forest" />
-          <span
-            class="self-center text-2xl font-semibold whitespace-nowrap text-hijau"
-            >Save Forest</span
-          >
+  <nav id="mainNavbar"
+      class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-white md:bg-transparent font-montserrat">
+      <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <a href="/index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+          <img src="assets/images/logo.png" class="logo-hijau w-12 transition-all duration-300 md:hidden" alt="Save Forest" />
+          <img src="assets/images/logo-putih.png" class="logo-putih hidden w-12 transition-all duration-300 md:block" alt="Save Forest" />
+          <span id="navBrand" class="self-center text-2xl font-semibold whitespace-nowrap transition-colors duration-300 text-hijau md:text-white">
+            Save Forest
+          </span>
         </a>
-        <button
-          data-collapse-toggle="navbar-default"
-          type="button"
-          class="inline-flex items-center p-2 w-10 h-10 justify-center text-md text-hijau rounded-lg md:hidden ring-2 ring-hijau"
-          aria-controls="navbar-default"
-          aria-expanded="false"
-        >
-          <span class="sr-only">Open main menu</span>
-          <svg
-            class="w-5 h-5"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 17 14"
-          >
-            <path
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M1 1h15M1 7h15M1 13h15"
-            />
-          </svg>
+        <button onclick="toggleMenu()"
+            type="button"
+            class="inline-flex items-center p-2 w-10 h-10 justify-center text-md text-hijau rounded-lg md:hidden ring-2 ring-hijau z-50"
+            aria-controls="navbar-default"
+            aria-expanded="false">
+            <span class="sr-only">Open main menu</span>
+            <!-- Hamburger icon -->
+            <svg id="iconHamburger" class="w-5 h-5 block transition duration-700 ease-in-out" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+            </svg>
+            <!-- X icon diperbesar dan diberi transisi -->
+            <svg id="iconClose" class="w-7 h-7 hidden transition duration-700 ease-in-out" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
         </button>
-        <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-          <ul
-            class="font-medium flex flex-col p-4 md:p-0 mt-3 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0"
-          >
+        <div class="fixed top-[5rem] right-0 h-full w-full bg-white z-40 transform translate-x-full transition-transform duration-300 md:static md:translate-x-0 md:bg-transparent md:w-auto md:block" id="navbar-default">
+          <ul class="font-medium flex flex-col items-center justify-center gap-6 p-4 md:p-0 mt-3 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
             <li>
-              <a
-                href="/index.html"
-                class="block py-2 px-3 rounded-sm md:p-0 text-hijau md:hover:text-aksen"
-                >Home</a
-              >
+              <a href="/index.html" id="navHome"
+                class="nav-link block py-2 px-3 rounded-sm md:p-0 transition-colors duration-300 text-xl font-bold text-hijau md:text-hijau md:hover:text-coklat">
+                Home
+              </a>
             </li>
             <li>
-              <a
-                href="/education.html"
-                class="block py-2 px-3 rounded-sm md:hover:text-aksen md:p-0"
-                >Education</a
-              >
+              <a href="/education.html"
+                class="nav-link block py-2 px-3 rounded-sm md:p-0 transition-colors duration-300 text-xl text-coklat md:text-white md:hover:text-coklat">
+                Education
+              </a>
             </li>
             <li>
-              <a
-                href="/contribution.html"
-                class="block py-2 px-3 text-gray-900 rounded-sm md:border-0 md:hover:text-aksen md:p-0"
-                >Contribution</a
-              >
+              <a href="/contribution.html"
+                class="nav-link block py-2 px-3 rounded-sm md:p-0 transition-colors duration-300 text-xl text-coklat md:text-white md:hover:text-coklat">
+                Contribution
+              </a>
             </li>
             <li>
-              <a
-                href="/community.html"
-                class="block py-2 px-3 text-gray-900 rounded-sm md:border-0 md:hover:text-aksen md:p-0"
-                >Community</a
-              >
+              <a href="/community.html"
+                class="nav-link block py-2 px-3 rounded-sm md:p-0 transition-colors duration-300 text-xl text-coklat md:text-white md:hover:text-coklat">
+                Community
+              </a>
             </li>
             <li>
-              <a
-                href="/aboutus.html"
-                class="block py-2 px-3 text-gray-900 rounded-sm md:border-0 md:hover:text-aksen md:p-0"
-                >About Us</a
-              >
+              <a href="/aboutus.html"
+                class="nav-link block py-2 px-3 rounded-sm md:p-0 transition-colors duration-300 text-xl text-coklat md:text-white md:hover:text-coklat">
+                About Us
+              </a>
             </li>
           </ul>
         </div>
       </div>
-    </nav>
+  </nav>
 
     <!-- banner -->
-    <section class="w-full bg-hijau py-20 px-6 font-montserrat md:px-16">
-      <div
-        class="flex flex-col-reverse md:flex-row items-center justify-between gap-12"
-      >
+    <section class="md:pt-24 w-full h-[80vh] md:h-[85vh] px-6 font-montserrat md:px-16 relative overflow-hidden">
+      <!-- Background Image Slider -->
+      <div class="absolute inset-0 w-full h-full">
+        <div id="sliderImgContainer" class="relative w-full h-full overflow-hidden"></div>
+        <!-- Overlay di atas gambar, di bawah konten -->
+        <div class="absolute inset-0 bg-black/60 z-10 pointer-events-none"></div>
+        <div class="absolute left-1/2 -translate-x-1/2 bottom-6 flex gap-2 z-20" id="sliderBullets"></div>
+      </div>
+      <div class="relative z-30 flex flex-col items-center justify-center h-full w-full">
         <!-- Text Section -->
         <div
-          class="flex flex-col gap-6 text-background text-center md:text-left"
-          data-aos="fade-right"
+          id="sliderTextSection"
+          class="flex flex-col gap-6 text-background text-center md:text-left w-full transition-all duration-500"
         >
-          <h1 class="text-3xl md:text-5xl font-extrabold leading-tight">
-            Turning <span class="text-aksen">Awareness</span> Into Action
-          </h1>
-          <p class="text-md md:text-xl font-light leading-relaxed">
-            Save our forests, shape our future. One step at a time, your action
-            today defines tomorrow's Earth.
-          </p>
-          <div class="mt-4">
-            <a
-              href="/education.html"
-              class="inline-block bg-aksen text-white px-6 py-3 rounded-full text-sm md:text-base font-semibold hover:bg-background hover:text-aksen transition"
-            >
-              Learn How You Can Help →
-            </a>
-          </div>
-        </div>
-
-        <!-- Image Section -->
-        <div
-          class="relative w-full md:w-[40rem] flex flex-col items-center"
-          data-aos="fade-left"
-        >
-          <img
-            id="sliderImg"
-            src="assets/images/deforestasi1.jpeg"
-            alt="Deforestation impact"
-            class="w-full rounded-2xl shadow-lg object-cover transition-all duration-500"
-          />
-          <div id="sliderBullets" class="flex gap-2 mt-4"></div>
+          <!-- Konten akan diisi lewat JS -->
         </div>
       </div>
     </section>
 
     <!-- Content -->
     <section
-      class="w-full py-16 px-6 font-montserrat md:py-20 md:px-16"
+      class="w-full py-16 px-4 font-montserrat md:py-20 md:px-16 md:my-28"
       data-aos="fade-up"
       data-aos-duration="1000"
       data-aos-once="true"
     >
       <div
-        class="flex flex-col md:flex-row gap-8 md:gap-12 items-center justify-around"
+        class="flex flex-col md:flex-row gap-8 md:gap-12 items-center justify-around overflow-hidden"
       >
         <div
-          class="text text-hijau text-center flex flex-col gap-4 order-2 md:order-1 md:text-left md:gap-10 w-1/2"
+          class="text-center flex flex-col gap-4 md:text-left md:gap-10 md:w-1/2"
         >
-          <h1 class="font-bold text-xl md:text-4xl">
-            Before the Numbers, There’s a Deeper Reality
+          <h1 class="font-bold text-hijau text-2xl md:text-4xl">
+            Before the <span class="text-aksen">Numbers</span>, There’s a Deeper Reality
           </h1>
-          <p class="font-normal text-md md:text-xl">
+          <p class="font-normal text-md md:text-xl hidden md:block">
             The damage caused by deforestation isn’t just measured in hectares
             or tons. It’s seen in the vanishing trees, the disrupted lives, and
             the fading balance of nature.
           </p>
         </div>
-        <div class="berita order-1 md:order-2">
+        <div class="berita">
           <div
             id="newsSlider"
             class="flex transition-all duration-500 gap-6"
           ></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Forest Damage Statistics Section -->
+    <section class="w-full py-16 px-4 font-montserrat md:py-20 md:px-16 md:my-28"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+      data-aos-once="true">
+      <div class="max-w-6xl mx-auto flex flex-col items-center">
+        <h2 class="text-3xl text-hijau md:text-5xl font-extrabold text-center mb-4">Forest Damage Statistics</h2>
+        <p class="text-base md:text-lg text-center mb-10 text-black/70">Year over year data on forest damage.</p>
+        <div class="w-full flex flex-col md:flex-row gap-6 justify-center">
+          <!-- Card 1 -->
+          <div class="flex-1 bg-white border border-black rounded-lg p-6 min-w-[270px]">
+            <p class="text-gray-400 text-base mb-2">Area of Forest Lost (ha)</p>
+            <div class="text-2xl md:text-3xl font-bold mb-2 text-aksen">250,000</div>
+            <div class="text-sm text-black/70 flex items-center">
+              <span class="mr-1">↓</span> 5%
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div class="flex-1 bg-white border border-black rounded-lg p-6 min-w-[270px]">
+            <p class="text-gray-400 text-base mb-2">Number of Trees Cut Down</p>
+            <div class="text-2xl md:text-3xl font-bold text-aksen mb-2">1,000,000</div>
+            <div class="text-sm text-black/70 flex items-center">
+              <span class="mr-1">↑</span> 10%
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div class="flex-1 bg-white border border-black rounded-lg p-6 min-w-[270px]">
+            <p class="text-gray-400 text-base mb-2">CO2 Emissions Level</p>
+            <div class="text-2xl md:text-3xl font-bold text-aksen mb-2">200M tons</div>
+            <div class="text-sm text-black/70 flex items-center">
+              <span class="mr-1">↓</span> 2%
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -285,10 +279,18 @@
     <script src="assets/js/slider.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="assets/js/animation.js"></script>
+    <script src="assets/js/navbar.js"></script>
     <script>
       function toggleMenu() {
-        var menu = document.getElementById("menu");
-        menu.classList.toggle("hidden");
+        const menu = document.getElementById("navbar-default");
+        menu.classList.toggle("translate-x-full");
+        menu.classList.toggle("translate-x-0");
+
+        // Toggle icon
+        const iconHamburger = document.getElementById("iconHamburger");
+        const iconClose = document.getElementById("iconClose");
+        iconHamburger.classList.toggle("hidden");
+        iconClose.classList.toggle("hidden");
       }
     </script>
   </body>
