@@ -141,29 +141,29 @@
         <p class="text-base md:text-lg text-center mb-10 text-black/70">Year over year data on forest damage.</p>
         <div class="w-full flex flex-col md:flex-row gap-6 justify-center">
           <!-- Card 1 -->
-          <div class="flex-1 bg-white border border-black rounded-lg p-6 min-w-[270px]">
-            <p class="text-gray-400 text-base mb-2">Area of Forest Lost (ha)</p>
-            <div class="text-2xl md:text-3xl font-bold mb-2 text-aksen">250,000</div>
-            <div class="text-sm text-black/70 flex items-center">
-              <span class="mr-1">↓</span> 5%
-            </div>
+        <div class="flex-1 bg-white border border-black rounded-lg p-6 min-w-[270px]">
+          <p class="text-gray-400 text-base mb-2">Area of Forest Lost (ha)</p>
+          <div id="forestLostCounter" class="text-2xl md:text-3xl font-bold mb-2 text-aksen">0</div>
+          <div class="text-sm text-black/70 flex items-center">
+            <span class="mr-1">↓</span> 5%
           </div>
-          <!-- Card 2 -->
-          <div class="flex-1 bg-white border border-black rounded-lg p-6 min-w-[270px]">
-            <p class="text-gray-400 text-base mb-2">Number of Trees Cut Down</p>
-            <div class="text-2xl md:text-3xl font-bold text-aksen mb-2">1,000,000</div>
-            <div class="text-sm text-black/70 flex items-center">
-              <span class="mr-1">↑</span> 10%
-            </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="flex-1 bg-white border border-black rounded-lg p-6 min-w-[270px]">
+          <p class="text-gray-400 text-base mb-2">Number of Trees Cut Down</p>
+          <div id="treesCounter" class="text-2xl md:text-3xl font-bold text-aksen mb-2">0</div>
+          <div class="text-sm text-black/70 flex items-center">
+            <span class="mr-1">↑</span> 10%
           </div>
-          <!-- Card 3 -->
-          <div class="flex-1 bg-white border border-black rounded-lg p-6 min-w-[270px]">
-            <p class="text-gray-400 text-base mb-2">CO2 Emissions Level</p>
-            <div class="text-2xl md:text-3xl font-bold text-aksen mb-2">200M tons</div>
-            <div class="text-sm text-black/70 flex items-center">
-              <span class="mr-1">↓</span> 2%
-            </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="flex-1 bg-white border border-black rounded-lg p-6 min-w-[270px]">
+          <p class="text-gray-400 text-base mb-2">CO2 Emissions Level</p>
+          <div id="co2Counter" class="text-2xl md:text-3xl font-bold text-aksen mb-2">0</div>
+          <div class="text-sm text-black/70 flex items-center">
+            <span class="mr-1">↓</span> 2%
           </div>
+        </div>
         </div>
       </div>
     </section>
@@ -198,69 +198,69 @@
             <h4 class="font-bold text-base md:text-xl mb-4">Our Socials</h4>
             <div class="text-xs md:text-base space-y-4 w-full">
               <div class="flex flex-col">
-                <p class="text-white">Ahmad Zainul Mufid</p>
+                 <p class="text-white mb-1">Ahmad Zainul Mufid</p>
                 <div class="social-icons flex md:space-x-4">
                   <a
                     href="https://www.instagram.com/ahmadzainulmfd_/"
-                    class="bg-white text-hijau p-2 rounded-full text-xl md:text-base hover:bg-aksen hover:text-white transition"
+                    class="bg-white text-hijau inline-flex items-center justify-center w-8 h-8 rounded-full hover:bg-aksen hover:text-white transition"
                   >
                     <i class="fa-brands fa-instagram"></i>
                   </a>
                   <a
                     href="https://www.linkedin.com/in/ahmad-zainul-mufid-b29b91219/"
-                    class="bg-white text-hijau p-2 rounded-full text-xl md:text-base hover:bg-aksen hover:text-white transition"
+                    class="bg-white text-hijau inline-flex items-center justify-center w-8 h-8 rounded-full hover:bg-aksen hover:text-white transition"
                   >
                     <i class="fab fa-linkedin-in"></i>
                   </a>
                   <a
                     href="https://github.com/ahmadzainulmufid/"
-                    class="bg-white text-hijau p-2 rounded-full text-xl md:text-base hover:bg-aksen hover:text-white transition"
+                    class="bg-white text-hijau inline-flex items-center justify-center w-8 h-8 rounded-full hover:bg-aksen hover:text-white transition"
                   >
                     <i class="fab fa-github"></i>
                   </a>
                 </div>
               </div>
               <div class="flex flex-col">
-                <p class="text-white">Dimas Adlan Wiyanto</p>
+                <p class="text-white mb-1">Dimas Adlan Wiyanto</p>
                 <div class="social-icons flex md:space-x-4">
                   <a
                     href="https://www.instagram.com/dimasadlan/"
-                    class="bg-white text-hijau p-2 rounded-full text-xl md:text-base hover:bg-aksen hover:text-white transition"
+                    class="bg-white text-hijau inline-flex items-center justify-center w-8 h-8 rounded-full hover:bg-aksen hover:text-white transition"
                   >
                     <i class="fa-brands fa-instagram"></i>
                   </a>
                   <a
                     href="https://www.linkedin.com/in/dimasadlan/"
-                    class="bg-white text-hijau p-2 rounded-full text-xl md:text-base hover:bg-aksen hover:text-white transition"
+                    class="bg-white text-hijau inline-flex items-center justify-center w-8 h-8 rounded-full hover:bg-aksen hover:text-white transition"
                   >
                     <i class="fab fa-linkedin-in"></i>
                   </a>
                   <a
                     href="https://github.com/DimasAdlan13"
-                    class="bg-white text-hijau p-2 rounded-full text-xl md:text-base hover:bg-aksen hover:text-white transition"
+                    class="bg-white text-hijau inline-flex items-center justify-center w-8 h-8 rounded-full hover:bg-aksen hover:text-white transition"
                   >
                     <i class="fab fa-github"></i>
                   </a>
                 </div>
               </div>
               <div class="flex flex-col">
-                <p class="text-white">Muhammad Dzaki Alif Hidayat</p>
+                <p class="text-white mb-1">Muhammad Dzaki Alif Hidayat</p>
                 <div class="social-icons flex md:space-x-4">
                   <a
                     href="https://www.instagram.com/dzakialiff/"
-                    class="bg-white text-hijau p-2 rounded-full text-xl md:text-base hover:bg-aksen hover:text-white transition"
+                    class="bg-white text-hijau inline-flex items-center justify-center w-8 h-8 rounded-full hover:bg-aksen hover:text-white transition"
                   >
                     <i class="fa-brands fa-instagram"></i>
                   </a>
                   <a
                     href="https://www.linkedin.com/in/muhammad-dzaki-alif-hidayat-83365023b/"
-                    class="bg-white text-hijau p-2 rounded-full text-xl md:text-base hover:bg-aksen hover:text-white transition"
+                    class="bg-white text-hijau inline-flex items-center justify-center w-8 h-8 rounded-full hover:bg-aksen hover:text-white transition"
                   >
                     <i class="fab fa-linkedin-in"></i>
                   </a>
                   <a
                     href="https://github.com/dzakialif"
-                    class="bg-white text-hijau p-2 rounded-full text-xl md:text-base hover:bg-aksen hover:text-white transition"
+                    class="bg-white text-hijau inline-flex items-center justify-center w-8 h-8 rounded-full hover:bg-aksen hover:text-white transition"
                   >
                     <i class="fab fa-github"></i>
                   </a>
@@ -280,6 +280,7 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="assets/js/animation.js"></script>
     <script src="assets/js/navbar.js"></script>
+    <script src="assets/js/counter.js"></script>
     <script>
       function toggleMenu() {
         const menu = document.getElementById("navbar-default");

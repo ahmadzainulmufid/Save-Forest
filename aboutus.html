@@ -16,85 +16,129 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
   </head>
-  <body>
-    <nav class="shadow-lg font-montserrat">
-      <div
-        class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
-      >
-        <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
-          <img src="assets/images/logo.png" class="w-12" alt="Save Forest" />
-          <span
-            class="self-center text-2xl font-semibold whitespace-nowrap text-hijau"
-            >Save Forest</span
-          >
+  <body class="bg-white font-montserrat">
+    <!-- navbar -->
+  <nav id="mainNavbar"
+      class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-white md:bg-transparent font-montserrat">
+      <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <a href="/index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+          <img src="assets/images/logo.png" class="logo-hijau w-12 transition-all duration-300 md:hidden" alt="Save Forest" />
+          <img src="assets/images/logo-putih.png" class="logo-putih hidden w-12 transition-all duration-300 md:block" alt="Save Forest" />
+          <span id="navBrand" class="self-center text-2xl font-semibold whitespace-nowrap transition-colors duration-300 text-hijau md:text-white">
+            Save Forest
+          </span>
         </a>
-        <button
-          data-collapse-toggle="navbar-default"
-          type="button"
-          class="inline-flex items-center p-2 w-10 h-10 justify-center text-md text-hijau rounded-lg md:hidden ring-2 ring-hijau"
-          aria-controls="navbar-default"
-          aria-expanded="false"
-        >
-          <span class="sr-only">Open main menu</span>
-          <svg
-            class="w-5 h-5"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 17 14"
-          >
-            <path
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M1 1h15M1 7h15M1 13h15"
-            />
-          </svg>
+        <button onclick="toggleMenu()"
+            type="button"
+            class="inline-flex items-center p-2 w-10 h-10 justify-center text-md text-hijau rounded-lg md:hidden ring-2 ring-hijau z-50"
+            aria-controls="navbar-default"
+            aria-expanded="false">
+            <span class="sr-only">Open main menu</span>
+            <!-- Hamburger icon -->
+            <svg id="iconHamburger" class="w-5 h-5 block transition duration-700 ease-in-out" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+            </svg>
+            <!-- X icon diperbesar dan diberi transisi -->
+            <svg id="iconClose" class="w-7 h-7 hidden transition duration-700 ease-in-out" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
         </button>
-        <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-          <ul
-            class="font-medium flex flex-col p-4 md:p-0 mt-3 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0"
-          >
+        <div class="fixed top-[5rem] right-0 h-full w-full bg-white z-40 transform translate-x-full transition-transform duration-300 md:static md:translate-x-0 md:bg-transparent md:w-auto md:block" id="navbar-default">
+          <ul class="font-medium flex flex-col items-center justify-center gap-6 p-4 md:p-0 mt-3 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
             <li>
-              <a
-                href="index.html"
-                class="block py-2 px-3 rounded-sm md:p-0 md:hover:text-aksen"
-                >Home</a
-              >
+              <a href="/index.html" id="navHome"
+                class="nav-link block py-2 px-3 rounded-sm md:p-0 transition-colors duration-300 text-xl text-coklat md:text-white md:hover:text-coklat">
+                Home
+              </a>
             </li>
             <li>
-              <a
-                href="/education.html"
-                class="block py-2 px-3 rounded-sm md:hover:text-aksen md:p-0"
-                >Education</a
-              >
+              <a href="/education.html"
+                class="nav-link block py-2 px-3 rounded-sm md:p-0 transition-colors duration-300 text-xl text-coklat md:text-white md:hover:text-coklat">
+                Education
+              </a>
             </li>
             <li>
-              <a
-                href="/contribution.html"
-                class="block py-2 px-3 text-gray-900 rounded-sm md:border-0 md:hover:text-aksen md:p-0"
-                >Contribution</a
-              >
+              <a href="/contribution.html"
+                class="nav-link block py-2 px-3 rounded-sm md:p-0 transition-colors duration-300 text-xl text-coklat md:text-white md:hover:text-coklat">
+                Contribution
+              </a>
             </li>
             <li>
-              <a
-                href="/community.html"
-                class="block py-2 px-3 text-gray-900 rounded-sm md:border-0 md:hover:text-aksen md:p-0"
-                >Community</a
-              >
+              <a href="/community.html"
+                class="nav-link block py-2 px-3 rounded-sm md:p-0 transition-colors duration-300 text-xl text-coklat md:text-white md:hover:text-coklat">
+                Community
+              </a>
             </li>
             <li>
-              <a
-                href="/aboutus.html"
-                class="block py-2 px-3 text-gray-900 rounded-sm md:border-0 md:hover:text-aksen md:p-0 text-hijau"
-                >About Us</a
-              >
+              <a href="/aboutus.html"
+                class="nav-link block py-2 px-3 rounded-sm md:p-0 transition-colors duration-300 text-xl font-bold text-hijau md:text-hijau md:hover:text-coklat">
+                About Us
+              </a>
             </li>
           </ul>
         </div>
       </div>
-    </nav>
+  </nav>
+
+
+    <!-- Vision and Mission Section -->
+    <section class="py-16 px-6">
+      <div
+        class="max-w-6xl mx-auto"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+        data-aos-once="true"
+      >
+        <div class="mb-16 flex flex-col items-center">
+          <h2
+            class="text-2xl md:text-3xl font-extrabold text-emerald-700 tracking-wide"
+          >
+            Vision and Mission
+          </h2>
+          <span class="mt-2 w-16 h-1 bg-emerald-400 rounded"></span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Vision Column -->
+          <div class="bg-teal-800 p-8 rounded-lg text-white">
+            <h3 class="text-xl font-bold mb-4">Vision</h3>
+            <p
+              class="text-sm text-white leading-relaxed text-justify text-left font-montserrat"
+            >
+              Menjadi ekosistem digital terdepan yang menghubungkan masyarakat,
+              komunitas, dan berbagai pemangku kepentingan untuk bersama-sama
+              melindungi, melestarikan, dan memulihkan hutan Indonesia. Melalui
+              inovasi teknologi dan kolaborasi sosial, kami berkomitmen
+              memperkuat kesadaran, menyediakan solusi praktis, dan mendorong
+              perubahan sikap berkelanjutan yang diperlukan untuk mengatasi
+              tantangan perlindungan hutan Indonesia.
+            </p>
+          </div>
+
+          <!-- Mission Column -->
+          <div class="bg-teal-800 p-8 rounded-lg text-white">
+            <h3 class="text-xl font-bold mb-4">Mission</h3>
+            <ol
+              class="text-sm text-white space-y-4 list-decimal pl-5 text-justify text-left font-montserrat"
+            >
+              <li>
+                Meningkatkan masyarakat tentang bahaya deforestasi dan
+                pentingnya pelestarian hutan melalui informasi yang akurat dan
+                mudah diakses.
+              </li>
+              <li>
+                Menghubungkan komunitas, relawan, dan organisasi yang
+                berkontribusi dalam upaya penyelamatan deforestasi.
+              </li>
+              <li>
+                Memberdayakan masyarakat lokal agar lebih berperan aktif dalam
+                menjaga kelestarian hutan melalui dukungan sosial dan ekonomi.
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Our Members Section -->
     <section class="py-16 px-6">
@@ -189,65 +233,6 @@
       </div>
     </section>
 
-    <!-- Vision and Mission Section -->
-    <section class="py-16 px-6">
-      <div
-        class="max-w-6xl mx-auto"
-        data-aos="fade-up"
-        data-aos-duration="1000"
-        data-aos-once="true"
-      >
-        <div class="mb-16 flex flex-col items-center">
-          <h2
-            class="text-2xl md:text-3xl font-extrabold text-emerald-700 tracking-wide"
-          >
-            Vision and Mission
-          </h2>
-          <span class="mt-2 w-16 h-1 bg-emerald-400 rounded"></span>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <!-- Vision Column -->
-          <div class="bg-teal-800 p-8 rounded-lg text-white">
-            <h3 class="text-xl font-bold mb-4">Vision</h3>
-            <p
-              class="text-sm text-white leading-relaxed text-justify text-left"
-            >
-              Menjadi ekosistem digital terdepan yang menghubungkan masyarakat,
-              komunitas, dan berbagai pemangku kepentingan untuk bersama-sama
-              melindungi, melestarikan, dan memulihkan hutan Indonesia. Melalui
-              inovasi teknologi dan kolaborasi sosial, kami berkomitmen
-              memperkuat kesadaran, menyediakan solusi praktis, dan mendorong
-              perubahan sikap berkelanjutan yang diperlukan untuk mengatasi
-              tantangan perlindungan hutan Indonesia.
-            </p>
-          </div>
-
-          <!-- Mission Column -->
-          <div class="bg-teal-800 p-8 rounded-lg text-white">
-            <h3 class="text-xl font-bold mb-4">Mission</h3>
-            <ol
-              class="text-sm text-white space-y-4 list-decimal pl-5 text-justify text-left"
-            >
-              <li>
-                Meningkatkan masyarakat tentang bahaya deforestasi dan
-                pentingnya pelestarian hutan melalui informasi yang akurat dan
-                mudah diakses.
-              </li>
-              <li>
-                Menghubungkan komunitas, relawan, dan organisasi yang
-                berkontribusi dalam upaya penyelamatan deforestasi.
-              </li>
-              <li>
-                Memberdayakan masyarakat lokal agar lebih berperan aktif dalam
-                menjaga kelestarian hutan melalui dukungan sosial dan ekonomi.
-              </li>
-            </ol>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- Footer -->
     <footer
       class="bg-hijau text-white py-8 md:pt-8"
@@ -278,69 +263,69 @@
             <h4 class="font-bold text-base md:text-xl mb-4">Our Socials</h4>
             <div class="text-xs md:text-base space-y-4 w-full">
               <div class="flex flex-col">
-                <p class="text-white">Ahmad Zainul Mufid</p>
+                <p class="text-white mb-1">Ahmad Zainul Mufid</p>
                 <div class="social-icons flex md:space-x-4">
                   <a
                     href="https://www.instagram.com/ahmadzainulmfd_/"
-                    class="bg-white text-hijau p-2 rounded-full text-xl md:text-base hover:bg-aksen hover:text-white transition"
+                    class="bg-white text-hijau inline-flex items-center justify-center w-8 h-8 rounded-full hover:bg-aksen hover:text-white transition"
                   >
                     <i class="fa-brands fa-instagram"></i>
                   </a>
                   <a
                     href="https://www.linkedin.com/in/ahmad-zainul-mufid-b29b91219/"
-                    class="bg-white text-hijau p-2 rounded-full text-xl md:text-base hover:bg-aksen hover:text-white transition"
+                    class="bg-white text-hijau inline-flex items-center justify-center w-8 h-8 rounded-full hover:bg-aksen hover:text-white transition"
                   >
                     <i class="fab fa-linkedin-in"></i>
                   </a>
                   <a
                     href="https://github.com/ahmadzainulmufid/"
-                    class="bg-white text-hijau p-2 rounded-full text-xl md:text-base hover:bg-aksen hover:text-white transition"
+                    class="bg-white text-hijau inline-flex items-center justify-center w-8 h-8 rounded-full hover:bg-aksen hover:text-white transition"
                   >
                     <i class="fab fa-github"></i>
                   </a>
                 </div>
               </div>
               <div class="flex flex-col">
-                <p class="text-white">Dimas Adlan Wiyanto</p>
+                <p class="text-white mb-1">Dimas Adlan Wiyanto</p>
                 <div class="social-icons flex md:space-x-4">
                   <a
                     href="https://www.instagram.com/dimasadlan/"
-                    class="bg-white text-hijau p-2 rounded-full text-xl md:text-base hover:bg-aksen hover:text-white transition"
+                    class="bg-white text-hijau inline-flex items-center justify-center w-8 h-8 rounded-full hover:bg-aksen hover:text-white transition"
                   >
                     <i class="fa-brands fa-instagram"></i>
                   </a>
                   <a
                     href="https://www.linkedin.com/in/dimasadlan/"
-                    class="bg-white text-hijau p-2 rounded-full text-xl md:text-base hover:bg-aksen hover:text-white transition"
+                    class="bg-white text-hijau inline-flex items-center justify-center w-8 h-8 rounded-full hover:bg-aksen hover:text-white transition"
                   >
                     <i class="fab fa-linkedin-in"></i>
                   </a>
                   <a
                     href="https://github.com/DimasAdlan13"
-                    class="bg-white text-hijau p-2 rounded-full text-xl md:text-base hover:bg-aksen hover:text-white transition"
+                    class="bg-white text-hijau inline-flex items-center justify-center w-8 h-8 rounded-full hover:bg-aksen hover:text-white transition"
                   >
                     <i class="fab fa-github"></i>
                   </a>
                 </div>
               </div>
               <div class="flex flex-col">
-                <p class="text-white">Muhammad Dzaki Alif Hidayat</p>
+                <p class="text-white mb-1">Muhammad Dzaki Alif Hidayat</p>
                 <div class="social-icons flex md:space-x-4">
                   <a
                     href="https://www.instagram.com/dzakialiff/"
-                    class="bg-white text-hijau p-2 rounded-full text-xl md:text-base hover:bg-aksen hover:text-white transition"
+                    class="bg-white text-hijau inline-flex items-center justify-center w-8 h-8 rounded-full hover:bg-aksen hover:text-white transition"
                   >
                     <i class="fa-brands fa-instagram"></i>
                   </a>
                   <a
                     href="https://www.linkedin.com/in/muhammad-dzaki-alif-hidayat-83365023b/"
-                    class="bg-white text-hijau p-2 rounded-full text-xl md:text-base hover:bg-aksen hover:text-white transition"
+                    class="bg-white text-hijau inline-flex items-center justify-center w-8 h-8 rounded-full hover:bg-aksen hover:text-white transition"
                   >
                     <i class="fab fa-linkedin-in"></i>
                   </a>
                   <a
                     href="https://github.com/dzakialif"
-                    class="bg-white text-hijau p-2 rounded-full text-xl md:text-base hover:bg-aksen hover:text-white transition"
+                    class="bg-white text-hijau inline-flex items-center justify-center w-8 h-8 rounded-full hover:bg-aksen hover:text-white transition"
                   >
                     <i class="fab fa-github"></i>
                   </a>

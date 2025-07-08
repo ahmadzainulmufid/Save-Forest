@@ -20,7 +20,7 @@ module.exports = {
         coklat: '#A16D28'
       },
       fontFamily: {
-        montserrat: ['Montserrat', 'sans-serif']
+        montserrat: ['Montserrat', 'sans-serif'],
       }
     },
   },
