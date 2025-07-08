@@ -1,43 +1,136 @@
-// Slider Gambar
-const images = [
-  "assets/images/deforestasi1.jpeg",
-  "assets/images/deforestasi2.jpeg",
-  "assets/images/deforestasi3.jpeg",
+const slides = [
+  {
+    image: "assets/images/deforestasi1.jpeg",
+    title: "Turning <span class='text-aksen'>Awareness</span> Into Action",
+    description: "Save our forests, shape our future. One step at a time, your action today defines tomorrow's Earth."
+  },
+  {
+    image: "assets/images/deforestasi2.jpeg",
+    title: "Your <span class='text-aksen'>Action</span> Matters",
+    description: "Every small step counts. Be part of the movement to save our green planet for future generations."
+  },
+  {
+    image: "assets/images/deforestasi3.jpeg",
+    title: "Find out <span class='text-aksen'>The local</span> Heroes ",
+    description: "Millions of species lose their home every year due to massive deforestation. Let’s make a change."
+  },
 ];
-let current = 0;
-const sliderImg = document.getElementById("sliderImg");
-const bulletsContainer = document.getElementById("sliderBullets");
 
-function showImage(idx) {
-  sliderImg.src = images[idx];
-  updateBullets();
+let current = 0;
+const sliderContainer = document.getElementById("sliderImgContainer");
+const bulletsContainer = document.getElementById("sliderBullets");
+const sliderTextSection = document.getElementById("sliderTextSection");
+
+function renderSliderSlide(nextIdx = null) {
+  // Render gambar (slide)
+  if (!sliderContainer) return;
+  const currIdx = current;
+  if (nextIdx == null) {
+    sliderContainer.innerHTML = `
+      <img src="${slides[currIdx].image}" alt="Deforestation impact"
+        class="slider-img absolute inset-0 w-full h-full object-cover object-center transition-all duration-700 translate-x-0 z-10"
+      />`;
+    renderSliderText(currIdx);
+    updateBullets();
+    return;
+  }
+  sliderContainer.innerHTML = `
+    <img src="${slides[currIdx].image}" alt="Deforestation impact"
+      class="slider-img absolute inset-0 w-full h-full object-cover object-center transition-all duration-700 translate-x-0 z-10"
+      id="imgCurrent"
+    />
+    <img src="${slides[nextIdx].image}" alt="Deforestation impact"
+      class="slider-img absolute inset-0 w-full h-full object-cover object-center transition-all duration-700 translate-x-full z-10"
+      id="imgNext"
+    />`;
+  updateBullets(nextIdx);
+
+  // Fade out text, lalu ganti konten dan fade in
+  animateTextFadeOut(() => {
+    renderSliderText(nextIdx, true);
+  });
+
+  setTimeout(() => {
+    const imgCurrent = document.getElementById("imgCurrent");
+    const imgNext = document.getElementById("imgNext");
+    if (imgCurrent && imgNext) {
+      imgCurrent.classList.remove("translate-x-0");
+      imgCurrent.classList.add("-translate-x-full");
+      imgNext.classList.remove("translate-x-full");
+      imgNext.classList.add("translate-x-0");
+    }
+  }, 30);
+
+  setTimeout(() => {
+    current = nextIdx;
+    renderSliderSlide();
+  }, 700);
 }
 
-function updateBullets() {
+function renderSliderText(idx, animateIn = false) {
+  if (!sliderTextSection) return;
+  sliderTextSection.innerHTML = `
+    <h1 class="text-xl md:text-5xl font-extrabold leading-tight">
+      ${slides[idx].title}
+    </h1>
+    <p class="text-sm md:text-xl font-extralight leading-relaxed">
+      ${slides[idx].description}
+    </p>
+    <div class="mt-4">
+      <a href="/education.html"
+        class="inline-block bg-aksen text-white px-6 py-3 rounded-full text-sm md:text-base font-semibold hover:bg-background hover:text-aksen transition"
+      >
+        Learn How You Can Help →
+      </a>
+    </div>
+  `;
+  // Fade in
+  sliderTextSection.classList.add('opacity-0');
+  sliderTextSection.classList.remove('opacity-100');
+  setTimeout(() => {
+    sliderTextSection.classList.remove('opacity-0');
+    sliderTextSection.classList.add('opacity-100');
+  }, 30);
+}
+
+function animateTextFadeOut(after) {
+  if (!sliderTextSection) return after && after();
+  // Fade out
+  sliderTextSection.classList.remove('opacity-100');
+  sliderTextSection.classList.add('opacity-0');
+  setTimeout(() => {
+    if (after) after();
+  }, 300);
+}
+
+function updateBullets(idx = current) {
+  if (!bulletsContainer) return;
   bulletsContainer.innerHTML = "";
-  images.forEach((_, i) => {
+  slides.forEach((_, i) => {
     const bullet = document.createElement("button");
     bullet.className =
-      "w-3 h-3 rounded-full border border-background transition-all duration-300 " +
-      (i === current
-        ? "bg-aksen border-aksen"
-        : "bg-background opacity-70 hover:bg-aksen");
+      "h-1 md:h-2 w-8 md:w-12 rounded-full transition-all duration-300 cursor-pointer " +
+      (i === idx
+        ? "bg-aksen"
+        : "bg-white/50 hover:bg-aksen/50");
     bullet.addEventListener("click", () => {
-      current = i;
-      showImage(current);
+      if (i !== current) renderSliderSlide(i);
     });
     bulletsContainer.appendChild(bullet);
   });
 }
 
+// Initial render
+renderSliderSlide();
+
+// Auto-slide
 setInterval(() => {
-  current = (current + 1) % images.length;
-  showImage(current);
+  const nextIdx = (current + 1) % slides.length;
+  renderSliderSlide(nextIdx);
 }, 5000);
 
-// Inisialisasi pertama
-showImage(current);
 
+// News List
 const newsList = [
   {
     title: "Dampak Deforestasi dan Penggundulan Hutan Terhadap Permukaan Bumi",
@@ -63,33 +156,60 @@ const newsList = [
   },
 ];
 
-// Card template
+// Template dengan Tailwind dan animasi
 function getNewsCardHTML(news) {
   return `
-        <div class="w-[40rem] flex gap-8 items-center p-4 bg-white rounded-lg shadow-xl hover:scale-105 hover:border-2 hover:border- transition-all duration-500 overflow-hidden">
-          <div>
-            <img src="${news.image}" alt="${news.title}" class="max-w-52 min-w-52 h-[10rem] rounded object-cover">
-          </div>
-          <div class="p-4 flex flex-col gap-2">
-            <h2 class="font-bold text-lg text-hijau line-clamp-2">${news.title}</h2>
-            <p class="text-gray-700 text-sm line-clamp-3">${news.summary}</p>
-            <a href="${news.url}" target="_blank" class="text-coklat font-semibold hover:underline mt-2 text-sm">Baca Selengkapnya &rarr;</a>
-          </div>
-        </div>
-        `;
+    <div
+      class="news-card w-[16rem] md:w-[40rem] flex flex-col md:flex-row md:gap-8 items-center p-4 rounded-xl border-4 border-[#005f39] hover:scale-105 transition-all duration-300 opacity-0"
+      style="transform: translateY(-40px);"
+    >
+      <div>
+        <img src="${news.image}" alt="${news.title}" class="max-w-44 md:max-w-52 min-w-44 md:min-w-52 h-[7rem] md:h-[10rem] rounded object-cover">
+      </div>
+      <div class="text-center p-2 md:p-4 flex flex-col gap-2">
+        <h2 class="font-bold text-md md:text-lg text-hijau line-clamp-2">${news.title}</h2>
+        <p class="text-gray-700 text-sm line-clamp-3">${news.summary}</p>
+        <a href="${news.url}" target="_blank" class="text-coklat font-semibold hover:underline mt-1 md:mt-2 text-xs md:text-sm">Baca Selengkapnya &rarr;</a>
+      </div>
+    </div>
+  `;
 }
 
-// Render cards
 const newsSlider = document.getElementById("newsSlider");
 let newsCurrent = 0;
+
 function renderNewsSlider(idx) {
-  // Tampilkan hanya 1 card (atau 2 jika ingin responsive: newsList.slice(idx, idx+2))
+  if (!newsSlider) return;
+  const oldCard = newsSlider.querySelector('.news-card');
+  if (oldCard) {
+    // Optional: animasi fade out dulu, lalu masuk, atau langsung masuk (next card)
+    oldCard.classList.remove('opacity-100');
+    oldCard.classList.add('opacity-0');
+    setTimeout(() => {
+      showNewCard(idx);
+    }, 300); // fade out duration
+  } else {
+    showNewCard(idx);
+  }
+}
+
+function showNewCard(idx) {
   const visibleNews = [newsList[idx]];
   newsSlider.innerHTML = visibleNews.map(getNewsCardHTML).join("");
+  const newCard = newsSlider.querySelector('.news-card');
+  if (newCard) {
+    // Animasi dari atas (translateY(-40px) -> translateY(0))
+    setTimeout(() => {
+      newCard.classList.remove('opacity-0');
+      newCard.classList.add('opacity-100');
+      newCard.style.transform = 'translateY(0)';
+    }, 30);
+  }
 }
+
+// Initial render
 renderNewsSlider(newsCurrent);
 
-// Auto-slide
 setInterval(() => {
   newsCurrent = (newsCurrent + 1) % newsList.length;
   renderNewsSlider(newsCurrent);
