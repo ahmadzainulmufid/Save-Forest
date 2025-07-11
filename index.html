@@ -15,81 +15,154 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
   <body class="bg-white">
     <!-- navbar -->
-  <nav id="mainNavbar"
-      class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-white md:bg-transparent font-montserrat">
-      <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <a href="/index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
-          <img src="assets/images/logo.png" class="logo-hijau w-12 transition-all duration-300 md:hidden" alt="Save Forest" />
-          <img src="assets/images/logo-putih.png" class="logo-putih hidden w-12 transition-all duration-300 md:block" alt="Save Forest" />
-          <span id="navBrand" class="self-center text-2xl font-semibold whitespace-nowrap transition-colors duration-300 text-hijau md:text-white">
+    <nav
+      id="mainNavbar"
+      class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-white md:bg-transparent font-montserrat"
+    >
+      <div
+        class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
+      >
+        <a
+          href="/index.html"
+          class="flex items-center space-x-3 rtl:space-x-reverse"
+        >
+          <img
+            src="assets/images/logo.png"
+            class="logo-hijau w-12 transition-all duration-300 md:hidden"
+            alt="Save Forest"
+          />
+          <img
+            src="assets/images/logo-putih.png"
+            class="logo-putih hidden w-12 transition-all duration-300 md:block"
+            alt="Save Forest"
+          />
+          <span
+            id="navBrand"
+            class="self-center text-2xl font-semibold whitespace-nowrap transition-colors duration-300 text-hijau md:text-white"
+          >
             Save Forest
           </span>
         </a>
-        <button onclick="toggleMenu()"
-            type="button"
-            class="inline-flex items-center p-2 w-10 h-10 justify-center text-md text-hijau rounded-lg md:hidden ring-2 ring-hijau z-50"
-            aria-controls="navbar-default"
-            aria-expanded="false">
-            <span class="sr-only">Open main menu</span>
-            <!-- Hamburger icon -->
-            <svg id="iconHamburger" class="w-5 h-5 block transition duration-700 ease-in-out" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
-            </svg>
-            <!-- X icon diperbesar dan diberi transisi -->
-            <svg id="iconClose" class="w-7 h-7 hidden transition duration-700 ease-in-out" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-              <path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
-            </svg>
+        <button
+          onclick="toggleMenu()"
+          type="button"
+          class="inline-flex items-center p-2 w-10 h-10 justify-center text-md text-hijau rounded-lg md:hidden ring-2 ring-hijau z-50"
+          aria-controls="navbar-default"
+          aria-expanded="false"
+        >
+          <span class="sr-only">Open main menu</span>
+          <!-- Hamburger icon -->
+          <svg
+            id="iconHamburger"
+            class="w-5 h-5 block transition duration-700 ease-in-out"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 17 14"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M1 1h15M1 7h15M1 13h15"
+            />
+          </svg>
+          <!-- X icon diperbesar dan diberi transisi -->
+          <svg
+            id="iconClose"
+            class="w-7 h-7 hidden transition duration-700 ease-in-out"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
         </button>
-        <div class="fixed top-[5rem] right-0 h-full w-full bg-white z-40 transform translate-x-full transition-transform duration-300 md:static md:translate-x-0 md:bg-transparent md:w-auto md:block" id="navbar-default">
-          <ul class="font-medium flex flex-col items-center justify-center gap-6 p-4 md:p-0 mt-3 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
+        <div
+          class="fixed top-[5rem] right-0 h-full w-full bg-white z-40 transform translate-x-full transition-transform duration-300 md:static md:translate-x-0 md:bg-transparent md:w-auto md:block"
+          id="navbar-default"
+        >
+          <ul
+            class="font-medium flex flex-col items-center justify-center gap-6 p-4 md:p-0 mt-3 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0"
+          >
             <li>
-              <a href="/index.html" id="navHome"
-                class="nav-link block py-2 px-3 rounded-sm md:p-0 transition-colors duration-300 text-xl font-bold text-hijau md:text-hijau md:hover:text-coklat">
+              <a
+                href="/index.html"
+                id="navHome"
+                class="nav-link block py-2 px-3 rounded-sm md:p-0 transition-colors duration-300 text-xl font-bold text-hijau md:text-hijau md:hover:text-coklat"
+              >
                 Home
               </a>
             </li>
             <li>
-              <a href="/education.html"
-                class="nav-link block py-2 px-3 rounded-sm md:p-0 transition-colors duration-300 text-xl text-coklat md:text-white md:hover:text-coklat">
+              <a
+                href="/education.html"
+                class="nav-link block py-2 px-3 rounded-sm md:p-0 transition-colors duration-300 text-xl text-coklat md:text-white md:hover:text-coklat"
+              >
                 Education
               </a>
             </li>
             <li>
-              <a href="/contribution.html"
-                class="nav-link block py-2 px-3 rounded-sm md:p-0 transition-colors duration-300 text-xl text-coklat md:text-white md:hover:text-coklat">
+              <a
+                href="/contribution.html"
+                class="nav-link block py-2 px-3 rounded-sm md:p-0 transition-colors duration-300 text-xl text-coklat md:text-white md:hover:text-coklat"
+              >
                 Contribution
               </a>
             </li>
             <li>
-              <a href="/community.html"
-                class="nav-link block py-2 px-3 rounded-sm md:p-0 transition-colors duration-300 text-xl text-coklat md:text-white md:hover:text-coklat">
+              <a
+                href="/community.html"
+                class="nav-link block py-2 px-3 rounded-sm md:p-0 transition-colors duration-300 text-xl text-coklat md:text-white md:hover:text-coklat"
+              >
                 Community
               </a>
             </li>
             <li>
-              <a href="/aboutus.html"
-                class="nav-link block py-2 px-3 rounded-sm md:p-0 transition-colors duration-300 text-xl text-coklat md:text-white md:hover:text-coklat">
+              <a
+                href="/aboutus.html"
+                class="nav-link block py-2 px-3 rounded-sm md:p-0 transition-colors duration-300 text-xl text-coklat md:text-white md:hover:text-coklat"
+              >
                 About Us
               </a>
             </li>
           </ul>
         </div>
       </div>
-  </nav>
+    </nav>
 
     <!-- banner -->
-    <section class="md:pt-24 w-full h-[80vh] md:h-[85vh] px-6 font-montserrat md:px-16 relative overflow-hidden">
+    <section
+      class="md:pt-24 w-full h-[80vh] md:h-[85vh] px-6 font-montserrat md:px-16 relative overflow-hidden"
+    >
       <!-- Background Image Slider -->
       <div class="absolute inset-0 w-full h-full">
-        <div id="sliderImgContainer" class="relative w-full h-full overflow-hidden"></div>
+        <div
+          id="sliderImgContainer"
+          class="relative w-full h-full overflow-hidden"
+        ></div>
         <!-- Overlay di atas gambar, di bawah konten -->
-        <div class="absolute inset-0 bg-black/60 z-10 pointer-events-none"></div>
-        <div class="absolute left-1/2 -translate-x-1/2 bottom-6 flex gap-2 z-20" id="sliderBullets"></div>
+        <div
+          class="absolute inset-0 bg-black/60 z-10 pointer-events-none"
+        ></div>
+        <div
+          class="absolute left-1/2 -translate-x-1/2 bottom-6 flex gap-2 z-20"
+          id="sliderBullets"
+        ></div>
       </div>
-      <div class="relative z-30 flex flex-col items-center justify-center h-full w-full">
+      <div
+        class="relative z-30 flex flex-col items-center justify-center h-full w-full"
+      >
         <!-- Text Section -->
         <div
           id="sliderTextSection"
@@ -114,7 +187,8 @@
           class="text-center flex flex-col gap-4 md:text-left md:gap-10 md:w-1/2"
         >
           <h1 class="font-bold text-hijau text-2xl md:text-4xl">
-            Before the <span class="text-aksen">Numbers</span>, There’s a Deeper Reality
+            Before the <span class="text-aksen">Numbers</span>, There’s a Deeper
+            Reality
           </h1>
           <p class="font-normal text-md md:text-xl hidden md:block">
             The damage caused by deforestation isn’t just measured in hectares
@@ -132,38 +206,433 @@
     </section>
 
     <!-- Forest Damage Statistics Section -->
-    <section class="w-full py-16 px-4 font-montserrat md:py-20 md:px-16 md:my-28"
+    <section
+      class="w-full py-16 px-4 font-montserrat md:py-20 md:px-16 md:my-28"
       data-aos="fade-up"
       data-aos-duration="1000"
-      data-aos-once="true">
+      data-aos-once="true"
+    >
       <div class="max-w-6xl mx-auto flex flex-col items-center">
-        <h2 class="text-3xl text-hijau md:text-5xl font-extrabold text-center mb-4">Forest Damage Statistics</h2>
-        <p class="text-base md:text-lg text-center mb-10 text-black/70">Year over year data on forest damage.</p>
+        <h2
+          class="text-3xl text-hijau md:text-5xl font-extrabold text-center mb-4"
+        >
+          Forest Damage Statistics
+        </h2>
+        <p class="text-base md:text-lg text-center mb-10 text-black/70">
+          Year over year data on forest damage.
+        </p>
         <div class="w-full flex flex-col md:flex-row gap-6 justify-center">
           <!-- Card 1 -->
-        <div class="flex-1 bg-white border border-black rounded-lg p-6 min-w-[270px]">
-          <p class="text-gray-400 text-base mb-2">Area of Forest Lost (ha)</p>
-          <div id="forestLostCounter" class="text-2xl md:text-3xl font-bold mb-2 text-aksen">0</div>
-          <div class="text-sm text-black/70 flex items-center">
-            <span class="mr-1">↓</span> 5%
+          <div
+            class="flex-1 bg-white border border-black rounded-lg p-6 min-w-[270px]"
+          >
+            <p class="text-gray-400 text-base mb-2">Area of Forest Lost (ha)</p>
+            <div
+              id="forestLostCounter"
+              class="text-2xl md:text-3xl font-bold mb-2 text-aksen"
+            >
+              0
+            </div>
+            <div class="text-sm text-black/70 flex items-center">
+              <span class="mr-1">↓</span> 5%
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div
+            class="flex-1 bg-white border border-black rounded-lg p-6 min-w-[270px]"
+          >
+            <p class="text-gray-400 text-base mb-2">Number of Trees Cut Down</p>
+            <div
+              id="treesCounter"
+              class="text-2xl md:text-3xl font-bold text-aksen mb-2"
+            >
+              0
+            </div>
+            <div class="text-sm text-black/70 flex items-center">
+              <span class="mr-1">↑</span> 10%
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div
+            class="flex-1 bg-white border border-black rounded-lg p-6 min-w-[270px]"
+          >
+            <p class="text-gray-400 text-base mb-2">CO2 Emissions Level</p>
+            <div
+              id="co2Counter"
+              class="text-2xl md:text-3xl font-bold text-aksen mb-2"
+            >
+              0
+            </div>
+            <div class="text-sm text-black/70 flex items-center">
+              <span class="mr-1">↓</span> 2%
+            </div>
           </div>
         </div>
-        <!-- Card 2 -->
-        <div class="flex-1 bg-white border border-black rounded-lg p-6 min-w-[270px]">
-          <p class="text-gray-400 text-base mb-2">Number of Trees Cut Down</p>
-          <div id="treesCounter" class="text-2xl md:text-3xl font-bold text-aksen mb-2">0</div>
-          <div class="text-sm text-black/70 flex items-center">
-            <span class="mr-1">↑</span> 10%
+      </div>
+    </section>
+
+    <!-- Bar Chart -->
+    <section
+      class="bg-white py-10 px-4 md:px-16"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+      data-aos-once="true"
+    >
+      <div class="max-w-6xl mx-auto">
+        <h2
+          class="text-2xl md:text-3xl font-semibold text-gray-800 mb-6 text-center"
+        >
+          Tren Deforestasi Indonesia (2013–2022)
+        </h2>
+
+        <div
+          class="bg-gray-50 rounded-xl shadow-md p-6 flex flex-col md:flex-row gap-4 md:gap-6 items-start"
+        >
+          <!-- KIRI: Chart -->
+          <div class="flex-1 w-full md:w-1/2">
+            <div class="relative w-full h-[300px]">
+              <canvas id="deforestasiChart"></canvas>
+            </div>
+          </div>
+
+          <!-- KANAN: Penjelasan -->
+          <div class="flex-1 w-full md:w-1/2 text-gray-700">
+            <h3 class="text-lg font-semibold mb-4">Penjelasan Tren</h3>
+            <ul class="list-disc pl-5 space-y-2 text-sm">
+              <li>
+                Tahun 2014–2015 menunjukkan puncak deforestasi yang sangat
+                tinggi (> 2 juta ha).
+              </li>
+              <li>
+                Setelah tahun 2016, deforestasi mulai menurun secara signifikan.
+              </li>
+              <li>
+                Faktor penurunan termasuk moratorium, pengawasan, dan kebijakan
+                pengendalian kebakaran.
+              </li>
+            </ul>
           </div>
         </div>
-        <!-- Card 3 -->
-        <div class="flex-1 bg-white border border-black rounded-lg p-6 min-w-[270px]">
-          <p class="text-gray-400 text-base mb-2">CO2 Emissions Level</p>
-          <div id="co2Counter" class="text-2xl md:text-3xl font-bold text-aksen mb-2">0</div>
-          <div class="text-sm text-black/70 flex items-center">
-            <span class="mr-1">↓</span> 2%
+
+        <script>
+          const data = [
+            { tahun: "2013-2014", deforestasi: 794741 },
+            { tahun: "2014-2015", deforestasi: 2184363 },
+            { tahun: "2015-2016", deforestasi: 1258353 },
+            { tahun: "2016-2017", deforestasi: 960021 },
+            { tahun: "2017-2018", deforestasi: 878878 },
+            { tahun: "2018-2019", deforestasi: 924916 },
+            { tahun: "2019-2020", deforestasi: 230919 },
+            { tahun: "2020-2021", deforestasi: 241411 },
+            { tahun: "2021-2022", deforestasi: 208065 },
+          ];
+
+          const labels = data.map((item) => item.tahun);
+          const values = data.map((item) => item.deforestasi);
+
+          const ctx = document
+            .getElementById("deforestasiChart")
+            .getContext("2d");
+
+          new Chart(ctx, {
+            type: "bar",
+            data: {
+              labels: labels,
+              datasets: [
+                {
+                  type: "bar",
+                  label: "Luas Deforestasi (ha)",
+                  data: values,
+                  backgroundColor: "rgba(255, 99, 132, 0.7)",
+                  borderColor: "rgba(255, 99, 132, 1)",
+                  borderWidth: 1,
+                  borderRadius: 5,
+                  barThickness: 20,
+                },
+                {
+                  type: "line",
+                  label: "Tren Deforestasi",
+                  data: values,
+                  borderColor: "rgba(75, 192, 192, 1)",
+                  borderWidth: 2,
+                  fill: false,
+                  tension: 0.3,
+                  pointRadius: 4,
+                  pointBackgroundColor: "rgba(75, 192, 192, 1)",
+                },
+              ],
+            },
+            options: {
+              responsive: true,
+              maintainAspectRatio: false,
+              plugins: {
+                legend: { display: true },
+                tooltip: {
+                  callbacks: {
+                    label: (context) => `${context.raw.toLocaleString()} ha`,
+                  },
+                },
+              },
+              scales: {
+                y: {
+                  beginAtZero: true,
+                  title: {
+                    display: true,
+                    text: "Luas (hektar)",
+                  },
+                },
+                x: {
+                  title: {
+                    display: true,
+                    text: "Tahun",
+                  },
+                },
+              },
+            },
+          });
+        </script>
+      </div>
+    </section>
+
+    <section
+      class="bg-white py-10 px-4 md:px-16"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+      data-aos-once="true"
+    >
+      <div class="max-w-6xl mx-auto">
+        <h2
+          class="text-2xl md:text-3xl font-semibold text-gray-800 mb-6 text-center"
+        >
+          Distribusi Deforestasi: Kawasan Hutan vs APL
+        </h2>
+
+        <div
+          class="bg-gray-50 rounded-xl shadow-md p-6 flex flex-col md:flex-row gap-4 md:gap-6 items-start"
+        >
+          <!-- Penjelasan Kiri -->
+          <div class="flex-1 w-full md:w-1/2 text-gray-700">
+            <h3 class="text-lg font-semibold mb-4">Penjelasan Singkat</h3>
+            <ul class="list-disc pl-5 space-y-2 text-sm">
+              <li>
+                Kehilangan hutan di Indonesia terjadi baik di dalam kawasan
+                hutan maupun di APL (Areal Penggunaan Lain).
+              </li>
+              <li>
+                Kawasan hutan mencakup wilayah konservasi, hutan produksi, dan
+                lindung.
+              </li>
+              <li>
+                APL sering kali dikaitkan dengan aktivitas industri, perkebunan,
+                dan pemukiman.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Chart Kanan -->
+          <div class="flex-1 w-full md:w-1/2">
+            <div class="relative w-full h-[300px]">
+              <canvas id="distribusiChart"></canvas>
+            </div>
           </div>
         </div>
+      </div>
+
+      <script>
+        const distribusiData = [
+          { tahun: "2013-2014", kawasan_hutan: 585067, apl: 209675 },
+          { tahun: "2014-2015", kawasan_hutan: 1631214, apl: 553147 },
+          { tahun: "2015-2016", kawasan_hutan: 862532, apl: 395821 },
+          { tahun: "2016-2017", kawasan_hutan: 594366, apl: 365655 },
+          { tahun: "2017-2018", kawasan_hutan: 446647, apl: 432230 },
+          { tahun: "2018-2019", kawasan_hutan: 751733, apl: 173183 },
+          { tahun: "2019-2020", kawasan_hutan: 133991, apl: 96928 },
+          { tahun: "2020-2021", kawasan_hutan: 166798, apl: 74613 },
+          { tahun: "2021-2022", kawasan_hutan: 146260, apl: 61804 },
+        ];
+
+        const distribusiLabels = distribusiData.map((d) => d.tahun);
+        const kawasanData = distribusiData.map((d) => d.kawasan_hutan);
+        const aplData = distribusiData.map((d) => d.apl);
+
+        const distribusiCtx = document
+          .getElementById("distribusiChart")
+          .getContext("2d");
+        new Chart(distribusiCtx, {
+          type: "bar",
+          data: {
+            labels: distribusiLabels,
+            datasets: [
+              {
+                label: "Kawasan Hutan",
+                data: kawasanData,
+                backgroundColor: "rgba(54, 162, 235, 0.7)",
+                borderRadius: 5,
+                barThickness: 20,
+              },
+              {
+                label: "APL (Non-Kawasan Hutan)",
+                data: aplData,
+                backgroundColor: "rgba(255, 205, 86, 0.7)",
+                borderRadius: 5,
+                barThickness: 20,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              tooltip: {
+                callbacks: {
+                  label: (ctx) =>
+                    `${ctx.dataset.label}: ${ctx.raw.toLocaleString()} ha`,
+                },
+              },
+              legend: { position: "bottom" },
+            },
+            scales: {
+              x: { stacked: true, title: { display: true, text: "Tahun" } },
+              y: {
+                stacked: true,
+                beginAtZero: true,
+                title: { display: true, text: "Luas (hektar)" },
+              },
+            },
+          },
+        });
+      </script>
+    </section>
+
+    <section
+      class="bg-white py-12 px-4 md:px-16"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+      data-aos-once="true"
+    >
+      <div class="max-w-6xl mx-auto">
+        <h3 class="text-2xl md:text-3xl font-semibold mb-6 text-center">
+          Provinsi dengan Kehilangan Hutan Primer Terbesar
+        </h3>
+
+        <div
+          class="bg-gray-100 p-6 rounded-xl shadow-md flex flex-col md:flex-row gap-4 md:gap-6 items-start"
+        >
+          <!-- Pie Chart -->
+          <div class="flex-1 w-full md:w-1/2">
+            <div class="relative w-full h-[300px]">
+              <canvas id="pieProvinsiChart"></canvas>
+            </div>
+          </div>
+
+          <!-- Penjelasan -->
+          <div class="flex-1 w-full md:w-1/2 text-gray-700">
+            <h3 class="text-lg font-semibold mb-4">Fakta Penting</h3>
+            <ul class="list-disc pl-5 space-y-2 text-sm">
+              <li>
+                Kalimantan dan Papua menjadi penyumbang kehilangan hutan primer
+                terbesar selama 20 tahun terakhir.
+              </li>
+              <li>
+                Faktor utama meliputi pembukaan lahan, kebakaran, dan konversi
+                untuk industri.
+              </li>
+              <li>
+                Kehilangan hutan primer berdampak besar terhadap keanekaragaman
+                hayati dan emisi karbon.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chart Script -->
+      <script>
+        const provinsiData = {
+          labels: [
+            "Papua",
+            "Kalimantan Tengah",
+            "Riau",
+            "Papua Barat",
+            "Sumatera Utara",
+          ],
+          datasets: [
+            {
+              data: [320000, 290000, 210000, 180000, 160000],
+              backgroundColor: [
+                "rgba(255, 99, 132, 0.7)",
+                "rgba(54, 162, 235, 0.7)",
+                "rgba(255, 205, 86, 0.7)",
+                "rgba(75, 192, 192, 0.7)",
+                "rgba(153, 102, 255, 0.7)",
+              ],
+              borderColor: [
+                "rgba(255, 99, 132, 1)",
+                "rgba(54, 162, 235, 1)",
+                "rgba(255, 205, 86, 1)",
+                "rgba(75, 192, 192, 1)",
+                "rgba(153, 102, 255, 1)",
+              ],
+              borderWidth: 1,
+            },
+          ],
+        };
+
+        const provinsiCtx = document
+          .getElementById("pieProvinsiChart")
+          .getContext("2d");
+        new Chart(provinsiCtx, {
+          type: "pie",
+          data: provinsiData,
+          options: {
+            responsive: true,
+            plugins: {
+              legend: { position: "bottom" },
+              tooltip: {
+                callbacks: {
+                  label: function (context) {
+                    const total = context.dataset.data.reduce(
+                      (a, b) => a + b,
+                      0
+                    );
+                    const value = context.raw;
+                    const percent = ((value / total) * 100).toFixed(1);
+                    return `${
+                      context.label
+                    }: ${value.toLocaleString()} ha (${percent}%)`;
+                  },
+                },
+              },
+            },
+          },
+        });
+      </script>
+    </section>
+
+    <section
+      class="bg-white pt-4 pb-12 px-4 md:px-16"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+      data-aos-once="true"
+    >
+      <div class="max-w-6xl mx-auto">
+        <h3 class="text-2xl font-semibold text-gray-800 mb-4 text-center">
+          Peta Kehilangan Hutan di Indonesia
+        </h3>
+
+        <!-- Peta Static atau Embed GFW -->
+        <div
+          class="aspect-video rounded-xl overflow-hidden shadow-md border border-gray-200"
+        >
+          <iframe
+            src="https://www.globalforestwatch.org/map/country/IDN?mainMap=eyJzYXRlbGxpdGUtY2F0ZWdvcnkiOiJmb3Jlc3QiLCJzYXRlbGxpdGUtdHlwZSI6ImZvcmVzdCIsImZpbHRlcnMiOnt9fQ%3D%3D&lang=id"
+            width="100%"
+            height="100%"
+            frameborder="0"
+            allowfullscreen
+            title="Peta Kehilangan Hutan GFW"
+            loading="lazy"
+          ></iframe>
         </div>
       </div>
     </section>
@@ -198,7 +667,7 @@
             <h4 class="font-bold text-base md:text-xl mb-4">Our Socials</h4>
             <div class="text-xs md:text-base space-y-4 w-full">
               <div class="flex flex-col">
-                 <p class="text-white mb-1">Ahmad Zainul Mufid</p>
+                <p class="text-white mb-1">Ahmad Zainul Mufid</p>
                 <div class="social-icons flex md:space-x-4">
                   <a
                     href="https://www.instagram.com/ahmadzainulmfd_/"
