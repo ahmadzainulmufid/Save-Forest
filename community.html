@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Save Forest</title>
+    <link href="assets/css/output.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <script src="https://unpkg.com/@heroicons/vue@2.0.16/dist/heroicons.min.js"></script>
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav
+      id="mainNavbar"
+      class="top-0 left-0 w-full transition-all duration-300 bg-white font-montserrat shadow-xl"
+    >
+      <div
+        class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
+      >
+        <a
+          href="/index.html"
+          class="flex items-center space-x-3 rtl:space-x-reverse"
+        >
+          <img
+            src="assets/images/logo.png"
+            class="logo-hijau w-12 transition-all duration-300"
+            alt="Save Forest"
+          />
+          <span
+            id="navBrand"
+            class="self-center text-2xl font-semibold whitespace-nowrap transition-colors duration-300 text-hijau"
+          >
+            Save Forest
+          </span>
+        </a>
+        <button
+          onclick="toggleMenu()"
+          type="button"
+          class="inline-flex items-center p-2 w-10 h-10 justify-center text-md text-hijau rounded-lg md:hidden ring-2 ring-hijau"
+          aria-controls="navbar-default"
+          aria-expanded="false"
+        >
+          <span class="sr-only">Open main menu</span>
+          <!-- Hamburger icon -->
+          <svg
+            id="iconHamburger"
+            class="w-5 h-5 block transition duration-700 ease-in-out"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 17 14"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M1 1h15M1 7h15M1 13h15"
+            />
+          </svg>
+          <!-- X icon diperbesar dan diberi transisi -->
+          <svg
+            id="iconClose"
+            class="w-7 h-7 hidden transition duration-700 ease-in-out"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+        <div
+          class="fixed top-[5rem] right-0 h-full w-full bg-white z-40 transform translate-x-full transition-transform duration-300 md:static md:translate-x-0 md:bg-transparent md:w-auto md:block"
+          id="navbar-default"
+        >
+          <ul
+            class="font-medium flex flex-col items-center justify-center gap-6 p-4 md:p-0 mt-3 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0"
+          >
+            <li>
+              <a
+                href="/index.html"
+                id="navHome"
+                class="nav-link block py-2 px-3 rounded-sm md:p-0 transition-colors duration-300 text-xl text-coklat md:text-coklat md:hover:text-aksen"
+              >
+                Home
+              </a>
+            </li>
+            <li>
+              <a
+                href="/education.html"
+                class="nav-link block py-2 px-3 rounded-sm md:p-0 transition-colors duration-300 text-xl text-coklat md:text-coklat md:hover:text-aksen"
+              >
+                Education
+              </a>
+            </li>
+            <li>
+              <a
+                href="/contribution.html"
+                class="nav-link block py-2 px-3 rounded-sm md:p-0 transition-colors duration-300 text-xl text-coklat md:text-coklat md:hover:text-aksen"
+              >
+                Contribution
+              </a>
+            </li>
+            <li>
+              <a
+                href="/community.html"
+                class="nav-link block py-2 px-3 rounded-sm md:p-0 transition-colors duration-300 text-xl font-bold text-hijau md:text-hijau md:hover:text-aksen"
+              >
+                Community
+              </a>
+            </li>
+            <li>
+              <a
+                href="/aboutus.html"
+                class="nav-link block py-2 px-3 rounded-sm md:p-0 transition-colors duration-300 text-xl text-coklat md:text-coklat md:hover:text-aksen"
+              >
+                About Us
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </body>
+</html>

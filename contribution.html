@@ -5,19 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Save Forest</title>
     <link href="assets/css/output.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
   </head>
   <body class="bg-white">
     <!-- navbar -->
-    <nav id="mainNavbar" class="top-0 left-0 w-full transition-all duration-300 bg-white font-montserrat shadow-xl">
-      <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <a href="/index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
-          <img src="assets/images/logo.png" class="logo-hijau w-12 transition-all duration-300" alt="Save Forest" />
-          <span id="navBrand" class="self-center text-2xl font-semibold whitespace-nowrap transition-colors duration-300 text-hijau"> Save Forest </span>
+    <nav
+      id="mainNavbar"
+      class="top-0 left-0 w-full transition-all duration-300 bg-white font-montserrat shadow-xl"
+    >
+      <div
+        class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
+      >
+        <a
+          href="/index.html"
+          class="flex items-center space-x-3 rtl:space-x-reverse"
+        >
+          <img
+            src="assets/images/logo.png"
+            class="logo-hijau w-12 transition-all duration-300"
+            alt="Save Forest"
+          />
+          <span
+            id="navBrand"
+            class="self-center text-2xl font-semibold whitespace-nowrap transition-colors duration-300 text-hijau"
+          >
+            Save Forest
+          </span>
         </a>
         <button
           onclick="toggleMenu()"
@@ -28,19 +55,45 @@
         >
           <span class="sr-only">Open main menu</span>
           <!-- Hamburger icon -->
-          <svg id="iconHamburger" class="w-5 h-5 block transition duration-700 ease-in-out" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
+          <svg
+            id="iconHamburger"
+            class="w-5 h-5 block transition duration-700 ease-in-out"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 17 14"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M1 1h15M1 7h15M1 13h15"
+            />
           </svg>
           <!-- X icon diperbesar dan diberi transisi -->
-          <svg id="iconClose" class="w-7 h-7 hidden transition duration-700 ease-in-out" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-            <path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          <svg
+            id="iconClose"
+            class="w-7 h-7 hidden transition duration-700 ease-in-out"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6 18L18 6M6 6l12 12"
+            />
           </svg>
         </button>
         <div
           class="fixed top-[5rem] right-0 h-full w-full bg-white z-40 transform translate-x-full transition-transform duration-300 md:static md:translate-x-0 md:bg-transparent md:w-auto md:block"
           id="navbar-default"
         >
-          <ul class="font-medium flex flex-col items-center justify-center gap-6 p-4 md:p-0 mt-3 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
+          <ul
+            class="font-medium flex flex-col items-center justify-center gap-6 p-4 md:p-0 mt-3 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0"
+          >
             <li>
               <a
                 href="/index.html"
@@ -51,7 +104,10 @@
               </a>
             </li>
             <li>
-              <a href="/education.html" class="nav-link block py-2 px-3 rounded-sm md:p-0 transition-colors duration-300 text-xl text-coklat md:text-coklat md:hover:text-aksen">
+              <a
+                href="/education.html"
+                class="nav-link block py-2 px-3 rounded-sm md:p-0 transition-colors duration-300 text-xl text-coklat md:text-coklat md:hover:text-aksen"
+              >
                 Education
               </a>
             </li>
@@ -64,12 +120,18 @@
               </a>
             </li>
             <li>
-              <a href="/community.html" class="nav-link block py-2 px-3 rounded-sm md:p-0 transition-colors duration-300 text-xl text-coklat md:text-coklat md:hover:text-aksen">
+              <a
+                href="/community.html"
+                class="nav-link block py-2 px-3 rounded-sm md:p-0 transition-colors duration-300 text-xl text-coklat md:text-coklat md:hover:text-aksen"
+              >
                 Community
               </a>
             </li>
             <li>
-              <a href="/aboutus.html" class="nav-link block py-2 px-3 rounded-sm md:p-0 transition-colors duration-300 text-xl text-coklat md:text-coklat md:hover:text-aksen">
+              <a
+                href="/aboutus.html"
+                class="nav-link block py-2 px-3 rounded-sm md:p-0 transition-colors duration-300 text-xl text-coklat md:text-coklat md:hover:text-aksen"
+              >
                 About Us
               </a>
             </li>
@@ -79,28 +141,69 @@
     </nav>
 
     <!-- banner -->
-    <section class="w-full h-[70vh] md:h-[75vh] flex items-center py-10 px-5 md:px-24">
-      <div class="flex flex-col md:flex-row justify-between items-center gap-10 font-montserrat">
-        <h1 class="font-bold text-3xl md:text-4xl text-center text-hijau md:hidden">Together <span class="text-aksen">We Can</span> Save Our Forest</h1>
-        <div class="text md:w-1/2 flex flex-col gap-4 text-center md:text-left order-2 md:order-1">
-          <h1 class="font-bold text-3xl md:text-4xl text-hijau hidden md:block">Together <span class="text-aksen">We Can</span> Save Our Forest</h1>
-          <p class="text-lg md:text-xl hidden md:block">Help us fight deforestation through donations and action</p>
-          <p class="text-lg md:text-xl md:mt-8 font-semibold text-coklat">Each of your contributions will be used for education, tree planting, and forest protection advocacy.</p>
+    <section
+      class="w-full h-[70vh] md:h-[75vh] flex items-center py-10 px-5 md:px-24"
+    >
+      <div
+        class="flex flex-col md:flex-row justify-between items-center gap-10 font-montserrat"
+      >
+        <h1
+          class="font-bold text-3xl md:text-4xl text-center text-hijau md:hidden"
+        >
+          Together <span class="text-aksen">We Can</span> Save Our Forest
+        </h1>
+        <div
+          class="text md:w-1/2 flex flex-col gap-4 text-center md:text-left order-2 md:order-1"
+        >
+          <h1 class="font-bold text-3xl md:text-4xl text-hijau hidden md:block">
+            Together <span class="text-aksen">We Can</span> Save Our Forest
+          </h1>
+          <p class="text-lg md:text-xl hidden md:block">
+            Help us fight deforestation through donations and action
+          </p>
+          <p class="text-lg md:text-xl md:mt-8 font-semibold text-coklat">
+            Each of your contributions will be used for education, tree
+            planting, and forest protection advocacy.
+          </p>
         </div>
-        <div class="flex items-center justify-center w-full md:w-[30rem] order-1 md:order-2">
-          <div class="relative w-full h-48 md:h-64 rounded-lg shadow-lg overflow-hidden group">
+        <div
+          class="flex items-center justify-center w-full md:w-[30rem] order-1 md:order-2"
+        >
+          <div
+            class="relative w-full h-48 md:h-64 rounded-lg shadow-lg overflow-hidden group"
+          >
             <!-- Slides -->
             <div id="slider-images" class="relative w-full h-full shadow-xl">
-              <img src="assets/images/contribute1.png" class="absolute w-full h-full object-cover transition-opacity duration-1000 opacity-100" alt="Contribution 1" />
-              <img src="assets/images/contribute2.png" class="absolute w-full h-full object-cover transition-opacity duration-1000 opacity-0" alt="Contribution 2" />
-              <img src="assets/images/contribute3.jpeg" class="absolute w-full h-full object-cover transition-opacity duration-1000 opacity-0" alt="Contribution 3" />
+              <img
+                src="assets/images/contribute1.png"
+                class="absolute w-full h-full object-cover transition-opacity duration-1000 opacity-100"
+                alt="Contribution 1"
+              />
+              <img
+                src="assets/images/contribute2.png"
+                class="absolute w-full h-full object-cover transition-opacity duration-1000 opacity-0"
+                alt="Contribution 2"
+              />
+              <img
+                src="assets/images/contribute3.jpeg"
+                class="absolute w-full h-full object-cover transition-opacity duration-1000 opacity-0"
+                alt="Contribution 3"
+              />
             </div>
 
             <!-- Indicators -->
-            <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-              <span class="slider-dot w-3 h-3 rounded-full bg-aksen bg-opacity-80 border border-hijau cursor-pointer"></span>
-              <span class="slider-dot w-3 h-3 rounded-full bg-aksen bg-opacity-30 border border-hijau cursor-pointer"></span>
-              <span class="slider-dot w-3 h-3 rounded-full bg-aksen bg-opacity-30 border border-hijau cursor-pointer"></span>
+            <div
+              class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2"
+            >
+              <span
+                class="slider-dot w-3 h-3 rounded-full bg-aksen bg-opacity-80 border border-hijau cursor-pointer"
+              ></span>
+              <span
+                class="slider-dot w-3 h-3 rounded-full bg-aksen bg-opacity-30 border border-hijau cursor-pointer"
+              ></span>
+              <span
+                class="slider-dot w-3 h-3 rounded-full bg-aksen bg-opacity-30 border border-hijau cursor-pointer"
+              ></span>
             </div>
           </div>
         </div>
@@ -108,107 +211,201 @@
     </section>
 
     <!-- action -->
-    <section class="w-full py-10 mt-10 mb-10 bg-hijau px-4 md:px-16 overflow-hidden" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
-      <h1 class="text-2xl md:text-4xl text-white text-center font-bold font-montserrat">Here are some <span class="text-aksen">Communities</span>, Check out and Contribute</h1>
+    <section
+      class="w-full py-10 mt-10 mb-10 bg-hijau px-4 md:px-16 overflow-hidden"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+      data-aos-once="true"
+    >
+      <h1
+        class="text-2xl md:text-4xl text-white text-center font-bold font-montserrat"
+      >
+        Here are some <span class="text-aksen">Communities</span>, Check out and
+        Contribute
+      </h1>
 
       <!-- Communities Container -->
       <div class="relative mt-10">
         <!-- Desktop View -->
         <div class="hidden md:flex justify-center gap-10">
-          <div class="w-[30rem] flex flex-row gap-4 items-center p-4 bg-white rounded-xl shadow-xl hover:scale-105 transition-all duration-300">
+          <div
+            class="w-[30rem] flex flex-row gap-4 items-center p-4 bg-white rounded-xl shadow-xl hover:scale-105 transition-all duration-300"
+          >
             <div>
-              <img src="assets/images/contribute3.jpeg" alt="Mangrove Jakarta" class="max-w-44 min-w-44 h-[10rem] rounded object-cover" />
+              <img
+                src="assets/images/contribute3.jpeg"
+                alt="Mangrove Jakarta"
+                class="max-w-44 min-w-44 h-[10rem] rounded object-cover"
+              />
             </div>
             <div class="text-left p-4 flex flex-col gap-2">
               <h2 class="font-bold text-xl text-hijau">Mangrove Jakarta</h2>
               <p class="text-black text-md line-clamp-3">
-                At Mangrove Jakarta Community, we're raising funds and promoting initiatives to save the earth by planting mangrove trees. We believe in taking this action with
-                urgency in order to raise public awareness about some of the most pressing issues facing today's society (Climate change, Deforestation and Abrasion). Please join
-                us by supporting our efforts to make a measurable difference in the lives of others.
+                At Mangrove Jakarta Community, we're raising funds and promoting
+                initiatives to save the earth by planting mangrove trees. We
+                believe in taking this action with urgency in order to raise
+                public awareness about some of the most pressing issues facing
+                today's society (Climate change, Deforestation and Abrasion).
+                Please join us by supporting our efforts to make a measurable
+                difference in the lives of others.
               </p>
-              <a href="#" class="text-coklat font-semibold hover:underline mt-2 text-sm">See Details &rarr;</a>
+              <a
+                href="#"
+                class="text-coklat font-semibold hover:underline mt-2 text-sm"
+                >See Details &rarr;</a
+              >
             </div>
           </div>
 
-          <div class="w-[30rem] flex flex-row gap-4 items-center p-4 bg-white rounded-xl shadow-xl hover:scale-105 transition-all duration-300">
+          <div
+            class="w-[30rem] flex flex-row gap-4 items-center p-4 bg-white rounded-xl shadow-xl hover:scale-105 transition-all duration-300"
+          >
             <div>
-              <img src="assets/images/lindungihutan.jpg" alt="LindungiHutan" class="max-w-44 min-w-44 h-[10rem] rounded object-cover" />
+              <img
+                src="assets/images/lindungihutan.jpg"
+                alt="LindungiHutan"
+                class="max-w-44 min-w-44 h-[10rem] rounded object-cover"
+              />
             </div>
             <div class="text-left p-4 flex flex-col gap-2">
               <h2 class="font-bold text-xl text-hijau">LindungiHutan</h2>
               <p class="text-black text-md line-clamp-3">
-                Lindungi Hutan is an impact startup that has legal entity legality recognized by the Ministry of Law and Human Rights (Kemenkumham) of the Republic of Indonesia. We
-                have been operating for over 8 years collaborating with the public, greening partners, brands, media and multinational companies from various sectors.
+                Lindungi Hutan is an impact startup that has legal entity
+                legality recognized by the Ministry of Law and Human Rights
+                (Kemenkumham) of the Republic of Indonesia. We have been
+                operating for over 8 years collaborating with the public,
+                greening partners, brands, media and multinational companies
+                from various sectors.
               </p>
-              <a href="#" class="text-coklat font-semibold hover:underline mt-2 text-sm">See Details &rarr;</a>
+              <a
+                href="#"
+                class="text-coklat font-semibold hover:underline mt-2 text-sm"
+                >See Details &rarr;</a
+              >
             </div>
           </div>
 
-          <div class="w-[30rem] flex flex-row gap-4 items-center p-4 bg-white rounded-xl shadow-xl hover:scale-105 transition-all duration-300">
+          <div
+            class="w-[30rem] flex flex-row gap-4 items-center p-4 bg-white rounded-xl shadow-xl hover:scale-105 transition-all duration-300"
+          >
             <div>
-              <img src="assets/images/greenpeace.jpg" alt="Greenpeace" class="max-w-44 min-w-44 h-[10rem] rounded object-cover" />
+              <img
+                src="assets/images/greenpeace.jpg"
+                alt="Greenpeace"
+                class="max-w-44 min-w-44 h-[10rem] rounded object-cover"
+              />
             </div>
             <div class="text-left p-4 flex flex-col gap-2">
               <h2 class="font-bold text-xl text-hijau">Greenpeace</h2>
               <p class="text-black text-md line-clamp-3">
-                Greenpeace is a global environmental organization that campaigns for solutions to environmental problems. We work to expose environmental crimes and to challenge
-                governments and corporations that threaten the planet's future.
+                Greenpeace is a global environmental organization that campaigns
+                for solutions to environmental problems. We work to expose
+                environmental crimes and to challenge governments and
+                corporations that threaten the planet's future.
               </p>
-              <a href="#" class="text-coklat font-semibold hover:underline mt-2 text-sm">See Details &rarr;</a>
+              <a
+                href="#"
+                class="text-coklat font-semibold hover:underline mt-2 text-sm"
+                >See Details &rarr;</a
+              >
             </div>
           </div>
         </div>
 
         <!-- Mobile Carousel -->
         <div class="md:hidden">
-          <div id="carousel" class="flex transition-transform duration-300 ease-in-out">
+          <div
+            id="carousel"
+            class="flex transition-transform duration-300 ease-in-out"
+          >
             <!-- Card 1 -->
             <div class="w-full flex-shrink-0 px-4">
-              <div class="w-full max-w-sm mx-auto flex flex-col gap-4 items-center p-4 bg-white rounded-xl shadow-xl">
+              <div
+                class="w-full max-w-sm mx-auto flex flex-col gap-4 items-center p-4 bg-white rounded-xl shadow-xl"
+              >
                 <div class="w-full">
-                  <img src="assets/images/contribute3.jpeg" alt="Mangrove Jakarta" class="w-full h-48 rounded object-cover" />
+                  <img
+                    src="assets/images/contribute3.jpeg"
+                    alt="Mangrove Jakarta"
+                    class="w-full h-48 rounded object-cover"
+                  />
                 </div>
                 <div class="text-center p-2 flex flex-col gap-2">
-                  <h2 class="font-bold text-2xl text-hijau">Mangrove Jakarta</h2>
+                  <h2 class="font-bold text-2xl text-hijau">
+                    Mangrove Jakarta
+                  </h2>
                   <p class="text-black text-sm line-clamp-3">
-                    At Mangrove Jakarta Community, we're raising funds and promoting initiatives to save the earth by planting mangrove trees. We believe in taking this action with
-                    urgency in order to raise public awareness about some of the most pressing issues facing today's society.
+                    At Mangrove Jakarta Community, we're raising funds and
+                    promoting initiatives to save the earth by planting mangrove
+                    trees. We believe in taking this action with urgency in
+                    order to raise public awareness about some of the most
+                    pressing issues facing today's society.
                   </p>
-                  <a href="#" class="text-coklat font-semibold hover:underline mt-2 text-sm">See Details &rarr;</a>
+                  <a
+                    href="#"
+                    class="text-coklat font-semibold hover:underline mt-2 text-sm"
+                    >See Details &rarr;</a
+                  >
                 </div>
               </div>
             </div>
 
             <!-- Card 2 -->
             <div class="w-full flex-shrink-0 px-4">
-              <div class="w-full max-w-sm mx-auto flex flex-col gap-4 items-center p-4 bg-white rounded-xl shadow-xl">
+              <div
+                class="w-full max-w-sm mx-auto flex flex-col gap-4 items-center p-4 bg-white rounded-xl shadow-xl"
+              >
                 <div class="w-full">
-                  <img src="assets/images/lindungihutan.jpg" alt="LindungiHutan" class="w-full h-48 rounded object-cover" />
+                  <img
+                    src="assets/images/lindungihutan.jpg"
+                    alt="LindungiHutan"
+                    class="w-full h-48 rounded object-cover"
+                  />
                 </div>
                 <div class="text-center p-2 flex flex-col gap-2">
                   <h2 class="font-bold text-2xl text-hijau">LindungiHutan</h2>
                   <p class="text-black text-sm line-clamp-3">
-                    Lindungi Hutan is an impact startup that has legal entity legality recognized by the Ministry of Law and Human Rights (Kemenkumham) of the Republic of
-                    Indonesia. We have been operating for over 8 years collaborating with the public, greening partners, brands, media and multinational companies.
+                    Lindungi Hutan is an impact startup that has legal entity
+                    legality recognized by the Ministry of Law and Human Rights
+                    (Kemenkumham) of the Republic of Indonesia. We have been
+                    operating for over 8 years collaborating with the public,
+                    greening partners, brands, media and multinational
+                    companies.
                   </p>
-                  <a href="#" class="text-coklat font-semibold hover:underline mt-2 text-sm">See Details &rarr;</a>
+                  <a
+                    href="#"
+                    class="text-coklat font-semibold hover:underline mt-2 text-sm"
+                    >See Details &rarr;</a
+                  >
                 </div>
               </div>
             </div>
 
             <!-- Card 3 -->
             <div class="w-full flex-shrink-0 px-4">
-              <div class="w-full max-w-sm mx-auto flex flex-col gap-4 items-center p-4 bg-white rounded-xl shadow-xl">
+              <div
+                class="w-full max-w-sm mx-auto flex flex-col gap-4 items-center p-4 bg-white rounded-xl shadow-xl"
+              >
                 <div class="w-full">
-                  <img src="assets/images/greenpeace.jpg" alt="Greenpeace" class="w-full h-48 rounded object-cover" />
+                  <img
+                    src="assets/images/greenpeace.jpg"
+                    alt="Greenpeace"
+                    class="w-full h-48 rounded object-cover"
+                  />
                 </div>
                 <div class="text-center p-2 flex flex-col gap-2">
                   <h2 class="font-bold text-2xl text-hijau">Greenpeace</h2>
                   <p class="text-black text-sm line-clamp-3">
-                    Greenpeace is a global environmental organization that campaigns for solutions to environmental problems. We work to expose environmental crimes and to
-                    challenge governments and corporations that threaten the planet's future.
+                    Greenpeace is a global environmental organization that
+                    campaigns for solutions to environmental problems. We work
+                    to expose environmental crimes and to challenge governments
+                    and corporations that threaten the planet's future.
                   </p>
-                  <a href="#" class="text-coklat font-semibold hover:underline mt-2 text-sm">See Details &rarr;</a>
+                  <a
+                    href="#"
+                    class="text-coklat font-semibold hover:underline mt-2 text-sm"
+                    >See Details &rarr;</a
+                  >
                 </div>
               </div>
             </div>
@@ -217,38 +414,87 @@
 
         <!-- Mobile Navigation Controls -->
         <div class="flex justify-center items-center mt-6 md:hidden">
-          <button id="prevBtn" class="bg-white text-hijau p-2 rounded-full shadow-lg hover:bg-gray-100 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+          <button
+            id="prevBtn"
+            class="bg-white text-hijau p-2 rounded-full shadow-lg hover:bg-gray-100 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 19l-7-7 7-7"
+              ></path>
             </svg>
           </button>
 
           <div class="flex space-x-2 mx-4">
-            <span class="dot w-3 h-3 bg-white rounded-full opacity-100 transition-all duration-300"></span>
-            <span class="dot w-3 h-3 bg-white rounded-full opacity-50 transition-all duration-300"></span>
-            <span class="dot w-3 h-3 bg-white rounded-full opacity-50 transition-all duration-300"></span>
+            <span
+              class="dot w-3 h-3 bg-white rounded-full opacity-100 transition-all duration-300"
+            ></span>
+            <span
+              class="dot w-3 h-3 bg-white rounded-full opacity-50 transition-all duration-300"
+            ></span>
+            <span
+              class="dot w-3 h-3 bg-white rounded-full opacity-50 transition-all duration-300"
+            ></span>
           </div>
 
-          <button id="nextBtn" class="bg-white text-hijau p-2 rounded-full shadow-lg hover:bg-gray-100 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          <button
+            id="nextBtn"
+            class="bg-white text-hijau p-2 rounded-full shadow-lg hover:bg-gray-100 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5l7 7-7 7"
+              ></path>
             </svg>
           </button>
         </div>
       </div>
     </section>
 
-    <section class="w-full py-10 mt-10 mb-10 px-4 md:px-20" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
+    <section
+      class="w-full py-10 mt-10 mb-10 px-4 md:px-20"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+      data-aos-once="true"
+    >
       <div class="flex justify-evenly items-center gap-10 items-start">
         <!-- Left Side - Title and Description -->
         <div class="font-montserrat px-5">
-          <h1 class="text-hijau font-bold text-4xl">Donation <span class="text-aksen">and</span> Support</h1>
+          <h1 class="text-hijau font-bold text-4xl">
+            Donation <span class="text-aksen">and</span> Support
+          </h1>
           <div class="mt-8 text-gray-600">
-            <p class="text-lg mb-4">Your generous donation helps us continue our mission to make a positive impact in our community.</p>
-            <p class="text-lg mb-4">Every contribution, no matter the size, brings us closer to our goals and helps us reach more people in need.</p>
-            <p class="text-lg">Thank you for your support and for believing in our cause.</p>
+            <p class="text-lg mb-4">
+              Your generous donation helps us continue our mission to make a
+              positive impact in our community.
+            </p>
+            <p class="text-lg mb-4">
+              Every contribution, no matter the size, brings us closer to our
+              goals and helps us reach more people in need.
+            </p>
+            <p class="text-lg">
+              Thank you for your support and for believing in our cause.
+            </p>
           </div>
-          <p class="text-coklat font-semibold text-2xl mt-4">Help us to Make a Change</p>
+          <p class="text-coklat font-semibold text-2xl mt-4">
+            Help us to Make a Change
+          </p>
         </div>
 
         <!-- Right Side - Form -->
@@ -257,7 +503,11 @@
             <div class="flex flex-col w-[35rem] gap-6">
               <!-- Name Field -->
               <div class="form-group">
-                <label for="name" class="block text-hijau font-semibold text-lg mb-2">Full Name</label>
+                <label
+                  for="name"
+                  class="block text-hijau font-semibold text-lg mb-2"
+                  >Full Name</label
+                >
                 <input
                   type="text"
                   id="name"
@@ -270,7 +520,11 @@
 
               <!-- Email Field -->
               <div class="form-group">
-                <label for="email" class="block text-hijau font-semibold text-lg mb-2">Email Address</label>
+                <label
+                  for="email"
+                  class="block text-hijau font-semibold text-lg mb-2"
+                  >Email Address</label
+                >
                 <input
                   type="email"
                   id="email"
@@ -283,7 +537,11 @@
 
               <!-- Phone Field -->
               <div class="form-group">
-                <label for="phone" class="block text-hijau font-semibold text-lg mb-2">Phone Number</label>
+                <label
+                  for="phone"
+                  class="block text-hijau font-semibold text-lg mb-2"
+                  >Phone Number</label
+                >
                 <input
                   type="tel"
                   id="phone"
@@ -296,9 +554,16 @@
 
               <!-- Amount Field -->
               <div class="form-group">
-                <label for="amount" class="block text-hijau font-semibold text-lg mb-2">Donation Amount</label>
+                <label
+                  for="amount"
+                  class="block text-hijau font-semibold text-lg mb-2"
+                  >Donation Amount</label
+                >
                 <div class="relative">
-                  <span class="absolute left-1.5 top-1/2 transform -translate-y-1/2 text-hijau font-semibold text-lg">Rp.</span>
+                  <span
+                    class="absolute left-1.5 top-1/2 transform -translate-y-1/2 text-hijau font-semibold text-lg"
+                    >Rp.</span
+                  >
                   <input
                     type="number"
                     id="amount"
@@ -327,17 +592,471 @@
       </div>
     </section>
 
+    <!-- info program -->
+    <section
+      class="w-full py-10 mt-10 mb-10 bg-hijau px-4 md:px-16 overflow-hidden"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+      data-aos-once="true"
+    >
+      <h1
+        class="text-2xl md:text-4xl text-white text-center font-bold font-montserrat"
+      >
+        Real <span class="text-aksen">Action</span> Program Info
+      </h1>
+
+      <!-- Communities Container -->
+      <div class="relative mt-10">
+        <!-- Desktop View -->
+        <div class="hidden md:flex justify-center gap-10">
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <!-- Card 1 -->
+              <div class="swiper-slide">
+                <div
+                  class="w-[30rem] flex flex-row gap-4 items-center p-4 bg-white rounded-xl shadow-xl hover:scale-105 transition-all duration-300"
+                >
+                  <div>
+                    <img
+                      src="assets/images/serentak.avif"
+                      alt="Depok Hijau"
+                      class="max-w-44 min-w-44 h-[10rem] rounded object-cover"
+                    />
+                  </div>
+                  <div class="text-left p-4 flex flex-col gap-2">
+                    <h2 class="font-bold text-xl text-hijau">
+                      Penanaman Pohon Serentak
+                    </h2>
+                    <p class="text-black text-md line-clamp-3">
+                      Kementerian Lingkungan Hidup dan Kehutanan (LHK)
+                      mengadakan penanaman pohon serentak di 37 provinsi,
+                      dipusatkan di Kupang, NTT. Dirjen LHK menegaskan bahwa
+                      kegiatan ini mendukung rehabilitasi 12,7 juta ha hutan dan
+                      lahan terdegradasi, dengan pohon-pohon seperti sukun,
+                      aren, nyamplung, dan buah-buahan multi guna (MPTS)
+                    </p>
+                    <a
+                      href="https://www.menlhk.go.id/news/penanaman-pohon-serentak-di-seluruh-indonesia-wamenhut-tanam-di-majalengka/"
+                      class="text-coklat font-semibold hover:underline mt-2 text-sm"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      See Details &rarr;
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 2 -->
+              <div class="swiper-slide">
+                <div
+                  class="w-[30rem] flex flex-row gap-4 items-center p-4 bg-white rounded-xl shadow-xl hover:scale-105 transition-all duration-300"
+                >
+                  <div>
+                    <img
+                      src="assets/images/lhk.jpeg"
+                      alt="DLHK Depok"
+                      class="max-w-44 min-w-22 h-[10rem] rounded object-cover"
+                    />
+                  </div>
+                  <div class="text-left p-4 flex flex-col gap-2">
+                    <h2 class="font-bold text-xl text-hijau">
+                      Gerakan Kompensasi Emisi LHK
+                    </h2>
+                    <p class="text-black text-md line-clamp-3">
+                      Kementerian LHK menanam ribuan pohon di wilayah Rumpin,
+                      Bogor, sebagai bagian dari strategi kompensasi karbon
+                      lembaga mereka. Sekitar 976.158 pohon yang setara dengan
+                      ±2.440 ha lahan akan ditanam untuk mengimbangi jejak
+                      karbon instansi.
+                    </p>
+                    <a
+                      href="https://www.kehutanan.go.id/news/article-43"
+                      class="text-coklat font-semibold hover:underline mt-2 text-sm"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      See Details &rarr;
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 3 -->
+              <div class="swiper-slide">
+                <div
+                  class="w-[30rem] flex flex-row gap-4 items-center p-4 bg-white rounded-xl shadow-xl hover:scale-105 transition-all duration-300"
+                >
+                  <div>
+                    <img
+                      src="assets/images/rer.jpg"
+                      alt="Kemenag Matoa"
+                      class="max-w-44 min-w-22 h-[10rem] rounded object-cover"
+                    />
+                  </div>
+                  <div class="text-left p-4 flex flex-col gap-2">
+                    <h2 class="font-bold text-xl text-hijau">
+                      Restorasi Ekosistem Riau (RER)
+                    </h2>
+                    <p class="text-black text-md line-clamp-3">
+                      Proyek restorasi ekosistem seluas 150.000 ha di
+                      semenanjung Kampar, Sumatra yang dimulai sejak 2013.
+                      Diprakarsai oleh APRIL Group dan Fauna & Flora
+                      International, fokusnya pada perlindungan, restorasi, dan
+                      pengelolaan hutan gambut, melibatkan komunitas lokal dalam
+                      setiap tahapnya.
+                    </p>
+                    <a
+                      href="https://en.wikipedia.org/wiki/Riau_Ecosystem_Restoration"
+                      class="text-coklat font-semibold hover:underline mt-2 text-sm"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      See Details &rarr;
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 4 -->
+              <div class="swiper-slide">
+                <div
+                  class="w-[30rem] flex flex-row gap-4 items-center p-4 bg-white rounded-xl shadow-xl hover:scale-105 transition-all duration-300"
+                >
+                  <div>
+                    <img
+                      src="assets/images/forest.jpeg"
+                      alt="Komunitas Lokal"
+                      class="max-w-44 min-w-44 h-[10rem] rounded object-cover"
+                    />
+                  </div>
+                  <div class="text-left p-4 flex flex-col gap-2">
+                    <h2 class="font-bold text-xl text-hijau">
+                      Forest Restoration Project SDGs Together!
+                    </h2>
+                    <p class="text-black text-md line-clamp-3">
+                      Inisiatif oleh APP Group bekerja sama dengan Belantara
+                      Foundation sejak 2020. Hingga Juni 2025 sudah berhasil
+                      menanam sekitar 43,901 pohon (melintasi 94 ha),
+                      menghidupkan kembali 32 spesies asli, termasuk jenis
+                      langka seperti ramin dan meranti bunga.
+                    </p>
+                    <a
+                      href="https://laotiantimes.com/2025/06/03/app-group-supports-forest-restoration-in-indonesia-through-sales-contribution/"
+                      class="text-coklat font-semibold hover:underline mt-2 text-sm"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      See Details &rarr;
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 5 (Baru) -->
+              <div class="swiper-slide">
+                <div
+                  class="w-[30rem] flex flex-row gap-4 items-center p-4 bg-white rounded-xl shadow-xl hover:scale-105 transition-all duration-300"
+                >
+                  <div>
+                    <img
+                      src="assets/images/samboja.jpg"
+                      alt="ikn"
+                      class="max-w-44 min-w-44 h-[10rem] rounded object-cover"
+                    />
+                  </div>
+                  <div class="text-left p-4 flex flex-col gap-2">
+                    <h2 class="font-bold text-xl text-hijau">
+                      Samboja Lestari (BOS Foundation)
+                    </h2>
+                    <p class="text-black text-md line-clamp-3">
+                      Di Kutai Kartanegara, Kalimantan Timur, proyek pemulihan
+                      1.800 ha lahan bekas tebangan sejak 2001. Telah menanam
+                      ratusan spesies lokal, dibantu budidaya bibit dari kotoran
+                      orangutan — sebagai bagian dari konservasi hutan dan
+                      rehabilitasi habitat.
+                    </p>
+                    <a
+                      href="https://en.wikipedia.org/wiki/Samboja_Lestari"
+                      class="text-coklat font-semibold hover:underline mt-2 text-sm"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      See Details &rarr;
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile Carousel -->
+        <div class="md:hidden">
+          <div
+            id="carousel"
+            class="flex transition-transform duration-300 ease-in-out"
+          >
+            <!-- Card 1 -->
+            <div class="w-full flex-shrink-0 px-4">
+              <div
+                class="w-full max-w-sm mx-auto flex flex-col gap-4 items-center p-4 bg-white rounded-xl shadow-xl"
+              >
+                <div class="w-full">
+                  <img
+                    src="assets/images/programdepok.jpeg"
+                    alt="Mangrove Jakarta"
+                    class="w-full h-48 rounded object-cover"
+                  />
+                </div>
+                <div class="text-center p-2 flex flex-col gap-2">
+                  <h2 class="font-bold text-2xl text-hijau">
+                    Program “Depok Hijau” oleh NU Care Lazisnu
+                  </h2>
+                  <p class="text-black text-sm line-clamp-3">
+                    NU Care Lazisnu Depok melalui program "Depok Hijau 2025"
+                    menginisiasi aksi nyata penanaman pohon di berbagai wilayah
+                    Depok. Kegiatan ini bertujuan untuk menghijaukan kota dan
+                    meningkatkan kesadaran lingkungan.
+                  </p>
+                  <a
+                    href="https://pcnudepok.com/program-nu-care-lazisnu-depok-hijau-2025-dimulai-250-bibit-pohon-buah-disebar-ke-13-titik-di-depok-dimulai-di-cilodong/"
+                    class="text-coklat font-semibold hover:underline mt-2 text-sm"
+                    >See Details &rarr;</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="w-full flex-shrink-0 px-4">
+              <div
+                class="w-full max-w-sm mx-auto flex flex-col gap-4 items-center p-4 bg-white rounded-xl shadow-xl"
+              >
+                <div class="w-full">
+                  <img
+                    src="assets/images/dlhk.jpg"
+                    alt="LindungiHutan"
+                    class="w-full h-48 rounded object-cover"
+                  />
+                </div>
+                <div class="text-center p-2 flex flex-col gap-2">
+                  <h2 class="font-bold text-2xl text-hijau">
+                    Distribusi 5.000 Bibit Pohon oleh DLHK Depok
+                  </h2>
+                  <p class="text-black text-sm line-clamp-3">
+                    Dinas Lingkungan Hidup Depok menyediakan 5.000 bibit pohon
+                    gratis untuk masyarakat. Program ini mendorong partisipasi
+                    warga dalam penghijauan kota.
+                  </p>
+                  <a
+                    href="https://berita.depok.go.id/dlhk-depok-siapkan-5000-bibit-pohon-untuk-masyarakat-ajak-warga-berperan-aktif-hijaukan-kota"
+                    class="text-coklat font-semibold hover:underline mt-2 text-sm"
+                    >See Details &rarr;</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="w-full flex-shrink-0 px-4">
+              <div
+                class="w-full max-w-sm mx-auto flex flex-col gap-4 items-center p-4 bg-white rounded-xl shadow-xl"
+              >
+                <div class="w-full">
+                  <img
+                    src="assets/images/kemena.jpg"
+                    alt="Greenpeace"
+                    class="w-full h-48 rounded object-cover"
+                  />
+                </div>
+                <div class="text-center p-2 flex flex-col gap-2">
+                  <h2 class="font-bold text-2xl text-hijau">
+                    Gerakan Penanaman "Sejuta Pohon Matoa" oleh Kemenag
+                  </h2>
+                  <p class="text-black text-sm line-clamp-3">
+                    Kemenag RI menginisiasi penanaman sejuta pohon matoa untuk
+                    membangun peradaban hijau dan meningkatkan kesadaran ekologi
+                    di masyarakat.
+                  </p>
+                  <a
+                    href="https://pendis.kemenag.go.id/sekretariat-ditjen-pendidikan-islam/bangun-peradaban-hijau-dan-moderat-kemenag-luncurkan-gerakan-penanaman-1-juta-pohon-dan-groundbreaking-pesantren-istiqlal-internasional"
+                    class="text-coklat font-semibold hover:underline mt-2 text-sm"
+                    >See Details &rarr;</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!--card 4-->
+            <div class="w-full flex-shrink-0 px-4">
+              <div
+                class="w-full max-w-sm mx-auto flex flex-col gap-4 items-center p-4 bg-white rounded-xl shadow-xl"
+              >
+                <div class="w-full">
+                  <img
+                    src="assets/images/lokal.jpg"
+                    alt="Greenpeace"
+                    class="w-full h-48 rounded object-cover"
+                  />
+                </div>
+                <div class="text-center p-2 flex flex-col gap-2">
+                  <h2 class="font-bold text-2xl text-hijau">
+                    Penanaman Pohon oleh Komunitas Lokal
+                  </h2>
+                  <p class="text-black text-sm line-clamp-3">
+                    Berbagai komunitas lokal Depok rutin mengadakan penanaman
+                    pohon untuk menghijaukan lingkungan sekaligus mempererat
+                    solidaritas sosial masyarakat.
+                  </p>
+                  <a
+                    href="https://jabar.nu.or.id/depok/penanaman-pohon-dan-mancing-bersama-gp-ansor-depok-meriahkan-harlah-ke-91-gp-ansor-dan-hut-ke-26-kota-depok-Tr7zV"
+                    class="text-coklat font-semibold hover:underline mt-2 text-sm"
+                    >See Details &rarr;</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!--card 5-->
+            <div class="w-full flex-shrink-0 px-4">
+              <div
+                class="w-full max-w-sm mx-auto flex flex-col gap-4 items-center p-4 bg-white rounded-xl shadow-xl"
+              >
+                <div class="w-full">
+                  <img
+                    src="assets/images/ikn.jpg"
+                    alt="Greenpeace"
+                    class="w-full h-48 rounded object-cover"
+                  />
+                </div>
+                <div class="text-center p-2 flex flex-col gap-2">
+                  <h2 class="font-bold text-2xl text-hijau">
+                    Aksi Penanaman Pohon di IKN
+                  </h2>
+                  <p class="text-black text-sm line-clamp-3">
+                    Pemerintah bersama berbagai komunitas dan instansi menggelar
+                    aksi penanaman pohon di kawasan Ibu Kota Nusantara (IKN)
+                    sebagai bagian dari komitmen mewujudkan kota hijau dan
+                    berkelanjutan. Program ini bertujuan untuk menjaga
+                    ekosistem, mengurangi emisi karbon, serta mempercepat
+                    penghijauan di area pembangunan IKN.
+                  </p>
+                  <a
+                    href="https://nasional.tvrinews.com/berita/tl9stng-aksi-penanaman-pohon-di-ikn-upaya-wujudkan-kota-berkelanjutan-dan-berketahanan-iklim"
+                    class="text-coklat font-semibold hover:underline mt-2 text-sm"
+                    >See Details &rarr;</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile Navigation Controls -->
+        <div class="flex justify-center items-center mt-6 md:hidden">
+          <button
+            id="prevBtn"
+            class="bg-white text-hijau p-2 rounded-full shadow-lg hover:bg-gray-100 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 19l-7-7 7-7"
+              ></path>
+            </svg>
+          </button>
+
+          <div class="flex space-x-2 mx-4">
+            <span
+              class="dot w-3 h-3 bg-white rounded-full opacity-100 transition-all duration-300"
+            ></span>
+            <span
+              class="dot w-3 h-3 bg-white rounded-full opacity-50 transition-all duration-300"
+            ></span>
+            <span
+              class="dot w-3 h-3 bg-white rounded-full opacity-50 transition-all duration-300"
+            ></span>
+            <span
+              class="dot w-3 h-3 bg-white rounded-full opacity-50 transition-all duration-300"
+            ></span>
+            <span
+              class="dot w-3 h-3 bg-white rounded-full opacity-50 transition-all duration-300"
+            ></span>
+          </div>
+
+          <button
+            id="nextBtn"
+            class="bg-white text-hijau p-2 rounded-full shadow-lg hover:bg-gray-100 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5l7 7-7 7"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Content 8 -->
+    <section class="w-full py-16 px-6 md:px-16 text-center font-montserrat">
+      <div data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
+        <h2 class="text-2xl md:text-4xl font-extrabold text-gray-900 mb-4">
+          Join the Movement
+        </h2>
+        <p class="text-gray-600 text-sm md:text-base mb-6">
+          Be part of our community and take real action for a greener,
+          sustainable future.
+        </p>
+        <a
+          href="/community.html"
+          class="inline-block bg-green-600 hover:bg-green-700 text-white font-medium px-6 py-2 rounded-md shadow transform hover:scale-105 transition duration-300 ease-in-out"
+        >
+          Join Community
+        </a>
+      </div>
+    </section>
+
     <!-- footer -->
-    <footer class="bg-hijau text-white py-8 md:pt-8" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
+    <footer
+      class="bg-hijau text-white py-8 md:pt-8"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+      data-aos-once="true"
+    >
       <div class="container mx-auto px-4 md:px-8">
         <div class="flex flex-col mx-6 md:mx-0 md:flex-row md:space-x-32">
           <div class="about mb-6 md:mb-0 md:w-2/3">
             <h4 class="font-bold text-base md:text-xl mb-4">Save Forest</h4>
-            <p class="mb-4 text-xs md:text-base text-white/90 text-justify text-left">
-              Save Forest is a website developed by a passionate team of aspiring web designers from Politeknik Negeri Jakarta. With creativity as our foundation and innovation as
-              our driving force, we are proud to showcase our skills in the TeknoCom International Web Design Competition 2025. The name "Save Forest" reflects our commitment to
-              environmental awareness and digital advocacy—turning awareness into action through the power of thoughtful design and technology. Through this platform, we aim to
-              inspire individuals to take part in protecting our forests, preserving biodiversity, and building a sustainable future for the next generations.
+            <p
+              class="mb-4 text-xs md:text-base text-white/90 text-justify text-left"
+            >
+              Save Forest is a website developed by a passionate team of
+              aspiring web designers from Politeknik Negeri Jakarta. With
+              creativity as our foundation and innovation as our driving force,
+              we are proud to showcase our skills in the TeknoCom International
+              Web Design Competition 2025. The name "Save Forest" reflects our
+              commitment to environmental awareness and digital advocacy—turning
+              awareness into action through the power of thoughtful design and
+              technology. Through this platform, we aim to inspire individuals
+              to take part in protecting our forests, preserving biodiversity,
+              and building a sustainable future for the next generations.
             </p>
           </div>
           <div class="contact-info md:w-1/3 flex flex-col">
@@ -424,166 +1143,26 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="assets/js/animation.js"></script>
+    <script src="assets/js/contribute.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-      let currentSlide = 0;
-      const totalSlides = 3;
-      const carousel = document.getElementById('carousel');
-      const prevBtn = document.getElementById('prevBtn');
-      const nextBtn = document.getElementById('nextBtn');
-      const dots = document.querySelectorAll('.dot');
-
-      function updateCarousel() {
-        const offset = -currentSlide * 100;
-        carousel.style.transform = `translateX(${offset}%)`;
-
-        // Update dots
-        dots.forEach((dot, index) => {
-          dot.style.opacity = index === currentSlide ? '1' : '0.5';
-        });
-
-        // Update button states
-        prevBtn.disabled = currentSlide === 0;
-        nextBtn.disabled = currentSlide === totalSlides - 1;
-      }
-
-      function nextSlide() {
-        if (currentSlide < totalSlides - 1) {
-          currentSlide++;
-          updateCarousel();
-        }
-      }
-
-      function prevSlide() {
-        if (currentSlide > 0) {
-          currentSlide--;
-          updateCarousel();
-        }
-      }
-
-      // Event listeners
-      nextBtn.addEventListener('click', nextSlide);
-      prevBtn.addEventListener('click', prevSlide);
-
-      // Dot navigation
-      dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-          currentSlide = index;
-          updateCarousel();
-        });
-        dot.style.cursor = 'pointer';
+      const swiper = new Swiper(".mySwiper", {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        loop: true,
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: true, // berhenti saat user pilih atau hover
+        },
+        breakpoints: {
+          768: {
+            slidesPerView: 3,
+          },
+          1024: {
+            slidesPerView: 3,
+          },
+        },
       });
-
-      // Touch/swipe support
-      let startX = 0;
-      let endX = 0;
-
-      carousel.addEventListener('touchstart', (e) => {
-        startX = e.touches[0].clientX;
-      });
-
-      carousel.addEventListener('touchend', (e) => {
-        endX = e.changedTouches[0].clientX;
-        const diff = startX - endX;
-
-        if (Math.abs(diff) > 50) {
-          // Minimum swipe distance
-          if (diff > 0) {
-            nextSlide();
-          } else {
-            prevSlide();
-          }
-        }
-      });
-
-      // Initialize
-      updateCarousel();
-
-      // Auto-play (optional)
-      setInterval(() => {
-        if (currentSlide < totalSlides - 1) {
-          nextSlide();
-        } else {
-          currentSlide = 0;
-          updateCarousel();
-        }
-      }, 5000); // Change slide every 5 seconds
-    </script>
-    <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        const slides = document.querySelectorAll('#slider-images img');
-        const dots = document.querySelectorAll('.slider-dot');
-        let currentIndex = 0;
-        let slideInterval;
-        const slideDuration = 5000; // 5 seconds
-
-        function showSlide(index) {
-          // Hide all slides
-          slides.forEach((slide) => {
-            slide.classList.remove('opacity-100');
-            slide.classList.add('opacity-0');
-          });
-
-          // Update dots
-          dots.forEach((dot) => {
-            dot.classList.remove('bg-opacity-80');
-            dot.classList.add('bg-opacity-30');
-          });
-
-          // Show current slide
-          slides[index].classList.remove('opacity-0');
-          slides[index].classList.add('opacity-100');
-
-          // Update current dot
-          dots[index].classList.remove('bg-opacity-30');
-          dots[index].classList.add('bg-opacity-80');
-
-          currentIndex = index;
-        }
-
-        function nextSlide() {
-          const nextIndex = (currentIndex + 1) % slides.length;
-          showSlide(nextIndex);
-        }
-
-        function startAutoSlide() {
-          slideInterval = setInterval(nextSlide, slideDuration);
-        }
-
-        function pauseAutoSlide() {
-          clearInterval(slideInterval);
-        }
-
-        // Initialize slider
-        showSlide(0);
-        startAutoSlide();
-
-        // Pause on hover
-        const slider = document.querySelector('.group');
-        slider.addEventListener('mouseenter', pauseAutoSlide);
-        slider.addEventListener('mouseleave', startAutoSlide);
-
-        // Click on dots
-        dots.forEach((dot, index) => {
-          dot.addEventListener('click', () => {
-            showSlide(index);
-            pauseAutoSlide();
-            startAutoSlide();
-          });
-        });
-      });
-    </script>
-    <script>
-      function toggleMenu() {
-        const menu = document.getElementById('navbar-default');
-        menu.classList.toggle('translate-x-full');
-        menu.classList.toggle('translate-x-0');
-
-        // Toggle icon
-        const iconHamburger = document.getElementById('iconHamburger');
-        const iconClose = document.getElementById('iconClose');
-        iconHamburger.classList.toggle('hidden');
-        iconClose.classList.toggle('hidden');
-      }
     </script>
   </body>
 </html>
