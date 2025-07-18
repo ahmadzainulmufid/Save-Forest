@@ -35,6 +35,7 @@ function startCountersWhenVisible() {
       if (entry.isIntersecting) {
         // Mulai animasi counter
         animateValue('forestLostCounter', 0, 250000, 2000, '');
+        animateValue('provinceCounter', 0, 250000, 2000, '');
         animateValue('treesCounter', 0, 1000000, 2000, '');
         animateValue('co2Counter', 0, '200M', 2000, ' tons');
         
@@ -50,6 +51,3 @@ function startCountersWhenVisible() {
     observer.observe(statsSection);
   }
 }
-
-// Jalankan setelah halaman dimuat
-document.addEventListener('DOMContentLoaded', startCountersWhenVisible);
