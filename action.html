@@ -357,7 +357,7 @@
     <!-- Content 4 -->
     <section data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
       <div
-        class="flex justify-between md:mt-32 mb-0 md:mb-64 items-center flex-col"
+        class="flex justify-between mb-8 md:mt-32 mb-0 md:mb-24 items-center flex-col"
       >
         <div class="flex flex-col">
           <p class="font-bold text-2xl md:text-4xl mb-4 text-hijau">
@@ -740,6 +740,21 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="assets/js/animation.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>    
+    <script>
+      function toggleMenu() {
+        const menu = document.getElementById("navbar-default");
+        menu.classList.toggle("translate-x-full");
+        menu.classList.toggle("translate-x-0");
+
+        // Toggle icon
+        const iconHamburger = document.getElementById("iconHamburger");
+        const iconClose = document.getElementById("iconClose");
+        iconHamburger.classList.toggle("hidden");
+        iconClose.classList.toggle("hidden");
+      }
+      </script>
+      <script src="assets/js/navbar.js"></script>
 
     <!-- Swiper JS -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
