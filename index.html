@@ -424,6 +424,29 @@
     <script src="assets/js/navbar.js"></script>
     <script src="assets/js/counter.js"></script>
     <script>
+      document.addEventListener('DOMContentLoaded', startCountersWhenVisible);
+
+  document.addEventListener('DOMContentLoaded', function() {
+    // Animasi typing untuk judul
+    const title = "10 Provinsi dengan Deforestasi Terbesar di Indonesia (2001-2024)";
+    const titleElement = document.getElementById('typing-title');
+    let i = 0;
+    
+    function typeWriter() {
+      if (i < title.length) {
+        titleElement.innerHTML += title.charAt(i);
+        i++;
+        setTimeout(typeWriter, 50);
+      } else {
+        titleElement.classList.remove('border-r-2');
+      }
+    }
+    
+    // Mulai animasi typing
+    setTimeout(typeWriter, 500)
+  });
+    </script>
+    <script>
       function toggleMenu() {
         const menu = document.getElementById("navbar-default");
         menu.classList.toggle("translate-x-full");

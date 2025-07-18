@@ -1,16 +1,16 @@
 const slides = [
   {
-    image: "assets/images/deforestasi1.jpeg",
+    image: "assets/images/banner1.jpg",
     title: "Turning <span class='text-aksen'>Awareness</span> Into Action",
     description: "Save our forests, shape our future. One step at a time, your action today defines tomorrow's Earth."
   },
   {
-    image: "assets/images/deforestasi2.jpeg",
+    image: "assets/images/banner2.jpg",
     title: "Your <span class='text-aksen'>Action</span> Matters",
     description: "Every small step counts. Be part of the movement to save our green planet for future generations."
   },
   {
-    image: "assets/images/deforestasi3.jpeg",
+    image: "assets/images/banner3.jpg",
     title: "Find out <span class='text-aksen'>The local</span> Heroes ",
     description: "Millions of species lose their home every year due to massive deforestation. Let’s make a change."
   },
