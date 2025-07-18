@@ -69,6 +69,17 @@ function renderSliderSlide(nextIdx = null) {
 
 function renderSliderText(idx, animateIn = false) {
   if (!sliderTextSection) return;
+
+  const isFirstSlide = idx === 0;
+  const isCentered = idx === 1 || idx === 2;
+
+  // Set class secara dinamis
+  sliderTextSection.className = `
+    flex flex-col gap-6 text-background w-full transition-all duration-500
+    ${isCentered ? "items-center justify-center text-center h-full" : "items-start justify-start md:text-left"}
+  `;
+
+  // Isi konten
   sliderTextSection.innerHTML = `
     <h1 class="text-xl md:text-5xl font-extrabold leading-tight">
       ${slides[idx].title}
@@ -76,14 +87,17 @@ function renderSliderText(idx, animateIn = false) {
     <p class="text-sm md:text-xl font-extralight leading-relaxed">
       ${slides[idx].description}
     </p>
-    <div class="mt-4">
-      <a href="/education.html"
-        class="inline-block bg-aksen text-white px-6 py-3 rounded-full text-sm md:text-base font-semibold hover:bg-background hover:text-aksen transition"
-      >
-        Learn How You Can Help →
-      </a>
-    </div>
+    ${isFirstSlide ? `
+      <div>
+        <a href="/education.html"
+          class="inline-block bg-aksen text-white px-6 py-3 rounded-full text-sm md:text-base font-semibold hover:bg-background hover:text-aksen transition"
+        >
+          Learn How You Can Help →
+        </a>
+      </div>
+    ` : ""}
   `;
+
   // Fade in
   sliderTextSection.classList.add('opacity-0');
   sliderTextSection.classList.remove('opacity-100');
@@ -92,6 +106,8 @@ function renderSliderText(idx, animateIn = false) {
     sliderTextSection.classList.add('opacity-100');
   }, 30);
 }
+
+
 
 function animateTextFadeOut(after) {
   if (!sliderTextSection) return after && after();

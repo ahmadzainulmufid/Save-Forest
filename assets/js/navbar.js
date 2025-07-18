@@ -8,7 +8,7 @@
       const logoPutih = document.querySelector('.logo-putih');
 
       function setNavbarColors(isScrolled) {
-        if (window.innerWidth < 768) return; // Only desktop
+        if (window.innerWidth < 20 ) return; // Only desktop
 
         if (isScrolled) {
           navbar.classList.add("md:bg-white", "shadow-xl");
