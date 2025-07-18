@@ -271,14 +271,352 @@
       </div>
     </section>
 
+    <!-- Bar Chart -->
     <section
-      class="bg-white pt-4 pb-12 px-4 mb-16 md:px-16"
+      class="bg-white py-10 px-4 md:px-16"
       data-aos="fade-up"
       data-aos-duration="1000"
       data-aos-once="true"
     >
       <div class="max-w-6xl mx-auto">
-        <h3 class="text-2xl font-bold text-hijau mb-7 text-center">
+        <h2
+          class="text-2xl md:text-3xl font-semibold text-gray-800 mb-6 text-center"
+        >
+          Tren Deforestasi Indonesia (2013–2022)
+        </h2>
+
+        <div
+          class="bg-gray-50 rounded-xl shadow-md p-6 flex flex-col md:flex-row gap-4 md:gap-6 items-start"
+        >
+          <!-- KIRI: Chart -->
+          <div class="flex-1 w-full md:w-1/2">
+            <div class="relative w-full h-[300px]">
+              <canvas id="deforestasiChart"></canvas>
+            </div>
+          </div>
+
+          <!-- KANAN: Penjelasan -->
+          <div class="flex-1 w-full md:w-1/2 text-gray-700">
+            <h3 class="text-lg font-semibold mb-4">Penjelasan Tren</h3>
+            <ul class="list-disc pl-5 space-y-2 text-sm">
+              <li>
+                Tahun 2014–2015 menunjukkan puncak deforestasi yang sangat
+                tinggi (> 2 juta ha).
+              </li>
+              <li>
+                Setelah tahun 2016, deforestasi mulai menurun secara signifikan.
+              </li>
+              <li>
+                Faktor penurunan termasuk moratorium, pengawasan, dan kebijakan
+                pengendalian kebakaran.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <script>
+          const data = [
+            { tahun: "2013-2014", deforestasi: 794741 },
+            { tahun: "2014-2015", deforestasi: 2184363 },
+            { tahun: "2015-2016", deforestasi: 1258353 },
+            { tahun: "2016-2017", deforestasi: 960021 },
+            { tahun: "2017-2018", deforestasi: 878878 },
+            { tahun: "2018-2019", deforestasi: 924916 },
+            { tahun: "2019-2020", deforestasi: 230919 },
+            { tahun: "2020-2021", deforestasi: 241411 },
+            { tahun: "2021-2022", deforestasi: 208065 },
+          ];
+
+          const labels = data.map((item) => item.tahun);
+          const values = data.map((item) => item.deforestasi);
+
+          const ctx = document
+            .getElementById("deforestasiChart")
+            .getContext("2d");
+
+          new Chart(ctx, {
+            type: "bar",
+            data: {
+              labels: labels,
+              datasets: [
+                {
+                  type: "bar",
+                  label: "Luas Deforestasi (ha)",
+                  data: values,
+                  backgroundColor: "rgba(255, 99, 132, 0.7)",
+                  borderColor: "rgba(255, 99, 132, 1)",
+                  borderWidth: 1,
+                  borderRadius: 5,
+                  barThickness: 20,
+                },
+                {
+                  type: "line",
+                  label: "Tren Deforestasi",
+                  data: values,
+                  borderColor: "rgba(75, 192, 192, 1)",
+                  borderWidth: 2,
+                  fill: false,
+                  tension: 0.3,
+                  pointRadius: 4,
+                  pointBackgroundColor: "rgba(75, 192, 192, 1)",
+                },
+              ],
+            },
+            options: {
+              responsive: true,
+              maintainAspectRatio: false,
+              plugins: {
+                legend: { display: true },
+                tooltip: {
+                  callbacks: {
+                    label: (context) => `${context.raw.toLocaleString()} ha`,
+                  },
+                },
+              },
+              scales: {
+                y: {
+                  beginAtZero: true,
+                  title: {
+                    display: true,
+                    text: "Luas (hektar)",
+                  },
+                },
+                x: {
+                  title: {
+                    display: true,
+                    text: "Tahun",
+                  },
+                },
+              },
+            },
+          });
+        </script>
+      </div>
+    </section>
+
+    <section
+      class="bg-white py-10 px-4 md:px-16"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+      data-aos-once="true"
+    >
+      <div class="max-w-6xl mx-auto">
+        <h2
+          class="text-2xl md:text-3xl font-semibold text-gray-800 mb-6 text-center"
+        >
+          Distribusi Deforestasi: Kawasan Hutan vs APL
+        </h2>
+
+        <div
+          class="bg-gray-50 rounded-xl shadow-md p-6 flex flex-col md:flex-row gap-4 md:gap-6 items-start"
+        >
+          <!-- Penjelasan Kiri -->
+          <div class="flex-1 w-full md:w-1/2 text-gray-700">
+            <h3 class="text-lg font-semibold mb-4">Penjelasan Singkat</h3>
+            <ul class="list-disc pl-5 space-y-2 text-sm">
+              <li>
+                Kehilangan hutan di Indonesia terjadi baik di dalam kawasan
+                hutan maupun di APL (Areal Penggunaan Lain).
+              </li>
+              <li>
+                Kawasan hutan mencakup wilayah konservasi, hutan produksi, dan
+                lindung.
+              </li>
+              <li>
+                APL sering kali dikaitkan dengan aktivitas industri, perkebunan,
+                dan pemukiman.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Chart Kanan -->
+          <div class="flex-1 w-full md:w-1/2">
+            <div class="relative w-full h-[300px]">
+              <canvas id="distribusiChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        const distribusiData = [
+          { tahun: "2013-2014", kawasan_hutan: 585067, apl: 209675 },
+          { tahun: "2014-2015", kawasan_hutan: 1631214, apl: 553147 },
+          { tahun: "2015-2016", kawasan_hutan: 862532, apl: 395821 },
+          { tahun: "2016-2017", kawasan_hutan: 594366, apl: 365655 },
+          { tahun: "2017-2018", kawasan_hutan: 446647, apl: 432230 },
+          { tahun: "2018-2019", kawasan_hutan: 751733, apl: 173183 },
+          { tahun: "2019-2020", kawasan_hutan: 133991, apl: 96928 },
+          { tahun: "2020-2021", kawasan_hutan: 166798, apl: 74613 },
+          { tahun: "2021-2022", kawasan_hutan: 146260, apl: 61804 },
+        ];
+
+        const distribusiLabels = distribusiData.map((d) => d.tahun);
+        const kawasanData = distribusiData.map((d) => d.kawasan_hutan);
+        const aplData = distribusiData.map((d) => d.apl);
+
+        const distribusiCtx = document
+          .getElementById("distribusiChart")
+          .getContext("2d");
+        new Chart(distribusiCtx, {
+          type: "bar",
+          data: {
+            labels: distribusiLabels,
+            datasets: [
+              {
+                label: "Kawasan Hutan",
+                data: kawasanData,
+                backgroundColor: "rgba(54, 162, 235, 0.7)",
+                borderRadius: 5,
+                barThickness: 20,
+              },
+              {
+                label: "APL (Non-Kawasan Hutan)",
+                data: aplData,
+                backgroundColor: "rgba(255, 205, 86, 0.7)",
+                borderRadius: 5,
+                barThickness: 20,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              tooltip: {
+                callbacks: {
+                  label: (ctx) =>
+                    `${ctx.dataset.label}: ${ctx.raw.toLocaleString()} ha`,
+                },
+              },
+              legend: { position: "bottom" },
+            },
+            scales: {
+              x: { stacked: true, title: { display: true, text: "Tahun" } },
+              y: {
+                stacked: true,
+                beginAtZero: true,
+                title: { display: true, text: "Luas (hektar)" },
+              },
+            },
+          },
+        });
+      </script>
+    </section>
+
+    <section
+      class="bg-white py-12 px-4 md:px-16"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+      data-aos-once="true"
+    >
+      <div class="max-w-6xl mx-auto">
+        <h3 class="text-2xl md:text-3xl font-semibold mb-6 text-center">
+          Provinsi dengan Kehilangan Hutan Primer Terbesar
+        </h3>
+
+        <div
+          class="bg-gray-100 p-6 rounded-xl shadow-md flex flex-col md:flex-row gap-4 md:gap-6 items-start"
+        >
+          <!-- Pie Chart -->
+          <div class="flex-1 w-full md:w-1/2">
+            <div class="relative w-full h-[300px]">
+              <canvas id="pieProvinsiChart"></canvas>
+            </div>
+          </div>
+
+          <!-- Penjelasan -->
+          <div class="flex-1 w-full md:w-1/2 text-gray-700">
+            <h3 class="text-lg font-semibold mb-4">Fakta Penting</h3>
+            <ul class="list-disc pl-5 space-y-2 text-sm">
+              <li>
+                Kalimantan dan Papua menjadi penyumbang kehilangan hutan primer
+                terbesar selama 20 tahun terakhir.
+              </li>
+              <li>
+                Faktor utama meliputi pembukaan lahan, kebakaran, dan konversi
+                untuk industri.
+              </li>
+              <li>
+                Kehilangan hutan primer berdampak besar terhadap keanekaragaman
+                hayati dan emisi karbon.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chart Script -->
+      <script>
+        const provinsiData = {
+          labels: [
+            "Papua",
+            "Kalimantan Tengah",
+            "Riau",
+            "Papua Barat",
+            "Sumatera Utara",
+          ],
+          datasets: [
+            {
+              data: [320000, 290000, 210000, 180000, 160000],
+              backgroundColor: [
+                "rgba(255, 99, 132, 0.7)",
+                "rgba(54, 162, 235, 0.7)",
+                "rgba(255, 205, 86, 0.7)",
+                "rgba(75, 192, 192, 0.7)",
+                "rgba(153, 102, 255, 0.7)",
+              ],
+              borderColor: [
+                "rgba(255, 99, 132, 1)",
+                "rgba(54, 162, 235, 1)",
+                "rgba(255, 205, 86, 1)",
+                "rgba(75, 192, 192, 1)",
+                "rgba(153, 102, 255, 1)",
+              ],
+              borderWidth: 1,
+            },
+          ],
+        };
+
+        const provinsiCtx = document
+          .getElementById("pieProvinsiChart")
+          .getContext("2d");
+        new Chart(provinsiCtx, {
+          type: "pie",
+          data: provinsiData,
+          options: {
+            responsive: true,
+            plugins: {
+              legend: { position: "bottom" },
+              tooltip: {
+                callbacks: {
+                  label: function (context) {
+                    const total = context.dataset.data.reduce(
+                      (a, b) => a + b,
+                      0
+                    );
+                    const value = context.raw;
+                    const percent = ((value / total) * 100).toFixed(1);
+                    return `${
+                      context.label
+                    }: ${value.toLocaleString()} ha (${percent}%)`;
+                  },
+                },
+              },
+            },
+          },
+        });
+      </script>
+    </section>
+
+    <section
+      class="bg-white pt-4 pb-12 px-4 md:px-16"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+      data-aos-once="true"
+    >
+      <div class="max-w-6xl mx-auto">
+        <h3 class="text-2xl font-semibold text-gray-800 mb-4 text-center">
           Peta Kehilangan Hutan di Indonesia
         </h3>
 
