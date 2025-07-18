@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Save Forest</title>
+    <link href="assets/css/output.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <script src="https://unpkg.com/@heroicons/vue@2.0.16/dist/heroicons.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <style>
+      .scroller__inner {
+        padding-block: 1rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      .scroller[data-animated="true"] {
+        overflow: hidden;
+        -webkit-mask: linear-gradient(
+          90deg,
+          transparent,
+          white 20% 80%,
+          transparent
+        );
+        mask: linear-gradient(
+          90deg,
+          transparent,
+          white 20%,
+          white 80%,
+          transparent
+        );
+      }
+
+      .scroller[data-animated="true"] .scroller__inner {
+        width: max-content;
+        flex-wrap: nowrap;
+        animation: scroll var(--_animation-duration, 40s)
+          var(--_animation-direction, forwards) linear infinite;
+      }
+
+      .scroller[data-direction="right"] {
+        --_animation-direction: reverse;
+      }
+
+      .scroller[data-direction="left"] {
+        --_animation-direction: forwards;
+      }
+
+      .scroller[data-speed="fast"] {
+        --_animation-duration: 20s;
+      }
+
+      .scroller[data-speed="slow"] {
+        --_animation-duration: 40s;
+      }
+
+      .scroller[data-animated="true"] .scroller__inner:hover {
+        animation-play-state: paused;
+      }
+
+      @keyframes scroll {
+        to {
+          transform: translate(calc(-50% - 0.5rem));
+        }
+      }
+
+      .tag-list {
+        margin: 0;
+        padding-inline: 0;
+        list-style: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav
+      id="mainNavbar"
+      class="top-0 left-0 w-full transition-all duration-300 bg-white font-montserrat shadow-xl"
+    >
+      <div
+        class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
+      >
+        <a
+          href="/index.html"
+          class="flex items-center space-x-3 rtl:space-x-reverse"
+        >
+          <img
+            src="assets/images/logo.png"
+            class="logo-hijau w-12 transition-all duration-300"
+            alt="Save Forest"
+          />
+          <span
+            id="navBrand"
+            class="self-center text-2xl font-semibold whitespace-nowrap transition-colors duration-300 text-hijau"
+          >
+            Save Forest
+          </span>
+        </a>
+        <button
+          onclick="toggleMenu()"
+          type="button"
+          class="inline-flex items-center p-2 w-10 h-10 justify-center text-md text-hijau rounded-lg md:hidden ring-2 ring-hijau"
+          aria-controls="navbar-default"
+          aria-expanded="false"
+        >
+          <span class="sr-only">Open main menu</span>
+          <!-- Hamburger icon -->
+          <svg
+            id="iconHamburger"
+            class="w-5 h-5 block transition duration-700 ease-in-out"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 17 14"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M1 1h15M1 7h15M1 13h15"
+            />
+          </svg>
+          <!-- X icon diperbesar dan diberi transisi -->
+          <svg
+            id="iconClose"
+            class="w-7 h-7 hidden transition duration-700 ease-in-out"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+        <div
+          class="fixed top-[5rem] right-0 h-full w-full bg-white z-40 transform translate-x-full transition-transform duration-300 md:static md:translate-x-0 md:bg-transparent md:w-auto md:block"
+          id="navbar-default"
+        >
+          <ul
+            class="font-medium flex flex-col items-center justify-center gap-6 p-4 md:p-0 mt-3 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0"
+          >
+            <li>
+              <a
+                href="/index.html"
+                id="navHome"
+                class="nav-link block py-2 px-3 rounded-sm md:p-0 transition-colors duration-300 text-xl text-coklat md:text-coklat md:hover:text-aksen"
+              >
+                Home
+              </a>
+            </li>
+            <li>
+              <a
+                href="/education.html"
+                class="nav-link block py-2 px-3 rounded-sm md:p-0 transition-colors duration-300 text-xl text-coklat md:text-coklat md:hover:text-aksen"
+              >
+                Education
+              </a>
+            </li>
+            <li>
+              <a
+                href="/contribution.html"
+                class="nav-link block py-2 px-3 rounded-sm md:p-0 transition-colors duration-300 text-xl text-coklat md:text-coklat md:hover:text-aksen"
+              >
+                Contribution
+              </a>
+            </li>
+            <li>
+              <a
+                href="/action.html"
+                class="nav-link block py-2 px-3 rounded-sm md:p-0 transition-colors duration-300 text-xl font-bold text-hijau md:text-hijau md:hover:text-aksen"
+              >
+                Action
+              </a>
+            </li>
+            <li>
+              <a
+                href="/aboutus.html"
+                class="nav-link block py-2 px-3 rounded-sm md:p-0 transition-colors duration-300 text-xl text-coklat md:text-coklat md:hover:text-aksen"
+              >
+                About Us
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Content 1 -->
+    <section>
+      <div class="py-12 px-6 md:px-16 text-center">
+        <h2 class="text-2xl md:text-3xl font-extrabold text-hijau mb-4">
+          Join the Green Community
+          <span class="text-aksen">Together We Protect Our Forests</span>
+        </h2>
+        <p class="text-coklat md:text-lg mb-8">
+          Across Indonesia, local communities are taking real action to
+          safeguard nature planting trees, educating future generations, and
+          patrolling our precious forests. <br />
+          Let’s stand together for a greener future. Be part of the change!
+        </p>
+      </div>
+    </section>
+
+    <!-- Content 2 -->
+    <section
+      class="py-12 px-6 md:px-16 bg-white"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+      data-aos-once="true"
+    >
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <img
+          src="/assets/images/contribute1.png"
+          alt="Activity 1"
+          class="rounded-lg object-cover w-full h-48 hover:scale-105 transition-transform duration-300"
+        />
+        <img
+          src="/assets/images/contribute2.png"
+          alt="Activity 2"
+          class="rounded-lg object-cover w-full h-48 hover:scale-105 transition-transform duration-300"
+        />
+        <img
+          src="/assets/images/contribute3.jpeg"
+          alt="Activity 3"
+          class="rounded-lg object-cover w-full h-48 hover:scale-105 transition-transform duration-300"
+        />
+        <img
+          src="/assets/images/ikn.jpg"
+          alt="Activity 4"
+          class="rounded-lg object-cover w-full h-48 hover:scale-105 transition-transform duration-300"
+        />
+        <img
+          src="/assets/images/lokal.jpg"
+          alt="Activity 5"
+          class="rounded-lg object-cover w-full h-48 hover:scale-105 transition-transform duration-300"
+        />
+        <img
+          src="/assets/images/programdepok.jpeg"
+          alt="Activity 6"
+          class="rounded-lg object-cover w-full h-48 hover:scale-105 transition-transform duration-300"
+        />
+        <img
+          src="/assets/images/serentak.avif"
+          alt="Activity 7"
+          class="rounded-lg object-cover w-full h-48 hover:scale-105 transition-transform duration-300"
+        />
+        <img
+          src="/assets/images/kemena.jpg"
+          alt="Activity 8"
+          class="rounded-lg object-cover w-full h-48 hover:scale-105 transition-transform duration-300"
+        />
+      </div>
+    </section>
+
+    <!-- Content 3 -->
+    <section
+      class="w-full py-16 px-6 md:py-20 md:px-16 font-montserrat bg-white"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+      data-aos-once="true"
+    >
+      <div
+        class="flex flex-col md:flex-row items-center justify-between gap-10"
+      >
+        <!-- Left: Title & Description -->
+        <div class="md:w-1/2 space-y-6 text-center md:text-left">
+          <h2 class="text-2xl md:text-4xl font-bold text-hijau">Testimonial</h2>
+          <p class="text-gray-600 text-base md:text-lg leading-relaxed">
+            Voices from Our Community: Real Stories, Real Impact
+          </p>
+        </div>
+
+        <!-- Right: Swiper Slider -->
+        <div class="md:w-1/2 w-full">
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <!-- Slide 1 -->
+              <div class="swiper-slide bg-gray-50 p-6 rounded-xl shadow-lg">
+                <p class="text-gray-700 italic mb-4 leading-relaxed">
+                  "Every tree we plant is a promise for the next generation.
+                  Small actions together bring big changes."
+                </p>
+                <p class="font-semibold text-hijau">
+                  — Mira, Tree Planting Volunteer
+                </p>
+              </div>
+
+              <!-- Slide 2 -->
+              <div class="swiper-slide bg-gray-50 p-6 rounded-xl shadow-lg">
+                <p class="text-gray-700 italic mb-4 leading-relaxed">
+                  "Joining this community taught me that saving nature starts
+                  from simple steps. Together, we make a difference."
+                </p>
+                <p class="font-semibold text-hijau">— Budi, Eco Ambassador</p>
+              </div>
+
+              <!-- Slide 3 -->
+              <div class="swiper-slide bg-gray-50 p-6 rounded-xl shadow-lg">
+                <p class="text-gray-700 italic mb-4 leading-relaxed">
+                  "When we work as one, nature has a better chance to heal.
+                  Protecting the forest is protecting life itself."
+                </p>
+                <p class="font-semibold text-hijau">
+                  — Sari, Green Movement Leader
+                </p>
+              </div>
+
+              <!-- Slide 4 -->
+              <div class="swiper-slide bg-gray-50 p-6 rounded-xl shadow-lg">
+                <p class="text-gray-700 italic mb-4 leading-relaxed">
+                  "Community action is the heart of conservation. We plant, we
+                  educate, we protect."
+                </p>
+                <p class="font-semibold text-hijau">
+                  — Rendra, Community Organizer
+                </p>
+              </div>
+
+              <!-- Slide 5 -->
+              <div class="swiper-slide bg-gray-50 p-6 rounded-xl shadow-lg">
+                <p class="text-gray-700 italic mb-4 leading-relaxed">
+                  "I learned that saving the environment is not just a
+                  mission—it's a way of life."
+                </p>
+                <p class="font-semibold text-hijau">
+                  — Lani, Environmental Volunteer
+                </p>
+              </div>
+            </div>
+
+            <!-- Swiper Controls -->
+            <div class="swiper-pagination mt-4"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Content 4 -->
+    <section data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
+      <div
+        class="flex justify-between md:mt-32 mb-0 md:mb-64 items-center flex-col"
+      >
+        <div class="flex flex-col">
+          <p class="font-bold text-2xl md:text-4xl mb-4 text-hijau">
+            20 Community in Indonesian
+          </p>
+        </div>
+        <div class="flex flex-col w-4/5 md:w-3/5 overflow-x-hidden">
+          <div class="scroller" data-direction="right" data-speed="fast">
+            <div class="scroller__inner tag-list md:space-x-12">
+              <!--10 community-->
+              <a
+                href="https://lindungihutan.com/"
+                target="_blank"
+                class="inline-block w-[100px] h-[50px] md:w-[200px] md:h-[100px] overflow-hidden relative"
+              >
+                <img
+                  src="assets/images/lindugihutan1.jpg"
+                  alt=""
+                  class="w-full h-full object-contain"
+                />
+              </a>
+              <a
+                href="https://hutanitu.id/"
+                target="_blank"
+                class="inline-block w-[75px] h-[50px] md:w-[150px] md:h-[100px] overflow-hidden relative"
+              >
+                <img
+                  src="assets/images/hutanituindonesia.png"
+                  alt=""
+                  class="w-full h-full object-contain"
+                />
+              </a>
+              <a
+                href="https://www.walhi.or.id/"
+                target="_blank"
+                class="inline-block w-[100px] h-[50px] md:w-[200px] md:h-[100px] overflow-hidden relative"
+              >
+                <img
+                  src="assets/images/walhi.png"
+                  alt=""
+                  class="w-full h-full object-contain"
+                />
+              </a>
+              <a
+                href="https://leuserconservancy.or.id/"
+                target="_blank"
+                class="inline-block w-[150px] h-[50px] md:w-[300px] md:h-[100px] overflow-hidden relative"
+              >
+                <img
+                  src="assets/images/LOGO-FKL--scaled.jpg"
+                  alt=""
+                  class="w-full h-full object-contain"
+                />
+              </a>
+              <a
+                href="https://saveourborneo.org/"
+                target="_blank"
+                class="inline-block w-[100px] h-[50px] md:w-[200px] md:h-[100px] overflow-hidden relative"
+              >
+                <img
+                  src="assets/images/Logo-SOB-1024x839.png"
+                  alt=""
+                  class="w-full h-full object-contain"
+                />
+              </a>
+              <a
+                href="https://econusa.id/"
+                target="_blank"
+                class="inline-block w-[100px] h-[50px] md:w-[200px] md:h-[100px] overflow-hidden relative"
+              >
+                <img
+                  src="assets/images/econusa.jpeg"
+                  alt=""
+                  class="w-full h-full object-contain"
+                />
+              </a>
+              <a
+                href="https://kehati.or.id/"
+                target="_blank"
+                class="inline-block w-[100px] h-[50px] md:w-[200px] md:h-[100px] overflow-hidden relative"
+              >
+                <img
+                  src="assets/images/kehati_logo.jpeg"
+                  alt=""
+                  class="w-full h-full object-contain"
+                />
+              </a>
+              <a
+                href="https://www.jagarimba.id/"
+                target="_blank"
+                class="inline-block w-[100px] h-[50px] md:w-[200px] md:h-[100px] overflow-hidden relative"
+              >
+                <img
+                  src="assets/images/jaga_rimba.jpeg"
+                  alt=""
+                  class="w-full h-full object-contain"
+                />
+              </a>
+              <a
+                href="https://lib.ui.ac.id/detail?id=20511616&lokasi=lokal"
+                target="_blank"
+                class="inline-block w-[100px] h-[50px] md:w-[200px] md:h-[100px] overflow-hidden relative"
+              >
+                <img
+                  src="assets/images/gnp.jpeg"
+                  alt=""
+                  class="w-full h-full object-contain"
+                />
+              </a>
+              <a
+                href="https://fwi.or.id/"
+                target="_blank"
+                class="inline-block w-[100px] h-[50px] md:w-[200px] md:h-[100px] overflow-hidden relative"
+              >
+                <img
+                  src="assets/images/Logo-FWI-2020.png"
+                  alt=""
+                  class="w-full h-full object-contain"
+                />
+              </a>
+
+              <!-- 10 community-->
+              <a
+                href="https://www.rainforest-alliance.org/id/"
+                target="_blank"
+                class="inline-block w-[100px] h-[50px] md:w-[200px] md:h-[100px] overflow-hidden relative"
+              >
+                <img
+                  src="assets/images/RA-Logo-forest.png"
+                  alt=""
+                  class="w-full h-full object-contain"
+                />
+              </a>
+              <a
+                href="https://alamsehatlestari.org/"
+                target="_blank"
+                class="inline-block w-[75px] h-[50px] md:w-[150px] md:h-[100px] overflow-hidden relative"
+              >
+                <img
+                  src="assets/images/asri.jpg"
+                  alt=""
+                  class="w-full h-full object-contain"
+                />
+              </a>
+              <a
+                href="https://kpshk.org/"
+                target="_blank"
+                class="inline-block w-[100px] h-[50px] md:w-[200px] md:h-[100px] overflow-hidden relative"
+              >
+                <img
+                  src="assets/images/kpshk.jpeg"
+                  alt=""
+                  class="w-full h-full object-contain"
+                />
+              </a>
+              <a
+                href="https://kanopihijauindonesia.or.id/"
+                target="_blank"
+                class="inline-block w-[150px] h-[50px] md:w-[300px] md:h-[100px] overflow-hidden relative"
+              >
+                <img
+                  src="assets/images/Logo-kanopi-ID.png"
+                  alt=""
+                  class="w-full h-full object-contain"
+                />
+              </a>
+              <a
+                href="https://www.gbif.org/publisher/6d4d47b0-cfd2-4c4e-9cf8-799143d3adfc"
+                target="_blank"
+                class="inline-block w-[100px] h-[50px] md:w-[200px] md:h-[100px] overflow-hidden relative"
+              >
+                <img
+                  src="assets/images/tambora.jpeg"
+                  alt=""
+                  class="w-full h-full object-contain"
+                />
+              </a>
+              <a
+                href="https://borneoproject.org/"
+                target="_blank"
+                class="inline-block w-[100px] h-[50px] md:w-[200px] md:h-[100px] overflow-hidden relative"
+              >
+                <img
+                  src="assets/images/borneo.png"
+                  alt=""
+                  class="w-full h-full object-contain"
+                />
+              </a>
+              <a
+                href="https://komunita.id/tag/cinta-hutan-indonesia/"
+                target="_blank"
+                class="inline-block w-[100px] h-[50px] md:w-[200px] md:h-[100px] overflow-hidden relative"
+              >
+                <img
+                  src="assets/images/logo-2.1.svg"
+                  alt=""
+                  class="w-full h-full object-contain"
+                />
+              </a>
+              <a
+                href="https://profauna.net/id"
+                target="_blank"
+                class="inline-block w-[100px] h-[50px] md:w-[200px] md:h-[100px] overflow-hidden relative"
+              >
+                <img
+                  src="assets/images/Logoprofauna.gif"
+                  alt=""
+                  class="w-full h-full object-contain"
+                />
+              </a>
+              <a
+                href="https://kehutanan.go.id/program/KESATUAN-PENGELOLAAN-HUTAN--"
+                target="_blank"
+                class="inline-block w-[100px] h-[50px] md:w-[200px] md:h-[100px] overflow-hidden relative"
+              >
+                <img
+                  src="assets/images/kph.jpeg"
+                  alt=""
+                  class="w-full h-full object-contain"
+                />
+              </a>
+              <a
+                href="https://sahabatalamindonesia.org/"
+                target="_blank"
+                class="inline-block w-[100px] h-[50px] md:w-[200px] md:h-[100px] overflow-hidden relative"
+              >
+                <img
+                  src="assets/images/logo-salam-150x150.png"
+                  alt=""
+                  class="w-full h-full object-contain"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Content 5 -->
+    <section
+      class="w-full py-6 px-6 mb-16 md:px-16 text-center font-montserrat"
+    >
+      <div data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
+        <h2 class="text-2xl md:text-3xl font-extrabold text-hijau">
+          Join Our
+          <span class="text-aksen">Community</span>
+        </h2>
+        <p class="text-gray-600 text-sm md:text-base mb-6">
+          Stay connected and get real-time updates about our green actions. Join
+          our WhatsApp Channel and be part of the movement!
+        </p>
+        <a
+          href="https://whatsapp.com/channel/0029Vb6ascfHwXb5t7bMMe1S"
+          target="_blank"
+          class="bg-hijau hover:bg-aksen text-white font-bold py-3 px-8 rounded-lg text-lg transition-colors duration-300 font-montserrat shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+        >
+          Join WhatsApp Channel
+        </a>
+      </div>
+    </section>
+
+    <!-- footer -->
+    <footer
+      class="bg-hijau text-white py-8 md:pt-8"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+      data-aos-once="true"
+    >
+      <div class="container mx-auto px-4 md:px-8">
+        <div
+          class="flex flex-col mx-4 md:mx-6 lg:mx-0 md:flex-row md:space-x-16 lg:space-x-32"
+        >
+          <div class="about mb-8 md:mb-0 md:w-2/3">
+            <h4 class="font-bold text-base md:text-xl mb-4">Save Forest</h4>
+            <p
+              class="mb-4 text-xs md:text-sm lg:text-base text-white/90 text-justify"
+            >
+              Save Forest is a website developed by a passionate team of
+              aspiring web designers from Politeknik Negeri Jakarta. With
+              creativity as our foundation and innovation as our driving force,
+              we are proud to showcase our skills in the TeknoCom International
+              Web Design Competition 2025. The name "Save Forest" reflects our
+              commitment to environmental awareness and digital advocacy—turning
+              awareness into action through the power of thoughtful design and
+              technology. Through this platform, we aim to inspire individuals
+              to take part in protecting our forests, preserving biodiversity,
+              and building a sustainable future for the next generations.
+            </p>
+          </div>
+          <div class="contact-info md:w-1/3 flex flex-col">
+            <h4 class="font-bold text-base md:text-xl mb-4">Our Socials</h4>
+            <div class="text-xs md:text-sm lg:text-base space-y-5 w-full">
+              <div class="flex flex-col gap-2">
+                <p class="text-white">Ahmad Zainul Mufid</p>
+                <div class="social-icons flex space-x-3 md:space-x-4">
+                  <a
+                    href="https://www.instagram.com/ahmadzainulmfd_/
+                    "
+                    class="bg-white text-hijau inline-flex items-center justify-center w-8 h-8 rounded-full hover:bg-aksen hover:text-white transition"
+                  >
+                    <i class="fa-brands fa-instagram"></i>
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/ahmad-zainul-mufid-b29b91219/
+                    "
+                    class="bg-white text-hijau inline-flex items-center justify-center w-8 h-8 rounded-full hover:bg-aksen hover:text-white transition"
+                  >
+                    <i class="fab fa-linkedin-in"></i>
+                  </a>
+                  <a
+                    href="https://github.com/ahmadzainulmufid/
+                    "
+                    class="bg-white text-hijau inline-flex items-center justify-center w-8 h-8 rounded-full hover:bg-aksen hover:text-white transition"
+                  >
+                    <i class="fab fa-github"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="flex flex-col gap-2">
+                <p class="text-white">Dimas Adlan Wiyanto</p>
+                <div class="social-icons flex space-x-3 md:space-x-4">
+                  <a
+                    href="https://www.instagram.com/dimasadlan/
+                    "
+                    class="bg-white text-hijau inline-flex items-center justify-center w-8 h-8 rounded-full hover:bg-aksen hover:text-white transition"
+                  >
+                    <i class="fa-brands fa-instagram"></i>
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/dimasadlan/
+                    "
+                    class="bg-white text-hijau inline-flex items-center justify-center w-8 h-8 rounded-full hover:bg-aksen hover:text-white transition"
+                  >
+                    <i class="fab fa-linkedin-in"></i>
+                  </a>
+                  <a
+                    href="https://github.com/DimasAdlan13
+                    "
+                    class="bg-white text-hijau inline-flex items-center justify-center w-8 h-8 rounded-full hover:bg-aksen hover:text-white transition"
+                  >
+                    <i class="fab fa-github"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="flex flex-col gap-2">
+                <p class="text-white">Muhammad Dzaki Alif Hidayat</p>
+                <div class="social-icons flex space-x-3 md:space-x-4">
+                  <a
+                    href="https://www.instagram.com/dzakialiff/
+                    "
+                    class="bg-white text-hijau inline-flex items-center justify-center w-8 h-8 rounded-full hover:bg-aksen hover:text-white transition"
+                  >
+                    <i class="fa-brands fa-instagram"></i>
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/muhammad-dzaki-alif-hidayat-83365023b/
+                    "
+                    class="bg-white text-hijau inline-flex items-center justify-center w-8 h-8 rounded-full hover:bg-aksen hover:text-white transition"
+                  >
+                    <i class="fab fa-linkedin-in"></i>
+                  </a>
+                  <a
+                    href="https://github.com/dzakialif
+                    "
+                    class="bg-white text-hijau inline-flex items-center justify-center w-8 h-8 rounded-full hover:bg-aksen hover:text-white transition"
+                  >
+                    <i class="fab fa-github"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr class="border-white/30 my-6 md:my-8" />
+      <div class="text-center text-xs md:text-sm text-white/80">
+        <p>Save Forest © 2025, All Rights Reserved</p>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/animation.js"></script>
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <script>
+      const swiper = new Swiper(".mySwiper", {
+        loop: true,
+        grabCursor: true,
+        autoplay: {
+          delay: 2000,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        effect: "slide",
+      });
+    </script>
+    <script>
+      const scrollers = document.querySelectorAll(".scroller");
+
+      if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        addAnimation();
+      }
+
+      function addAnimation() {
+        scrollers.forEach((scroller) => {
+          scroller.setAttribute("data-animated", true);
+
+          const scrollerInner = scroller.querySelector(".scroller__inner");
+          const scrollerContent = Array.from(scrollerInner.children);
+
+          scrollerContent.forEach((item) => {
+            const duplicatedItem = item.cloneNode(true);
+            duplicatedItem.setAttribute("image-hidden", true);
+            scrollerInner.appendChild(duplicatedItem);
+          });
+        });
+      }
+    </script>
+  </body>
+</html>
