@@ -4,6 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Save Forest</title>
+    <meta
+      name="description"
+      content="Save Forest - Education on Deforestation"
+    />
+    <meta
+      name="keywords"
+      content="Save Forest, Deforestation, Education, Environment, Conservation"
+    />
+    <meta name="author" content="Save Forest Team" />
+    <link rel="icon" type="image/png" href="/assets/images/logo-putih.png" />
     <link href="assets/css/output.css" rel="stylesheet" />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
@@ -17,7 +27,8 @@
     />
     <script src="https://unpkg.com/@heroicons/vue@2.0.16/dist/heroicons.min.js"></script>
   </head>
-<body class="bg-white font-montserrat">    <!-- navbar -->
+  <body class="bg-white font-montserrat">
+    <!-- navbar -->
     <nav
       id="mainNavbar"
       class="top-0 left-0 w-full transition-all duration-300 bg-white font-montserrat shadow-xl"
@@ -30,13 +41,13 @@
           class="flex items-center space-x-3 rtl:space-x-reverse"
         >
           <img
-            src="assets/images/logo.png"
-            class="logo-hijau w-12 transition-all duration-300"
+            src="/assets/images/logo.png"
+            class="w-12 transition-all duration-300"
             alt="Save Forest"
           />
           <span
             id="navBrand"
-            class="self-center text-2xl font-semibold whitespace-nowrap transition-colors duration-300 text-hijau"
+            class="self-center text-2xl font-semibold whitespace-nowrap transition-colors duration-300 !text-green-900"
           >
             Save Forest
           </span>
@@ -181,7 +192,8 @@
       data-aos-once="true"
     >
       <h2 class="text-2xl md:text-3xl font-extrabold text-hijau">
-        10 Million Hectares of Forest Are <span class="text-aksen">Lost Every Year</span> 
+        10 Million Hectares of Forest Are
+        <span class="text-aksen">Lost Every Year</span>
       </h2>
       <p class="mt-2 text-gray-600 text-base md:text-lg">
         A staggering amount of forest disappears annually due to illegal
@@ -205,10 +217,13 @@
           <h2 class="text-2xl md:text-4xl font-bold text-hijau">
             What is Deforestation?
           </h2>
-          <p class="text-gray-600 text-base text-justify md:text-lg leading-relaxed">
-            Deforestation refers to the clearing, destruction, or removal of forests by human activities, often to make way for agriculture, 
-            livestock, logging, mining, or urban development. 
-            It results in the conversion of forested land into non-forest uses.
+          <p
+            class="text-gray-600 text-base text-justify md:text-lg leading-relaxed"
+          >
+            Deforestation refers to the clearing, destruction, or removal of
+            forests by human activities, often to make way for agriculture,
+            livestock, logging, mining, or urban development. It results in the
+            conversion of forested land into non-forest uses.
           </p>
         </div>
 
@@ -459,7 +474,7 @@
         data-aos-once="true"
       >
         <h2 class="text-3xl md:text-4xl font-extrabold text-green-600 mb-10">
-          How to <span class="text-aksen">Prevent</span> 
+          How to <span class="text-aksen">Prevent</span>
         </h2>
 
         <!-- Grid 2x2 -->
@@ -545,7 +560,9 @@
       data-aos-once="true"
     >
       <div class="container mx-auto px-4 md:px-8">
-        <div class="flex flex-col mx-4 md:mx-6 lg:mx-0 md:flex-row md:space-x-16 lg:space-x-32">
+        <div
+          class="flex flex-col mx-4 md:mx-6 lg:mx-0 md:flex-row md:space-x-16 lg:space-x-32"
+        >
           <div class="about mb-8 md:mb-0 md:w-2/3">
             <h4 class="font-bold text-base md:text-xl mb-4">Save Forest</h4>
             <p
@@ -653,12 +670,12 @@
         <p>Save Forest © 2025, All Rights Reserved</p>
       </div>
     </footer>
-      <script src="assets/js/slider.js"></script>
+    <script src="assets/js/slider.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="assets/js/animation.js"></script>
     <script src="assets/js/navbar.js"></script>
     <script src="assets/js/counter.js"></script>
-     <script>
+    <script>
       function toggleMenu() {
         const menu = document.getElementById("navbar-default");
         menu.classList.toggle("translate-x-full");

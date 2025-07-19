@@ -4,6 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Save Forest</title>
+    <meta
+      name="description"
+      content="Save Forest - Education on Deforestation"
+    />
+    <meta
+      name="keywords"
+      content="Save Forest, Deforestation, Education, Environment, Conservation"
+    />
+    <meta name="author" content="Save Forest Team" />
+    <link rel="icon" type="image/png" href="/assets/images/logo-putih.png" />
     <link href="assets/css/output.css" rel="stylesheet" />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
@@ -155,10 +165,7 @@
         <div
           class="absolute inset-0 bg-black/60 z-10 pointer-events-none"
         ></div>
-        <div
-          class="hidden"
-          id="sliderBullets"
-        ></div>
+        <div class="hidden" id="sliderBullets"></div>
       </div>
       <div
         class="relative z-30 flex flex-col items-center justify-center h-full w-full"
@@ -256,7 +263,9 @@
           <div
             class="flex-1 bg-white border border-black rounded-lg p-6 min-w-[270px]"
           >
-            <p class="text-gray-400 text-base mb-2">Carbon Emissions Due to Forest Loss</p>
+            <p class="text-gray-400 text-base mb-2">
+              Carbon Emissions Due to Forest Loss
+            </p>
             <div
               id="co2Counter"
               class="text-2xl md:text-3xl font-bold text-aksen mb-2"
@@ -272,179 +281,301 @@
     </section>
 
     <!-- grafik -->
-    <section 
+    <section
       class="w-full px-4 mb-20 md:mb-32"
       data-aos="fade-up"
       data-aos-duration="1000"
-      data-aos-once="true">
-      <div class="w-full md:max-w-4xl mx-auto bg-white rounded-lg shadow-xl border-2 border-black md:border-0 p-4 md:p-6 overflow-x-auto">
+      data-aos-once="true"
+    >
+      <div
+        class="w-full md:max-w-4xl mx-auto bg-white rounded-lg shadow-xl border-2 border-black md:border-0 p-4 md:p-6 overflow-x-auto"
+      >
         <!-- Judul -->
-        <h1 id="typing-title" class="text-lg md:text-xl font-bold text-center text-hijau mb-1">
-        </h1>
+        <h1
+          id="typing-title"
+          class="text-lg md:text-xl font-bold text-center text-hijau mb-1"
+        ></h1>
         <p class="text-sm md:text-base text-center text-coklat mb-6">
-            Decrease in Tree Cover Area in hectares
+          Decrease in Tree Cover Area in hectares
         </p>
 
         <!-- Skala -->
         <div class="flex mb-2 ml-[160px] md:ml-[200px]">
-            <div class="w-12 md:w-24 text-xs text-gray-500 text-center">0</div>
-            <div class="w-12 md:w-24 text-xs text-gray-500 text-center">1</div>
-            <div class="w-12 md:w-24 text-xs text-gray-500 text-center">2</div>
-            <div class="w-12 md:w-24 text-xs text-gray-500 text-center">3</div>
-            <div class="w-12 md:w-24 text-xs text-gray-500 text-center">4</div>
+          <div class="w-12 md:w-24 text-xs text-gray-500 text-center">0</div>
+          <div class="w-12 md:w-24 text-xs text-gray-500 text-center">1</div>
+          <div class="w-12 md:w-24 text-xs text-gray-500 text-center">2</div>
+          <div class="w-12 md:w-24 text-xs text-gray-500 text-center">3</div>
+          <div class="w-12 md:w-24 text-xs text-gray-500 text-center">4</div>
         </div>
 
         <!-- Grafik Batang -->
         <div class="space-y-3 min-w-[600px] md:min-w-0">
-            <!-- Riau -->
-            <div class="flex items-center">
-                <div class="items-center w-40 md:w-48 text-sm md:text-base text-gray-700 text-right pr-4">Riau
-                </div>
-                <div class="w-full flex justify-between items-center gap-6 md:gap-0">
-                  <div class="h-6 md:h-8 bg-aksen flex items-center text-white text-xs md:text-sm px-2 rounded-r" 
-                       style="width: calc(6 * 80px);">
-                      4.30 Mha
-                  </div>
-                    <div>
-                      <img src="assets/images/pemprov/pemprov_riau.png" alt="riau" class="w-8">
-                    </div>
-                </div>
+          <!-- Riau -->
+          <div class="flex items-center">
+            <div
+              class="items-center w-40 md:w-48 text-sm md:text-base text-gray-700 text-right pr-4"
+            >
+              Riau
             </div>
-            
-            <!-- Kalimantan Barat -->
-            <div class="flex items-center">
-                <div class="w-40 md:w-48 text-sm md:text-base text-gray-700 text-right pr-4">Kalimantan Barat</div>
-                <div class="w-full flex justify-between items-center gap-6 md:gap-0">
-                  <div class="h-6 md:h-8 bg-aksen flex items-center text-white text-xs md:text-sm px-2 rounded-r" 
-                       style="width: calc(5 * 80px);">
-                      4,21 Mha
-                  </div>
-                  <div>
-                      <img src="assets/images/pemprov/pemprov_kalbar.png" alt="riau" class="w-8">
-                    </div>
-                </div>
+            <div
+              class="w-full flex justify-between items-center gap-6 md:gap-0"
+            >
+              <div
+                class="h-6 md:h-8 bg-aksen flex items-center text-white text-xs md:text-sm px-2 rounded-r"
+                style="width: calc(6 * 80px)"
+              >
+                4.30 Mha
+              </div>
+              <div>
+                <img
+                  src="assets/images/pemprov/pemprov_riau.png"
+                  alt="riau"
+                  class="w-8"
+                />
+              </div>
             </div>
-            
-            <!-- Kalimantan Tengah -->
-            <div class="flex items-center">
-                <div class="w-40 md:w-48 text-sm md:text-base text-gray-700 text-right pr-4">Kalimantan Tengah</div>
-                <div class="w-full flex justify-between items-center gap-6 md:gap-0">
-                  <div class="h-6 md:h-8 bg-aksen flex items-center text-white text-xs md:text-sm px-2 rounded-r" 
-                       style="width: calc(4.7 * 80px);">
-                      3,86 Mha
-                  </div>
-                  <div>
-                      <img src="assets/images/pemprov/pemprov_kalteng.jpg" alt="riau" class="w-8">
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Sumatera Selatan -->
-            <div class="flex items-center">
-                <div class="w-40 md:w-48 text-sm md:text-base text-gray-700 text-right pr-4">Sumatera Selatan</div>
-                <div class="w-full flex justify-between items-center gap-6 md:gap-0">
-                  <div class="h-6 md:h-8 bg-aksen flex items-center text-white text-xs md:text-sm px-2 rounded-r" 
-                       style="width: calc(4.5 * 80px);">
-                      3,29 Mha
-                  </div>
-                  <div>
-                      <img src="assets/images/pemprov/pemprov_sumsel.png" alt="riau" class="w-8">
-                  </div>
-                </div>
-            </div>
-            
-            <!-- Kalimantan Timur -->
-            <div class="flex items-center">
-                <div class="w-40 md:w-48 text-sm md:text-base text-gray-700 text-right pr-4">Kalimantan Timur</div>
-                <div class="w-full flex justify-between items-center gap-6 md:gap-0">
-                  <div class="h-6 md:h-8 bg-aksen flex items-center text-white text-xs md:text-sm px-2 rounded-r" 
-                       style="width: calc(4.2 * 80px);">
-                      3,13 Mha
-                  </div>
-                  <div>
-                      <img src="assets/images/pemprov/pemprov_kaltim.png" alt="riau" class="w-8">
-                  </div>
-                </div>
-            </div>
-            
-            <!-- Jambi -->
-            <div class="flex items-center">
-                <div class="w-40 md:w-48 text-sm md:text-base text-gray-700 text-right pr-4">Jambi</div>
-                <div class="w-full flex justify-between items-center gap-6 md:gap-0">
-                  <div class="h-6 md:h-8 bg-aksen flex items-center text-white text-xs md:text-sm px-2 rounded-r" 
-                       style="width: calc(3.8 * 80px);">
-                      2,01 Mha
-                  </div>
-                  <div class="-mr-1">
-                      <img src="assets/images/pemprov/pemprov_jambi.png" alt="riau" class="w-10">
-                  </div>
-                </div>
-            </div>
-            
-            <!-- Sumatra Utara -->
-            <div class="flex items-center">
-                <div class="w-40 md:w-48 text-sm md:text-base text-gray-700 text-right pr-4">Sumatra Utara</div>
-                <div class="w-full flex justify-between items-center gap-6 md:gap-0">
-                  <div class="h-6 md:h-8 bg-aksen flex items-center text-white text-xs md:text-sm px-2 rounded-r" 
-                       style="width: calc(3.4 * 80px);">
-                      1,62 Mha
-                  </div>
-                  <div class="-mr-1">
-                      <img src="assets/images/pemprov/pemprov_sumut.png" alt="riau" class="w-10">
-                  </div>
-                </div>
-            </div>
-            
-            <!-- Kalimantan Selatan -->
-            <div class="flex items-center">
-                <div class="w-40 md:w-48 text-sm md:text-base text-gray-700 text-right pr-4">Kalimantan Selatan</div>
-                <div class="w-full flex justify-between items-center gap-6 md:gap-0">
-                  <div class="h-6 md:h-8 bg-aksen flex items-center text-white text-xs md:text-sm px-2 rounded-r" 
-                       style="width: calc(2.6 * 80px);">
-                      934 Kha
-                  </div>
-                  <div class="-mr-1">
-                      <img src="assets/images/pemprov/pemprov_kalsel.png" alt="riau" class="w-10">
-                  </div>
-                </div>
-            </div>
+          </div>
 
-            <!-- Aceh -->
-            <div class="flex items-center">
-                <div class="w-40 md:w-48 text-sm md:text-base text-gray-700 text-right pr-4">Aceh</div>
-                <div class="w-full flex justify-between items-center gap-6 md:gap-0">
-                  <div class="h-6 md:h-8 bg-aksen flex items-center text-white text-xs md:text-sm px-2 rounded-r" 
-                       style="width: calc(2 * 80px);">
-                      857 Kha
-                  </div>
-                  <div class="-mr-2">
-                      <img src="assets/images/pemprov/pemprov_aceh.png" alt="riau" class="w-12">
-                  </div>
-                </div>
+          <!-- Kalimantan Barat -->
+          <div class="flex items-center">
+            <div
+              class="w-40 md:w-48 text-sm md:text-base text-gray-700 text-right pr-4"
+            >
+              Kalimantan Barat
             </div>
-            
-            <!-- Sulawesi Tengah -->
-            <div class="flex items-center">
-                <div class="w-40 md:w-48 text-sm md:text-base text-gray-700 text-right pr-4">Sulawesi Tengah</div>
-                <div class="w-full flex justify-between items-center gap-6 md:gap-0">
-                  <div class="h-6 md:h-8 bg-aksen flex items-center text-white text-xs md:text-sm px-2 rounded-r" 
-                       style="width: calc(1.8 * 80px);">
-                      842 Kha
-                  </div>
-                  <div class="-mr-1">
-                      <img src="assets/images/pemprov/pemprov_sulteng.png" alt="riau" class="w-10">
-                  </div>
-                </div>
+            <div
+              class="w-full flex justify-between items-center gap-6 md:gap-0"
+            >
+              <div
+                class="h-6 md:h-8 bg-aksen flex items-center text-white text-xs md:text-sm px-2 rounded-r"
+                style="width: calc(5 * 80px)"
+              >
+                4,21 Mha
+              </div>
+              <div>
+                <img
+                  src="assets/images/pemprov/pemprov_kalbar.png"
+                  alt="riau"
+                  class="w-8"
+                />
+              </div>
             </div>
-            
+          </div>
+
+          <!-- Kalimantan Tengah -->
+          <div class="flex items-center">
+            <div
+              class="w-40 md:w-48 text-sm md:text-base text-gray-700 text-right pr-4"
+            >
+              Kalimantan Tengah
+            </div>
+            <div
+              class="w-full flex justify-between items-center gap-6 md:gap-0"
+            >
+              <div
+                class="h-6 md:h-8 bg-aksen flex items-center text-white text-xs md:text-sm px-2 rounded-r"
+                style="width: calc(4.7 * 80px)"
+              >
+                3,86 Mha
+              </div>
+              <div>
+                <img
+                  src="assets/images/pemprov/pemprov_kalteng.jpg"
+                  alt="riau"
+                  class="w-8"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Sumatera Selatan -->
+          <div class="flex items-center">
+            <div
+              class="w-40 md:w-48 text-sm md:text-base text-gray-700 text-right pr-4"
+            >
+              Sumatera Selatan
+            </div>
+            <div
+              class="w-full flex justify-between items-center gap-6 md:gap-0"
+            >
+              <div
+                class="h-6 md:h-8 bg-aksen flex items-center text-white text-xs md:text-sm px-2 rounded-r"
+                style="width: calc(4.5 * 80px)"
+              >
+                3,29 Mha
+              </div>
+              <div>
+                <img
+                  src="assets/images/pemprov/pemprov_sumsel.png"
+                  alt="riau"
+                  class="w-8"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Kalimantan Timur -->
+          <div class="flex items-center">
+            <div
+              class="w-40 md:w-48 text-sm md:text-base text-gray-700 text-right pr-4"
+            >
+              Kalimantan Timur
+            </div>
+            <div
+              class="w-full flex justify-between items-center gap-6 md:gap-0"
+            >
+              <div
+                class="h-6 md:h-8 bg-aksen flex items-center text-white text-xs md:text-sm px-2 rounded-r"
+                style="width: calc(4.2 * 80px)"
+              >
+                3,13 Mha
+              </div>
+              <div>
+                <img
+                  src="assets/images/pemprov/pemprov_kaltim.png"
+                  alt="riau"
+                  class="w-8"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Jambi -->
+          <div class="flex items-center">
+            <div
+              class="w-40 md:w-48 text-sm md:text-base text-gray-700 text-right pr-4"
+            >
+              Jambi
+            </div>
+            <div
+              class="w-full flex justify-between items-center gap-6 md:gap-0"
+            >
+              <div
+                class="h-6 md:h-8 bg-aksen flex items-center text-white text-xs md:text-sm px-2 rounded-r"
+                style="width: calc(3.8 * 80px)"
+              >
+                2,01 Mha
+              </div>
+              <div class="-mr-1">
+                <img
+                  src="assets/images/pemprov/pemprov_jambi.png"
+                  alt="riau"
+                  class="w-10"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Sumatra Utara -->
+          <div class="flex items-center">
+            <div
+              class="w-40 md:w-48 text-sm md:text-base text-gray-700 text-right pr-4"
+            >
+              Sumatra Utara
+            </div>
+            <div
+              class="w-full flex justify-between items-center gap-6 md:gap-0"
+            >
+              <div
+                class="h-6 md:h-8 bg-aksen flex items-center text-white text-xs md:text-sm px-2 rounded-r"
+                style="width: calc(3.4 * 80px)"
+              >
+                1,62 Mha
+              </div>
+              <div class="-mr-1">
+                <img
+                  src="assets/images/pemprov/pemprov_sumut.png"
+                  alt="riau"
+                  class="w-10"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Kalimantan Selatan -->
+          <div class="flex items-center">
+            <div
+              class="w-40 md:w-48 text-sm md:text-base text-gray-700 text-right pr-4"
+            >
+              Kalimantan Selatan
+            </div>
+            <div
+              class="w-full flex justify-between items-center gap-6 md:gap-0"
+            >
+              <div
+                class="h-6 md:h-8 bg-aksen flex items-center text-white text-xs md:text-sm px-2 rounded-r"
+                style="width: calc(2.6 * 80px)"
+              >
+                934 Kha
+              </div>
+              <div class="-mr-1">
+                <img
+                  src="assets/images/pemprov/pemprov_kalsel.png"
+                  alt="riau"
+                  class="w-10"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Aceh -->
+          <div class="flex items-center">
+            <div
+              class="w-40 md:w-48 text-sm md:text-base text-gray-700 text-right pr-4"
+            >
+              Aceh
+            </div>
+            <div
+              class="w-full flex justify-between items-center gap-6 md:gap-0"
+            >
+              <div
+                class="h-6 md:h-8 bg-aksen flex items-center text-white text-xs md:text-sm px-2 rounded-r"
+                style="width: calc(2 * 80px)"
+              >
+                857 Kha
+              </div>
+              <div class="-mr-2">
+                <img
+                  src="assets/images/pemprov/pemprov_aceh.png"
+                  alt="riau"
+                  class="w-12"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Sulawesi Tengah -->
+          <div class="flex items-center">
+            <div
+              class="w-40 md:w-48 text-sm md:text-base text-gray-700 text-right pr-4"
+            >
+              Sulawesi Tengah
+            </div>
+            <div
+              class="w-full flex justify-between items-center gap-6 md:gap-0"
+            >
+              <div
+                class="h-6 md:h-8 bg-aksen flex items-center text-white text-xs md:text-sm px-2 rounded-r"
+                style="width: calc(1.8 * 80px)"
+              >
+                842 Kha
+              </div>
+              <div class="-mr-1">
+                <img
+                  src="assets/images/pemprov/pemprov_sulteng.png"
+                  alt="riau"
+                  class="w-10"
+                />
+              </div>
+            </div>
+          </div>
         </div>
 
         <!-- Footer -->
         <p class="text-xs text-gray-500 text-center mt-6">
-            Source: globalforestwatch
+          Source: globalforestwatch
         </p>
-    </div>
-
+      </div>
     </section>
 
     <section
@@ -472,6 +603,34 @@
             loading="lazy"
           ></iframe>
         </div>
+      </div>
+    </section>
+
+    <!-- Content 8 -->
+    <section
+      class="w-full py-16 px-6 mb-16 md:px-16 text-center font-montserrat"
+    >
+      <div data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
+        <h2 class="text-2xl md:text-3xl font-extrabold text-hijau">
+          Not sure what deforestation
+          <span class="text-aksen"> really means?</span>
+        </h2>
+        <p class="text-gray-600 text-sm md:text-base mb-6 leading-relaxed">
+          Before you take action, visit our
+          <a
+            href="/education.html"
+            class="text-hijau font-semibold hover:underline"
+            >Education</a
+          >
+          page and learn how deforestation impacts our world.<br />
+          Together, let’s make a difference!
+        </p>
+        <a
+          href="/action.html"
+          class="bg-hijau hover:bg-aksen text-white font-bold py-3 px-8 rounded-lg text-lg transition-all duration-300 font-montserrat shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-105"
+        >
+          Learn More <span class="ml-2">→</span>
+        </a>
       </div>
     </section>
 
