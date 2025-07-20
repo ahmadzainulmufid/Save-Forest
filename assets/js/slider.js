@@ -63,35 +63,112 @@ function renderSliderSlide(nextIdx = null) {
 
   setTimeout(() => {
     current = nextIdx;
-    renderSliderSlide();
   }, 700);
 }
 
-function renderSliderText(idx, animateIn = false) {
+function typeText(element, htmlText, speed = 25) {
+  return new Promise((resolve) => {
+    const tempDiv = document.createElement("div");
+    tempDiv.innerHTML = htmlText;
+    const nodes = Array.from(tempDiv.childNodes);
+    element.innerHTML = "";
+
+    let i = 0;
+    let currentNode = null;
+    let currentText = "";
+    let charIndex = 0;
+
+    function typeChar() {
+      if (!currentNode && i < nodes.length) {
+        currentNode = nodes[i++];
+        if (currentNode.nodeType === Node.TEXT_NODE) {
+          currentText = currentNode.textContent;
+          const span = document.createElement("span");
+          span.dataset.type = "text";
+          element.appendChild(span);
+        } else if (currentNode.nodeType === Node.ELEMENT_NODE) {
+          const cloned = currentNode.cloneNode(false);
+          currentText = currentNode.textContent;
+          element.appendChild(cloned);
+        }
+        charIndex = 0;
+      }
+
+      if (currentNode) {
+        const parent = element.lastChild;
+        if (charIndex < currentText.length) {
+          parent.textContent += currentText[charIndex++];
+          setTimeout(typeChar, speed);
+        } else {
+          currentNode = null;
+          typeChar();
+        }
+      } else if (i < nodes.length) {
+        typeChar(); // move to next node
+      } else {
+        resolve();
+      }
+    }
+
+    typeChar();
+  });
+}
+
+
+async function renderSliderText(idx, animateIn = false) {
   if (!sliderTextSection) return;
-  sliderTextSection.innerHTML = `
-    <h1 class="text-xl md:text-5xl font-extrabold leading-tight">
-      ${slides[idx].title}
-    </h1>
-    <p class="text-sm md:text-xl font-extralight leading-relaxed">
-      ${slides[idx].description}
-    </p>
-    <div class="mt-4">
+
+  const isFirstSlide = idx === 0;
+  const isCentered = idx === 1 || idx === 2;
+
+  // Reset dan setup style
+  sliderTextSection.className = `
+    flex flex-col gap-6 text-background w-full transition-all duration-500
+    ${isCentered ? "items-center justify-center text-center h-full" : "items-start justify-start md:text-left"}
+  `;
+  sliderTextSection.innerHTML = "";
+
+  // Buat elemen teks
+  const h1 = document.createElement("h1");
+  h1.className = "text-xl md:text-5xl font-extrabold leading-tight text-white";
+  const p = document.createElement("p");
+  p.className = "text-sm md:text-xl font-extralight leading-relaxed text-background";
+
+  sliderTextSection.appendChild(h1);
+  sliderTextSection.appendChild(p);
+
+  // Jalankan typing
+  await typeText(h1, slides[idx].title, 20);
+  await typeText(p, slides[idx].description, 10);
+
+  // Bersihkan tombol lama jika ada
+  const oldBtn = sliderTextSection.querySelector(".slider-cta-btn");
+  if (oldBtn) oldBtn.remove();
+
+  // Tambahkan tombol hanya jika slide pertama & index masih relevan
+  if (isFirstSlide && current === 0) {
+    const btnWrapper = document.createElement("div");
+    btnWrapper.innerHTML = `
       <a href="/education.html"
-        class="inline-block bg-aksen text-white px-6 py-3 rounded-full text-sm md:text-base font-semibold hover:bg-background hover:text-aksen transition"
+        class="slider-cta-btn inline-block bg-aksen text-white px-6 py-3 rounded-full text-sm md:text-base font-semibold hover:bg-background hover:text-aksen transition mt-4"
       >
         Learn How You Can Help →
       </a>
-    </div>
-  `;
-  // Fade in
+    `;
+    sliderTextSection.appendChild(btnWrapper);
+  }
+
+  // Fade in animasi (opsional)
   sliderTextSection.classList.add('opacity-0');
-  sliderTextSection.classList.remove('opacity-100');
   setTimeout(() => {
     sliderTextSection.classList.remove('opacity-0');
     sliderTextSection.classList.add('opacity-100');
   }, 30);
 }
+
+
+
+
 
 function animateTextFadeOut(after) {
   if (!sliderTextSection) return after && after();

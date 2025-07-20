@@ -50,7 +50,7 @@
         <button
           onclick="toggleMenu()"
           type="button"
-          class="inline-flex items-center p-2 w-10 h-10 justify-center text-md text-hijau rounded-lg md:hidden ring-2 ring-hijau z-50"
+          class="inline-flex items-center p-2 w-10 h-10 justify-center text-md text-hijau rounded-lg md:hidden ring-2 ring-hijau z-50 overflow-y-hidden"
           aria-controls="navbar-default"
           aria-expanded="false"
         >
@@ -143,7 +143,7 @@
 
     <!-- banner -->
     <section
-      class="md:pt-24 w-full h-[80vh] md:h-[85vh] px-6 font-montserrat md:px-16 relative overflow-hidden"
+      class="md:pt-24 w-full h-[80vh] md:h-[90vh] px-6 font-montserrat md:px-16 relative overflow-hidden"
     >
       <!-- Background Image Slider -->
       <div class="absolute inset-0 w-full h-full">
@@ -156,7 +156,7 @@
           class="absolute inset-0 bg-black/60 z-10 pointer-events-none"
         ></div>
         <div
-          class="absolute left-1/2 -translate-x-1/2 bottom-6 flex gap-2 z-20"
+          class="hidden"
           id="sliderBullets"
         ></div>
       </div>
@@ -207,7 +207,7 @@
 
     <!-- Forest Damage Statistics Section -->
     <section
-      class="w-full py-16 px-4 font-montserrat md:py-20 md:px-16 md:my-28"
+      class="w-full py-16 px-4 font-montserrat md:py-20 md:px-16 md:my-32"
       data-aos="fade-up"
       data-aos-duration="1000"
       data-aos-once="true"
@@ -219,14 +219,14 @@
           Forest Damage Statistics
         </h2>
         <p class="text-base md:text-lg text-center mb-10 text-black/70">
-          Year over year data on forest damage.
+          Summary of forest loss and CO₂ emissions from 2001 to 2024.
         </p>
         <div class="w-full flex flex-col md:flex-row gap-6 justify-center">
           <!-- Card 1 -->
           <div
             class="flex-1 bg-white border border-black rounded-lg p-6 min-w-[270px]"
           >
-            <p class="text-gray-400 text-base mb-2">Area of Forest Lost (ha)</p>
+            <p class="text-gray-400 text-base mb-2">Area of Forest Lost</p>
             <div
               id="forestLostCounter"
               class="text-2xl md:text-3xl font-bold mb-2 text-aksen"
@@ -241,7 +241,7 @@
           <div
             class="flex-1 bg-white border border-black rounded-lg p-6 min-w-[270px]"
           >
-            <p class="text-gray-400 text-base mb-2">Number of Trees Cut Down</p>
+            <p class="text-gray-400 text-base mb-2">Total Tree Cover Lost</p>
             <div
               id="treesCounter"
               class="text-2xl md:text-3xl font-bold text-aksen mb-2"
@@ -256,7 +256,7 @@
           <div
             class="flex-1 bg-white border border-black rounded-lg p-6 min-w-[270px]"
           >
-            <p class="text-gray-400 text-base mb-2">CO2 Emissions Level</p>
+            <p class="text-gray-400 text-base mb-2">Carbon Emissions Due to Forest Loss</p>
             <div
               id="co2Counter"
               class="text-2xl md:text-3xl font-bold text-aksen mb-2"
@@ -271,36 +271,37 @@
       </div>
     </section>
 
+    <!-- grafik -->
     <section 
-      class="w-full px-10 mb-32"
+      class="w-full px-4 mb-20 md:mb-32"
       data-aos="fade-up"
       data-aos-duration="1000"
       data-aos-once="true">
-      <div class="w-full relative md:max-w-4xl mx-auto bg-white rounded-lg shadow-xl p-6">
+      <div class="w-full md:max-w-4xl mx-auto bg-white rounded-lg shadow-xl border-2 border-black md:border-0 p-4 md:p-6 overflow-x-auto">
         <!-- Judul -->
-        <h1 id="typing-title" class="text-lg md:text-xl font-bold text-center text-gray-800 mb-1">
+        <h1 id="typing-title" class="text-lg md:text-xl font-bold text-center text-hijau mb-1">
         </h1>
-        <p class="text-sm md:text-base text-center text-gray-500 mb-6">
-            Penurunan Luas Tutupan Pohon dalam hektare
+        <p class="text-sm md:text-base text-center text-coklat mb-6">
+            Decrease in Tree Cover Area in hectares
         </p>
 
         <!-- Skala -->
         <div class="flex mb-2 ml-[160px] md:ml-[200px]">
-            <div class="w-16 md:w-24 text-xs text-gray-500 text-center">0</div>
-            <div class="w-16 md:w-24 text-xs text-gray-500 text-center">1</div>
-            <div class="w-16 md:w-24 text-xs text-gray-500 text-center">2</div>
-            <div class="w-16 md:w-24 text-xs text-gray-500 text-center">3</div>
-            <div class="w-16 md:w-24 text-xs text-gray-500 text-center">4</div>
+            <div class="w-12 md:w-24 text-xs text-gray-500 text-center">0</div>
+            <div class="w-12 md:w-24 text-xs text-gray-500 text-center">1</div>
+            <div class="w-12 md:w-24 text-xs text-gray-500 text-center">2</div>
+            <div class="w-12 md:w-24 text-xs text-gray-500 text-center">3</div>
+            <div class="w-12 md:w-24 text-xs text-gray-500 text-center">4</div>
         </div>
 
         <!-- Grafik Batang -->
-        <div class="space-y-3">
+        <div class="space-y-3 min-w-[600px] md:min-w-0">
             <!-- Riau -->
             <div class="flex items-center">
                 <div class="items-center w-40 md:w-48 text-sm md:text-base text-gray-700 text-right pr-4">Riau
                 </div>
-                <div class="w-full flex justify-between items-center">
-                  <div class="h-6 md:h-8 bg-coklat flex items-center text-white text-xs md:text-sm px-2 rounded-r" 
+                <div class="w-full flex justify-between items-center gap-6 md:gap-0">
+                  <div class="h-6 md:h-8 bg-aksen flex items-center text-white text-xs md:text-sm px-2 rounded-r" 
                        style="width: calc(6 * 80px);">
                       4.30 Mha
                   </div>
@@ -313,8 +314,8 @@
             <!-- Kalimantan Barat -->
             <div class="flex items-center">
                 <div class="w-40 md:w-48 text-sm md:text-base text-gray-700 text-right pr-4">Kalimantan Barat</div>
-                <div class="w-full flex justify-between items-center">
-                  <div class="h-6 md:h-8 bg-coklat flex items-center text-white text-xs md:text-sm px-2 rounded-r" 
+                <div class="w-full flex justify-between items-center gap-6 md:gap-0">
+                  <div class="h-6 md:h-8 bg-aksen flex items-center text-white text-xs md:text-sm px-2 rounded-r" 
                        style="width: calc(5 * 80px);">
                       4,21 Mha
                   </div>
@@ -327,8 +328,8 @@
             <!-- Kalimantan Tengah -->
             <div class="flex items-center">
                 <div class="w-40 md:w-48 text-sm md:text-base text-gray-700 text-right pr-4">Kalimantan Tengah</div>
-                <div class="w-full flex justify-between items-center">
-                  <div class="h-6 md:h-8 bg-coklat flex items-center text-white text-xs md:text-sm px-2 rounded-r" 
+                <div class="w-full flex justify-between items-center gap-6 md:gap-0">
+                  <div class="h-6 md:h-8 bg-aksen flex items-center text-white text-xs md:text-sm px-2 rounded-r" 
                        style="width: calc(4.7 * 80px);">
                       3,86 Mha
                   </div>
@@ -341,8 +342,8 @@
             <!-- Sumatera Selatan -->
             <div class="flex items-center">
                 <div class="w-40 md:w-48 text-sm md:text-base text-gray-700 text-right pr-4">Sumatera Selatan</div>
-                <div class="w-full flex justify-between items-center">
-                  <div class="h-6 md:h-8 bg-coklat flex items-center text-white text-xs md:text-sm px-2 rounded-r" 
+                <div class="w-full flex justify-between items-center gap-6 md:gap-0">
+                  <div class="h-6 md:h-8 bg-aksen flex items-center text-white text-xs md:text-sm px-2 rounded-r" 
                        style="width: calc(4.5 * 80px);">
                       3,29 Mha
                   </div>
@@ -355,8 +356,8 @@
             <!-- Kalimantan Timur -->
             <div class="flex items-center">
                 <div class="w-40 md:w-48 text-sm md:text-base text-gray-700 text-right pr-4">Kalimantan Timur</div>
-                <div class="w-full flex justify-between items-center">
-                  <div class="h-6 md:h-8 bg-coklat flex items-center text-white text-xs md:text-sm px-2 rounded-r" 
+                <div class="w-full flex justify-between items-center gap-6 md:gap-0">
+                  <div class="h-6 md:h-8 bg-aksen flex items-center text-white text-xs md:text-sm px-2 rounded-r" 
                        style="width: calc(4.2 * 80px);">
                       3,13 Mha
                   </div>
@@ -369,8 +370,8 @@
             <!-- Jambi -->
             <div class="flex items-center">
                 <div class="w-40 md:w-48 text-sm md:text-base text-gray-700 text-right pr-4">Jambi</div>
-                <div class="w-full flex justify-between items-center">
-                  <div class="h-6 md:h-8 bg-coklat flex items-center text-white text-xs md:text-sm px-2 rounded-r" 
+                <div class="w-full flex justify-between items-center gap-6 md:gap-0">
+                  <div class="h-6 md:h-8 bg-aksen flex items-center text-white text-xs md:text-sm px-2 rounded-r" 
                        style="width: calc(3.8 * 80px);">
                       2,01 Mha
                   </div>
@@ -383,8 +384,8 @@
             <!-- Sumatra Utara -->
             <div class="flex items-center">
                 <div class="w-40 md:w-48 text-sm md:text-base text-gray-700 text-right pr-4">Sumatra Utara</div>
-                <div class="w-full flex justify-between items-center">
-                  <div class="h-6 md:h-8 bg-coklat flex items-center text-white text-xs md:text-sm px-2 rounded-r" 
+                <div class="w-full flex justify-between items-center gap-6 md:gap-0">
+                  <div class="h-6 md:h-8 bg-aksen flex items-center text-white text-xs md:text-sm px-2 rounded-r" 
                        style="width: calc(3.4 * 80px);">
                       1,62 Mha
                   </div>
@@ -397,8 +398,8 @@
             <!-- Kalimantan Selatan -->
             <div class="flex items-center">
                 <div class="w-40 md:w-48 text-sm md:text-base text-gray-700 text-right pr-4">Kalimantan Selatan</div>
-                <div class="w-full flex justify-between items-center">
-                  <div class="h-6 md:h-8 bg-coklat flex items-center text-white text-xs md:text-sm px-2 rounded-r" 
+                <div class="w-full flex justify-between items-center gap-6 md:gap-0">
+                  <div class="h-6 md:h-8 bg-aksen flex items-center text-white text-xs md:text-sm px-2 rounded-r" 
                        style="width: calc(2.6 * 80px);">
                       934 Kha
                   </div>
@@ -411,8 +412,8 @@
             <!-- Aceh -->
             <div class="flex items-center">
                 <div class="w-40 md:w-48 text-sm md:text-base text-gray-700 text-right pr-4">Aceh</div>
-                <div class="w-full flex justify-between items-center">
-                  <div class="h-6 md:h-8 bg-coklat flex items-center text-white text-xs md:text-sm px-2 rounded-r" 
+                <div class="w-full flex justify-between items-center gap-6 md:gap-0">
+                  <div class="h-6 md:h-8 bg-aksen flex items-center text-white text-xs md:text-sm px-2 rounded-r" 
                        style="width: calc(2 * 80px);">
                       857 Kha
                   </div>
@@ -425,8 +426,8 @@
             <!-- Sulawesi Tengah -->
             <div class="flex items-center">
                 <div class="w-40 md:w-48 text-sm md:text-base text-gray-700 text-right pr-4">Sulawesi Tengah</div>
-                <div class="w-full flex justify-between items-center">
-                  <div class="h-6 md:h-8 bg-coklat flex items-center text-white text-xs md:text-sm px-2 rounded-r" 
+                <div class="w-full flex justify-between items-center gap-6 md:gap-0">
+                  <div class="h-6 md:h-8 bg-aksen flex items-center text-white text-xs md:text-sm px-2 rounded-r" 
                        style="width: calc(1.8 * 80px);">
                       842 Kha
                   </div>
@@ -440,7 +441,7 @@
 
         <!-- Footer -->
         <p class="text-xs text-gray-500 text-center mt-6">
-            Sumber: GlobalForestWatch
+            Source: globalforestwatch
         </p>
     </div>
 
@@ -598,29 +599,6 @@
     <script src="assets/js/animation.js"></script>
     <script src="assets/js/navbar.js"></script>
     <script src="assets/js/counter.js"></script>
-    <script>
-      document.addEventListener('DOMContentLoaded', startCountersWhenVisible);
-
-  document.addEventListener('DOMContentLoaded', function() {
-    // Animasi typing untuk judul
-    const title = "10 Provinsi dengan Deforestasi Terbesar di Indonesia (2001-2024)";
-    const titleElement = document.getElementById('typing-title');
-    let i = 0;
-    
-    function typeWriter() {
-      if (i < title.length) {
-        titleElement.innerHTML += title.charAt(i);
-        i++;
-        setTimeout(typeWriter, 50);
-      } else {
-        titleElement.classList.remove('border-r-2');
-      }
-    }
-    
-    // Mulai animasi typing
-    setTimeout(typeWriter, 500)
-  });
-    </script>
     <script>
       function toggleMenu() {
         const menu = document.getElementById("navbar-default");
