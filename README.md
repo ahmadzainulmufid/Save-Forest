@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div align="center">
   <h1>🌳 Save Forest - Protecting Our Green Legacy</h1>
   <p><i>Turning awareness into action for forest conservation</i></p>
@@ -16,7 +17,7 @@
 
 ---
 
-## 📚 About The Project
+##  About The Project 📚
 
 **Save Forest** is an environmental awareness website developed by a passionate team from Politeknik Negeri Jakarta. With creativity as our foundation and innovation as our driving force, we aim to educate and inspire action against deforestation in Indonesia and worldwide.
 
@@ -24,7 +25,7 @@
 
 ---
 
-## ✨ Key Features
+##  Key Features ✨
 
 | Feature                        | Description                                                                                                    |
 |---------------------------------|----------------------------------------------------------------------------------------------------------------|
@@ -36,7 +37,7 @@
 
 ---
 
-## 🛠️ Technologies Used
+##  Technologies Used 🛠️
 
 - HTML5 & CSS3
 - Tailwind CSS (responsive design)
@@ -48,7 +49,7 @@
 
 ---
 
-## 📱 Responsive Design
+##  Responsive Design 📱
 
 Save Forest is fully responsive, providing an optimal viewing experience across all devices:
 - Desktop computers
@@ -57,13 +58,13 @@ Save Forest is fully responsive, providing an optimal viewing experience across 
 
 ---
 
-## 🌟 Our Mission
+##  Our Mission 🌟
 
 > Our mission is to inspire individuals to take part in protecting our forests, preserving biodiversity, and building a sustainable future for the next generations. We believe that awareness combined with action can make a real difference in the fight against deforestation.
 
 ---
 
-## 🔍 Explore Our Sections
+##  Explore Our Sections 🔍
 
 | Section      | Description                                                        |
 |--------------|--------------------------------------------------------------------|
@@ -75,7 +76,7 @@ Save Forest is fully responsive, providing an optimal viewing experience across 
 
 ---
 
-## 👥 Developed By
+##  Developed By 👥
 
 This project was proudly created by:
 
