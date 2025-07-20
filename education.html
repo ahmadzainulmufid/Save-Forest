@@ -4,16 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Save Forest</title>
-    <meta
-      name="description"
-      content="Save Forest - Education on Deforestation"
-    />
-    <meta
-      name="keywords"
-      content="Save Forest, Deforestation, Education, Environment, Conservation"
-    />
-    <meta name="author" content="Save Forest Team" />
-    <link rel="icon" type="image/png" href="/assets/images/logo-putih.png" />
     <link href="assets/css/output.css" rel="stylesheet" />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
@@ -27,8 +17,7 @@
     />
     <script src="https://unpkg.com/@heroicons/vue@2.0.16/dist/heroicons.min.js"></script>
   </head>
-  <body class="bg-white font-montserrat">
-    <!-- navbar -->
+<body class="bg-white font-montserrat">    <!-- navbar -->
     <nav
       id="mainNavbar"
       class="top-0 left-0 w-full transition-all duration-300 bg-white font-montserrat shadow-xl"
@@ -41,13 +30,13 @@
           class="flex items-center space-x-3 rtl:space-x-reverse"
         >
           <img
-            src="/assets/images/logo.png"
-            class="w-12 transition-all duration-300"
+            src="assets/images/logo.png"
+            class="logo-hijau w-12 transition-all duration-300"
             alt="Save Forest"
           />
           <span
             id="navBrand"
-            class="self-center text-2xl font-semibold whitespace-nowrap transition-colors duration-300 !text-green-900"
+            class="self-center text-2xl font-semibold whitespace-nowrap transition-colors duration-300 text-hijau"
           >
             Save Forest
           </span>
@@ -192,8 +181,7 @@
       data-aos-once="true"
     >
       <h2 class="text-2xl md:text-3xl font-extrabold text-hijau">
-        10 Million Hectares of Forest Are
-        <span class="text-aksen">Lost Every Year</span>
+        10 Million Hectares of Forest Are <span class="text-aksen">Lost Every Year</span> 
       </h2>
       <p class="mt-2 text-gray-600 text-base md:text-lg">
         A staggering amount of forest disappears annually due to illegal
@@ -211,26 +199,21 @@
       <div
         class="flex flex-col md:flex-row items-start md:items-center justify-between gap-10"
       >
-        <div
-          class="md:w-1/2 space-y-6 order-2 md:order-1 text-center md:text-left"
-        >
+        <!-- Text content - akan tampil pertama di mobile -->
+        <div class="w-full md:w-1/2 space-y-6 order-1 md:order-1 text-center md:text-left">
           <h2 class="text-2xl md:text-4xl font-bold text-hijau">
             What is Deforestation?
           </h2>
-          <p
-            class="text-gray-600 text-base text-justify md:text-lg leading-relaxed"
-          >
-            Deforestation refers to the clearing, destruction, or removal of
-            forests by human activities, often to make way for agriculture,
-            livestock, logging, mining, or urban development. It results in the
-            conversion of forested land into non-forest uses.
+          <p class="text-gray-600 text-base text-justify md:text-lg leading-relaxed">
+            Deforestation refers to the clearing, destruction, or removal of forests by human activities, often to make way for agriculture, 
+            livestock, logging, mining, or urban development. 
+            It results in the conversion of forested land into non-forest uses.
           </p>
         </div>
 
-        <div class="md:w-1/2 space-y-6 order-1 md:order-2">
-          <div
-            class="flex items-start bg-white shadow-md rounded-lg p-4 gap-4 border"
-          >
+        <!-- Boxes - akan tampil kedua di mobile -->
+        <div class="w-full md:w-1/2 space-y-6 order-2 md:order-2">
+          <div class="flex items-start bg-white shadow-md rounded-lg p-4 gap-4 border">
             <div
               class="w-12 h-12 bg-green-100 text-green-600 flex items-center justify-center rounded-md"
             >
@@ -296,19 +279,28 @@
     </section>
 
     <!-- Content 4 -->
-    <section
-      class="w-full py-16 px-6 md:py-20 md:px-16 font-montserrat"
-      data-aos="fade-up"
-      data-aos-duration="1000"
-      data-aos-once="true"
-    >
-      <div
-        class="flex flex-col md:flex-row items-start md:items-center justify-between gap-10"
-      >
-        <div class="w-full max-w-sm h-64 bg-gray-300 rounded-md mx-auto">
-          <div
-            class="w-full max-w-sm h-64 h-64 bg-green-100 flex items-center justify-center rounded-lg shadow-md"
-          >
+      <section class="w-full py-16 px-6 md:py-20 md:px-16 font-montserrat" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-10">
+        <!-- Text content - akan tampil pertama di mobile -->
+        <div class="w-full md:w-1/2 space-y-6 order-1 md:order-2 text-center md:text-left">
+          <h2 class="text-2xl md:text-4xl font-bold text-hijau">
+            Deforestation Rates
+          </h2>
+          <p class="text-gray-600 text-base md:text-lg leading-relaxed text-justify text-left">
+            The rate of global forest loss has reached millions of hectares
+            annually, posing severe ecological and environmental consequences.
+            This phenomenon contributes to biodiversity decline, disrupts
+            ecological balance, increases atmospheric carbon concentrations
+            through reduced carbon sequestration, and accelerates global climate
+            change. Furthermore, widespread deforestation affects hydrological
+            cycles and undermines the socio-economic stability of indigenous and
+            local communities who depend on forest ecosystems.
+          </p>
+        </div>
+        
+        <!-- Image - akan tampil kedua di mobile -->
+        <div class="w-full max-w-sm h-64 mx-auto order-2 md:order-1">
+          <div class="w-full max-w-sm h-64 bg-green-100 flex items-center justify-center rounded-lg shadow-md">
             <!-- Icon: Chart Bar (Heroicons) -->
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -326,89 +318,60 @@
             </svg>
           </div>
         </div>
-        <div
-          class="md:w-1/2 space-y-6 order-2 md:order-1 text-center md:text-left"
-        >
-          <h2 class="text-2xl md:text-4xl font-bold text-hijau">
-            Deforestation Rates
-          </h2>
-          <p
-            class="text-gray-600 text-base md:text-lg leading-relaxed text-justify text-left"
-          >
-            The rate of global forest loss has reached millions of hectares
-            annually, posing severe ecological and environmental consequences.
-            This phenomenon contributes to biodiversity decline, disrupts
-            ecological balance, increases atmospheric carbon concentrations
-            through reduced carbon sequestration, and accelerates global climate
-            change. Furthermore, widespread deforestation affects hydrological
-            cycles and undermines the socio-economic stability of indigenous and
-            local communities who depend on forest ecosystems.
-          </p>
-        </div>
       </div>
     </section>
 
     <!-- Content 5 -->
-    <section
-      class="w-full py-16 px-6 md:py-20 md:px-16 font-montserrat"
-      data-aos="fade-up"
-      data-aos-duration="1000"
-      data-aos-once="true"
-    >
-      <div
-        class="flex flex-col md:flex-row items-start md:items-center justify-between gap-10"
-      >
-        <div
-          class="md:w-1/2 space-y-6 order-2 md:order-1 text-center md:text-left"
+    <section class="w-full py-16 px-6 md:py-20 md:px-16 font-montserrat" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
+  <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-10">
+    <!-- Text content - akan tampil pertama di mobile -->
+    <div class="w-full md:w-1/2 space-y-6 order-1 md:order-1 text-center md:text-left">
+      <h2 class="text-2xl md:text-4xl font-bold text-hijau">
+        Social Impact
+      </h2>
+      <p class="text-gray-600 text-base md:text-lg leading-relaxed text-justify text-left">
+        Deforestation severely affects local and indigenous communities by
+        disrupting their livelihoods, diminishing access to essential
+        resources, and threatening their cultural heritage and traditional
+        knowledge systems. Moreover, it increases their socio-economic
+        vulnerability, exposes them to land conflicts, and accelerates the
+        loss of biodiversity crucial for their daily survival.
+      </p>
+    </div>
+    
+    <!-- Image - akan tampil kedua di mobile -->
+    <div class="w-full max-w-sm h-64 mx-auto order-2 md:order-2">
+      <div class="w-full max-w-sm h-64 bg-green-100 flex items-center justify-center rounded-lg shadow-md">
+        <!-- Icon -->
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-16 h-16 text-green-600"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
         >
-          <h2 class="text-2xl md:text-4xl font-bold text-hijau">
-            Social Impact
-          </h2>
-          <p
-            class="text-gray-600 text-base md:text-lg leading-relaxed text-justify text-left"
-          >
-            Deforestation severely affects local and indigenous communities by
-            disrupting their livelihoods, diminishing access to essential
-            resources, and threatening their cultural heritage and traditional
-            knowledge systems. Moreover, it increases their socio-economic
-            vulnerability, exposes them to land conflicts, and accelerates the
-            loss of biodiversity crucial for their daily survival.
-          </p>
-        </div>
-        <div class="w-full max-w-sm h-64 mx-auto order-1 md:order-2">
-          <div
-            class="w-full max-w-sm h-64 h-64 bg-green-100 flex items-center justify-center rounded-lg shadow-md"
-          >
-            <!-- Icon: Chart Bar (Heroicons) -->
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="w-16 h-16 text-green-600"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M17 20h5v-2a4 4 0 00-4-4h-1m-6 6v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2h5m6-6a4 4 0 100-8 4 4 0 000 8z"
-              />
-            </svg>
-          </div>
-        </div>
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M17 20h5v-2a4 4 0 00-4-4h-1m-6 6v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2h5m6-6a4 4 0 100-8 4 4 0 000 8z"
+          />
+        </svg>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
     <!-- Content 6 -->
     <section>
       <div
-        class="bg-white py-16 px-6 md:px-16 text-center font-montserrat"
+        class="bg-hijau py-16 px-6 md:px-16 text-center font-montserrat"
         data-aos="fade-up"
         data-aos-duration="1000"
         data-aos-once="true"
       >
-        <h2 class="text-3xl md:text-4xl font-extrabold text-hijau mb-10">
-          Main <span class="text-aksen">Impact</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-10">
+          Main Impact
         </h2>
 
         <!-- Grid 2x2 -->
@@ -468,13 +431,13 @@
     <!-- Content 7 -->
     <section>
       <div
-        class="bg-white py-16 px-6 md:px-16 text-center font-montserrat"
+        class="bg-hijau py-16 px-6 md:px-16 text-center font-montserrat"
         data-aos="fade-up"
         data-aos-duration="1000"
         data-aos-once="true"
       >
-        <h2 class="text-3xl md:text-4xl font-extrabold text-green-600 mb-10">
-          How to <span class="text-aksen">Prevent</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-10">
+          How to Prevent
         </h2>
 
         <!-- Grid 2x2 -->
@@ -535,17 +498,20 @@
     </section>
 
     <!-- Content 8 -->
-    <section class="w-full py-16 px-6 md:px-16 text-center font-montserrat">
+    <section
+      class="w-full py-16 px-6 mb-16 md:px-16 text-center font-montserrat"
+    >
       <div data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
-        <h2 class="text-2xl md:text-4xl font-extrabold text-hijau mb-4">
-          <span class="text-aksen">Join</span> the Movement
+        <h2 class="text-2xl md:text-3xl font-extrabold text-hijau">
+          Join the
+          <span class="text-aksen">Movement</span>
         </h2>
         <p class="text-gray-600 text-sm md:text-base mb-6">
           Make a meaningful contribution towards a sustainable future.
         </p>
         <a
           href="/contribution.html"
-          class="inline-block bg-green-600 hover:bg-green-700 text-white font-medium px-6 py-2 rounded-md shadow transform hover:scale-105 transition duration-300 ease-in-out"
+          class="bg-hijau hover:bg-aksen text-white font-bold py-3 px-8 rounded-lg text-lg transition-all duration-300 font-montserrat shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-105"
         >
           Contribute Now
         </a>
@@ -560,9 +526,7 @@
       data-aos-once="true"
     >
       <div class="container mx-auto px-4 md:px-8">
-        <div
-          class="flex flex-col mx-4 md:mx-6 lg:mx-0 md:flex-row md:space-x-16 lg:space-x-32"
-        >
+        <div class="flex flex-col mx-4 md:mx-6 lg:mx-0 md:flex-row md:space-x-16 lg:space-x-32">
           <div class="about mb-8 md:mb-0 md:w-2/3">
             <h4 class="font-bold text-base md:text-xl mb-4">Save Forest</h4>
             <p
@@ -670,12 +634,11 @@
         <p>Save Forest © 2025, All Rights Reserved</p>
       </div>
     </footer>
-    <script src="assets/js/slider.js"></script>
+      <script src="assets/js/slider.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="assets/js/animation.js"></script>
-    <script src="assets/js/navbar.js"></script>
     <script src="assets/js/counter.js"></script>
-    <script>
+     <script>
       function toggleMenu() {
         const menu = document.getElementById("navbar-default");
         menu.classList.toggle("translate-x-full");
