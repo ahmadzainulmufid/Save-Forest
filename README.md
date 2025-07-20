@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <div align="center">
   <h1>🌳 Save Forest - Protecting Our Green Legacy</h1>
   <p><i>Turning awareness into action for forest conservation</i></p>
