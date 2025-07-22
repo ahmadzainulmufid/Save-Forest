@@ -719,6 +719,16 @@ video {
   margin-bottom: 1.5rem;
 }
 
+.my-16 {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+.my-24 {
+  margin-top: 6rem;
+  margin-bottom: 6rem;
+}
+
 .mb-0 {
   margin-bottom: 0px;
 }
@@ -1255,10 +1265,6 @@ video {
   overflow-x: hidden;
 }
 
-.overflow-y-hidden {
-  overflow-y: hidden;
-}
-
 .whitespace-nowrap {
   white-space: nowrap;
 }
@@ -1433,6 +1439,10 @@ video {
 .bg-red-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(254 226 226 / var(--tw-bg-opacity, 1));
+}
+
+.bg-transparent {
+  background-color: transparent;
 }
 
 .bg-white {
@@ -2489,7 +2499,6 @@ video {
     --tw-text-opacity: 1;
     color: rgb(0 95 57 / var(--tw-text-opacity, 1));
   }
-
   .md\:hover\:text-aksen:hover {
     --tw-text-opacity: 1;
     color: rgb(251 191 36 / var(--tw-text-opacity, 1));
@@ -2542,7 +2551,6 @@ video {
     --tw-translate-x: 0px;
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   }
-
   .lg\:flex-row {
     flex-direction: row;
   }
@@ -2565,16 +2573,6 @@ video {
     margin-left: calc(8rem * calc(1 - var(--tw-space-x-reverse)));
   }
 
-  .lg\:space-x-8 > :not([hidden]) ~ :not([hidden]) {
-    --tw-space-x-reverse: 0;
-    margin-right: calc(2rem * var(--tw-space-x-reverse));
-    margin-left: calc(2rem * calc(1 - var(--tw-space-x-reverse)));
-  }
-
-  .lg\:border-0 {
-    border-width: 0px;
-  }
-
   .lg\:bg-transparent {
     background-color: transparent;
   }
@@ -2591,7 +2589,6 @@ video {
   .lg\:p-2 {
     padding: 0.5rem;
   }
-
   .lg\:px-16 {
     padding-left: 4rem;
     padding-right: 4rem;
@@ -2631,11 +2628,10 @@ video {
     color: rgb(161 109 40 / var(--tw-text-opacity, 1));
   }
 
-  .lg\:text-hijau {
+  .lg\:text-red-500 {
     --tw-text-opacity: 1;
-    color: rgb(0 95 57 / var(--tw-text-opacity, 1));
+    color: rgb(239 68 68 / var(--tw-text-opacity, 1));
   }
-
   .lg\:text-white {
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity, 1));
@@ -2646,9 +2642,13 @@ video {
     color: rgb(251 191 36 / var(--tw-text-opacity, 1));
   }
 
-  .lg\:hover\:text-coklat:hover {
+  .lg\:text-\[\#fbbf24\] {
     --tw-text-opacity: 1;
-    color: rgb(161 109 40 / var(--tw-text-opacity, 1));
+    color: rgb(251 191 36 / var(--tw-text-opacity, 1));
+  }
+
+  .lg\:text-\[red-500\] {
+    color: red-500;
   }
 }
 
@@ -2659,10 +2659,6 @@ video {
 
   .xl\:flex-row {
     flex-direction: row;
-  }
-
-  .xl\:p-0 {
-    padding: 0px;
   }
 }
 
