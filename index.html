@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Save Forest</title>
     <link href="assets/css/output.css" rel="stylesheet" />
+    <link href="assets/css/style.css" rel="stylesheet" />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
@@ -599,16 +600,24 @@
     <script src="assets/js/counter.js"></script>
     <script>
       function toggleMenu() {
-        const menu = document.getElementById("navbar-default");
-        menu.classList.toggle("translate-x-full");
-        menu.classList.toggle("translate-x-0");
-
-        // Toggle icon
-        const iconHamburger = document.getElementById("iconHamburger");
-        const iconClose = document.getElementById("iconClose");
-        iconHamburger.classList.toggle("hidden");
-        iconClose.classList.toggle("hidden");
-      }
+    const menu = document.getElementById("navbar-default");
+    const body = document.body;
+    
+    menu.classList.toggle("translate-x-full");
+    menu.classList.toggle("translate-x-0");
+    
+    // Toggle overflow pada body untuk mencegah scroll
+    body.classList.toggle("overflow-hidden");
+    body.classList.toggle("fixed");
+    body.classList.toggle("h-full");
+    body.classList.toggle("w-full");
+    
+    // Toggle icon
+    const iconHamburger = document.getElementById("iconHamburger");
+    const iconClose = document.getElementById("iconClose");
+    iconHamburger.classList.toggle("hidden");
+    iconClose.classList.toggle("hidden");
+  }
     </script>
   </body>
 </html>

@@ -1,0 +1,6 @@
+/* Mencegah scroll saat menu mobile terbuka */
+  body.overflow-hidden.fixed {
+    position: fixed;
+    width: 100%;
+    overflow: hidden;
+  }
