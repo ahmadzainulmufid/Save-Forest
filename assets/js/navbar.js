@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const logoPutih = document.querySelector(".logo-putih");
 
   function setNavbarColors(isScrolled) {
-    if (window.innerWidth < 100) return; // Only desktop
+    if (window.innerWidth < 1024) return; // Only desktop
 
     if (isScrolled) {
       navbar.classList.add("lg:bg-white", "shadow-xl");
@@ -33,8 +33,9 @@ document.addEventListener("DOMContentLoaded", function () {
       navbar.classList.remove("lg:bg-white");
       navbar.classList.add("lg:bg-transparent");
       navBrand.classList.add("lg:text-white");
-      navBrand.classList.remove("lg:text-hijau");
-      logoHijau.classList.add("lg:hidden");
+      navHome.classList.remove("lg:text-hijau");
+      navHome.classList.add("lg:text-white");
+      navHome.classList.add("lg:hover:text-coklat");
       logoHijau.classList.remove("lg:block");
       logoPutih.classList.add("lg:block");
       logoPutih.classList.remove("lg:hidden");
