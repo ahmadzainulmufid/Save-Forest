@@ -124,15 +124,15 @@ async function renderSliderText(idx, animateIn = false) {
   // Reset dan setup style
   sliderTextSection.className = `
     flex flex-col gap-6 text-background w-full transition-all duration-500
-    ${isCentered ? "items-center justify-center text-center h-full" : "items-start justify-start md:text-left"}
+    ${isCentered ? "items-center justify-center text-center h-full" : "items-start justify-start lg:text-left"}
   `;
   sliderTextSection.innerHTML = "";
 
   // Buat elemen teks
   const h1 = document.createElement("h1");
-  h1.className = "text-xl md:text-5xl font-extrabold leading-tight text-white";
+  h1.className = "text-xl lg:text-5xl font-extrabold leading-tight text-white";
   const p = document.createElement("p");
-  p.className = "text-sm md:text-xl font-extralight leading-relaxed text-background";
+  p.className = "text-sm lg:text-xl font-extralight leading-relaxed text-background";
 
   sliderTextSection.appendChild(h1);
   sliderTextSection.appendChild(p);
@@ -150,7 +150,7 @@ async function renderSliderText(idx, animateIn = false) {
     const btnWrapper = document.createElement("div");
     btnWrapper.innerHTML = `
       <a href="/education.html"
-        class="slider-cta-btn inline-block bg-aksen text-white px-6 py-3 rounded-full text-sm md:text-base font-semibold hover:bg-background hover:text-aksen transition mt-4"
+        class="slider-cta-btn inline-block bg-aksen text-white px-6 py-3 rounded-full text-sm lg:text-base font-semibold hover:bg-background hover:text-aksen transition mt-4"
       >
         Learn How You Can Help →
       </a>
@@ -237,7 +237,7 @@ const newsList = [
 function getNewsCardHTML(news) {
   return `
     <div
-      class="news-card w-[16rem] md:w-[40rem] flex flex-col md:flex-row md:gap-8 items-center p-4 rounded-xl border-4 border-[#005f39] hover:scale-105 transition-all duration-300 opacity-0"
+      class="news-card w-[16rem] md:w-[40rem] lg:w-[20rem] xl:w-[40rem] flex flex-col md:flex-row lg:flex-col xl:flex-row md:gap-8 items-center p-4 rounded-xl border-4 border-[#005f39] hover:scale-105 transition-all duration-300 opacity-0"
       style="transform: translateY(-40px);"
     >
       <div>
