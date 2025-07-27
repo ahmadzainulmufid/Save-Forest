@@ -143,18 +143,19 @@
         muted
         loop
         playsinline
+        preload="none"
+        poster="assets/images/deforestasi-poster.jpg"
         class="absolute top-0 left-0 w-full h-full object-cover"
+        id="hero-video"
       >
-        <source src="assets/video/deforestasi.mp4" type="video/mp4" />
+        <!-- Video tidak diload langsung -->
       </video>
-
-      <!-- Overlay -->
+      
+      <!-- Overlay tidak berubah -->
       <div class="absolute top-0 left-0 w-full h-full bg-black/60"></div>
-
-      <!-- Text content -->
-      <div
-        class="absolute inset-0 flex flex-col items-center justify-center text-center px-4"
-      >
+      
+      <!-- Text content tidak berubah -->
+      <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
         <h1
           class="text-3xl md:text-5xl font-extrabold leading-tight text-transparent bg-clip-text bg-gradient-to-tr from-green-400 via-lime-300 to-yellow-200 drop-shadow-md"
         >
@@ -639,6 +640,24 @@
       iconHamburger.classList.toggle("hidden");
       iconClose.classList.toggle("hidden");
     }
+
+    document.addEventListener('DOMContentLoaded', function() {
+    // Periksa bandwidth pengguna
+    if (navigator.connection && navigator.connection.effectiveType.includes('2g')) {
+      // Untuk koneksi lambat, hanya tampilkan poster
+      document.getElementById('hero-video').poster = "assets/images/deforestasi-poster.jpg";
+    } else {
+      // Untuk koneksi cepat, load video setelah 1 detik
+      setTimeout(() => {
+        const videoElement = document.getElementById('hero-video');
+        const sourceElement = document.createElement('source');
+        sourceElement.src = "assets/video/deforestasi.mp4";
+        sourceElement.type = "video/mp4";
+        videoElement.appendChild(sourceElement);
+        videoElement.load();
+      }, 1000);
+    }
+  });
     </script>
   </body>
 </html>
