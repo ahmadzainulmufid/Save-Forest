@@ -747,45 +747,6 @@
             </svg>
           </button>
         </div>
-        <div id="chatbox" class="p-4 h-80 overflow-y-auto">
-          <!-- Chat messages will be displayed here -->
-          <div class="mb-2 text-right">
-            <p class="bg-blue-500 text-white rounded-lg py-2 px-4 inline-block">
-              hello
-            </p>
-          </div>
-          <div class="mb-2">
-            <p
-              class="bg-gray-200 text-gray-700 rounded-lg py-2 px-4 inline-block"
-            >
-              This is a response from the chatbot.
-            </p>
-          </div>
-          <div class="mb-2 text-right">
-            <p class="bg-blue-500 text-white rounded-lg py-2 px-4 inline-block">
-              this example of chat
-            </p>
-          </div>
-          <div class="mb-2">
-            <p
-              class="bg-gray-200 text-gray-700 rounded-lg py-2 px-4 inline-block"
-            >
-              This is a response from the chatbot.
-            </p>
-          </div>
-          <div class="mb-2 text-right">
-            <p class="bg-blue-500 text-white rounded-lg py-2 px-4 inline-block">
-              design with tailwind
-            </p>
-          </div>
-          <div class="mb-2">
-            <p
-              class="bg-gray-200 text-gray-700 rounded-lg py-2 px-4 inline-block"
-            >
-              This is a response from the chatbot.
-            </p>
-          </div>
-        </div>
         <div class="p-4 border-t flex">
           <input
             id="user-input"
@@ -802,6 +763,60 @@
         </div>
       </div>
     </div>
+    <script type="module">
+      import { GoogleGenAI } from "https://esm.sh/@google/genai";
+
+      const ai = new GoogleGenAI({
+        apiKey: "AIzaSyAniUBMi3Mgos4XhB1yZ60w39hqHvJ81DQ", // <-- ganti dengan API key-mu
+      });
+
+      const chat = ai.chats.create({
+        model: "gemini-2.5-flash",
+      });
+
+      const chatbox = document.getElementById("chatbox");
+      const input = document.getElementById("user-input");
+      const sendBtn = document.getElementById("send-button");
+
+      sendBtn.addEventListener("click", async () => {
+        const userText = input.value.trim();
+        if (!userText) return;
+
+        // Tampilkan pesan user
+        chatbox.innerHTML += `
+      <div class="mb-2 text-right">
+        <p class="bg-blue-500 text-white rounded-lg py-2 px-4 inline-block">${userText}</p>
+      </div>
+    `;
+        input.value = "";
+        chatbox.scrollTop = chatbox.scrollHeight;
+
+        // Kirim ke Gemini
+        const stream = await chat.sendMessageStream({ message: userText });
+
+        let botReply = "";
+        for await (const chunk of stream) {
+          botReply += chunk.text;
+        }
+
+        // Tampilkan balasan bot
+        chatbox.innerHTML += `
+      <div class="mb-2">
+        <p class="bg-gray-200 text-gray-700 rounded-lg py-2 px-4 inline-block">${botReply}</p>
+      </div>
+    `;
+        chatbox.scrollTop = chatbox.scrollHeight;
+      });
+
+      // Tombol buka-tutup chat
+      document.getElementById("open-chat").addEventListener("click", () => {
+        document.getElementById("chat-container").classList.remove("hidden");
+      });
+
+      document.getElementById("close-chat").addEventListener("click", () => {
+        document.getElementById("chat-container").classList.add("hidden");
+      });
+    </script>
 
     <script src="assets/js/slider.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -830,8 +845,8 @@
       }
     </script>
     <script>
-      const chatbox = document.getElementById("chatbox");
-      const chatContainer = document.getElementById("chat-container");
+      const chatbox2 = document.getElementById("chatbox");
+      const chatContainer2 = document.getElementById("chat-container");
       const userInput = document.getElementById("user-input");
       const sendButton = document.getElementById("send-button");
       const openChatButton = document.getElementById("open-chat");
@@ -841,7 +856,7 @@
 
       // Function to toggle the chatbox visibility
       function toggleChatbox() {
-        chatContainer.classList.toggle("hidden");
+        chatContainer2.classList.toggle("hidden");
         isChatboxOpen = !isChatboxOpen; // Toggle the state
       }
 
@@ -874,16 +889,16 @@
         const messageElement = document.createElement("div");
         messageElement.classList.add("mb-2", "text-right");
         messageElement.innerHTML = `<p class="bg-blue-500 text-white rounded-lg py-2 px-4 inline-block">${message}</p>`;
-        chatbox.appendChild(messageElement);
-        chatbox.scrollTop = chatbox.scrollHeight;
+        chatbox2.appendChild(messageElement);
+        chatbox2.scrollTop = chatbox2.scrollHeight;
       }
 
       function addBotMessage(message) {
         const messageElement = document.createElement("div");
         messageElement.classList.add("mb-2");
         messageElement.innerHTML = `<p class="bg-gray-200 text-gray-700 rounded-lg py-2 px-4 inline-block">${message}</p>`;
-        chatbox.appendChild(messageElement);
-        chatbox.scrollTop = chatbox.scrollHeight;
+        chatbox2.appendChild(messageElement);
+        chatbox2.scrollTop = chatbox2.scrollHeight;
       }
 
       function respondToUser(userMessage) {
