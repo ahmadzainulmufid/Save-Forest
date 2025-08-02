@@ -699,6 +699,78 @@
       </div>
     </footer>
 
+    <div class="fixed bottom-0 right-0 mb-4 mr-4">
+      <button
+        id="open-chat"
+        class="bg-hijau text-white py-2 px-4 rounded-md hover:bg-hijau transition duration-300 flex items-center"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-6 h-6 mr-2"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 4.418-4.03 8-9 8a9.77 9.77 0 01-4-.83l-4 1 1-3A8.96 8.96 0 013 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+          />
+        </svg>
+        Open Chat
+      </button>
+    </div>
+    <div
+      id="chat-container"
+      class="hidden fixed bottom-20 right-4 w-96 max-h-[calc(100vh-6rem)] overflow-y-auto z-50"
+    >
+      <div class="bg-white shadow-md rounded-lg max-w-lg w-full">
+        <div
+          class="p-4 border-b bg-hijau text-white rounded-t-lg flex justify-between items-center"
+        >
+          <p class="text-lg font-semibold">Admin Bot</p>
+          <button
+            id="close-chat"
+            class="text-gray-300 hover:text-gray-400 focus:outline-none focus:text-gray-400"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-6 h-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <div
+          id="chat-messages"
+          class="p-4 max-h-60 overflow-y-auto space-y-2 text-sm"
+        ></div>
+        <div class="p-4 border-t flex">
+          <input
+            id="user-input"
+            type="text"
+            placeholder="Type a message"
+            class="w-full px-3 py-2 border rounded-l-md focus:outline-none focus:ring-2 focus:ring-bg-hijau"
+          />
+          <button
+            id="send-button"
+            class="bg-hijau text-white px-4 py-2 rounded-r-md hover:bg-hijau transition duration-300"
+          >
+            Send
+          </button>
+        </div>
+      </div>
+    </div>
+
     <script src="assets/js/slider.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="assets/js/animation.js"></script>
@@ -723,6 +795,90 @@
         const iconClose = document.getElementById("iconClose");
         iconHamburger.classList.toggle("hidden");
         iconClose.classList.toggle("hidden");
+      }
+    </script>
+    <script>
+      const chatBox = document.getElementById("chat-messages");
+
+      function appendMessage(sender, text, className = "") {
+        const bubble = document.createElement("div");
+        bubble.className =
+          className ||
+          (sender === "Bot"
+            ? "bg-green-100 text-green-900 p-2 rounded-lg w-fit"
+            : "bg-blue-500 text-white p-2 rounded-lg self-end w-fit ml-auto");
+        bubble.innerText = `${sender}: ${text}`;
+        chatBox.appendChild(bubble);
+        chatBox.scrollTop = chatBox.scrollHeight;
+        return bubble;
+      }
+
+      const deforestasiQuestions = [
+        "Apa itu deforestasi?",
+        "Mengapa deforestasi berbahaya bagi lingkungan?",
+        "Bagaimana cara mencegah deforestasi?",
+        "Apa dampak deforestasi terhadap keanekaragaman hayati?",
+        "Negara mana yang tingkat deforestasinya tertinggi?",
+      ];
+
+      document.getElementById("open-chat").addEventListener("click", () => {
+        document.getElementById("chat-container").classList.remove("hidden");
+
+        if (chatBox.children.length === 0) {
+          const randomQ =
+            deforestasiQuestions[
+              Math.floor(Math.random() * deforestasiQuestions.length)
+            ];
+          askGemini(randomQ, true);
+        }
+      });
+
+      document.getElementById("close-chat").addEventListener("click", () => {
+        document.getElementById("chat-container").classList.add("hidden");
+      });
+
+      document
+        .getElementById("send-button")
+        .addEventListener("click", async () => {
+          const input = document.getElementById("user-input");
+          const message = input.value.trim();
+          if (!message) return;
+          input.value = "";
+
+          appendMessage("You", message);
+          await askGemini(message, false);
+        });
+
+      async function askGemini(message, isRandom) {
+        // Tampilkan indikator loading
+        const loadingBubble = appendMessage(
+          "Bot",
+          "Typing...",
+          "bg-yellow-100 text-yellow-700 p-2 rounded-lg w-fit"
+        );
+
+        try {
+          const res = await fetch("/ask", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ question: message }),
+          });
+          const data = await res.json();
+
+          // Hapus bubble "Typing..."
+          chatBox.removeChild(loadingBubble);
+
+          // Tampilkan jawaban sebenarnya dari bot
+          appendMessage("Bot", data.reply);
+        } catch (err) {
+          chatBox.removeChild(loadingBubble);
+          appendMessage(
+            "Bot",
+            "Terjadi error dalam menjawab pertanyaan.",
+            "bg-red-100 text-red-800 p-2 rounded-lg w-fit"
+          );
+          console.error(err);
+        }
       }
     </script>
   </body>

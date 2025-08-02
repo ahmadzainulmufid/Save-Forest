@@ -1,6 +1,7 @@
 {
   "name": "save-forest",
   "version": "1.0.0",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "dev": "tailwindcss -i assets/css/tailwind.css -o assets/css/output.css --watch",
@@ -15,6 +16,11 @@
     "tailwindcss": "^4.1.11"
   },
   "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "axios": "^1.11.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
     "flowbite": "^3.1.2"
   },
   "repository": {
@@ -25,5 +31,5 @@
     "url": "https://github.com/ahmadzainulmufid/Save-Forest/issues"
   },
   "homepage": "https://github.com/ahmadzainulmufid/Save-Forest#readme",
-  "description": ""
+  "description": "<div align=\"center\">\r   <h1>🌳 Save Forest - Protecting Our Green Legacy</h1>\r   <p><i>Turning awareness into action for forest conservation</i></p>\r   <hr style=\"width:50%;margin:auto;margin-bottom:20px\">\r </div>"
 }
