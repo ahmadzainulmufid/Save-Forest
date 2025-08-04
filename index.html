@@ -858,7 +858,7 @@
         );
 
         try {
-          const res = await fetch("/ask", {
+          const res = await fetch("https://saveforest-chatbot-api-268719618725.asia-southeast2.run.app/ask", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ question: message }),
